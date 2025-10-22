@@ -1,1 +1,2 @@
-# SRD drafts will be stored here
+# SRD drafts or support will be stored here
+# 
