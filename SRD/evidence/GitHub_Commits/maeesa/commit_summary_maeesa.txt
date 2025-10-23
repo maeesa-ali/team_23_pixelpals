@@ -1,82 +1,113 @@
 -------------------------------------
 Team 23 – PixelPals
-GitHub Commit Summary: Maeesa Ali
+Author: Maeesa Ali
+Role: Project Manager / Backend Support
 Branches: main + maeesa-branch
 -------------------------------------
 
-🧠 Role:
-Project Manager + Backend Support  
-Responsible for managing the repo structure, backend (ERD), documentation uploads, merges, and SRD evidence.
+ OVERVIEW
+Chronological log of all GitHub commits and pull requests made by Maeesa Ali.  
+Each entry lists the date, purpose, branch used, and associated pull requests.  
+This file is continuously updated as work progresses.
 
 -------------------------------------
-🟦 Phase 1 – Work on Main Branch
-(Direct commits made before creating maeesa-branch)
+ OCTOBER 18, 2025
 -------------------------------------
-
-[Oct 18–19, 2025]  
-- Initial commit (project setup)  
-- Added initial SRD.docx and folder structure  
-- Uploaded Design Alliance.docx to root directory  
-- Added Designs folder with subfolders for ERD, Wireframes, and Flows  
-- Added README.md and initial project overview  
-**Purpose:** Establish base repository and file structure for Team 23 – PixelPals.  
-
-[Oct 20–21, 2025]  
-- Updated SRD.docx with revised layout  
-- Added updated README.md including tools and deliverables  
-- Uploaded Design Alliance draft to verify format compatibility  
-- Cleaned placeholder files and organised structure  
-**Purpose:** Begin structuring the documentation for team writing consistency.  
-
-[Oct 22, 2025]  
-- Completed Design Alliance version 1  
-- Updated SRD.docx and adjusted directory layout  
-- Removed duplicate SRD files and unused folders  
-- Updated README.md to reflect current project state  
-**Purpose:** Prepare repository for transition to branching workflow and evidence setup.  
-
-✅ *All commits above were made directly on `main` while initial setup and structural changes were ongoing.*
+Branch: main  
+Commits:
+- "Initial commit" – Created repository with base README.md and .gitignore.  
+- "Rename SDR to SRD and add README" – Corrected folder name and added SRD structure.  
+Purpose: Established the base repository and prepared SRD documentation layout.
 
 -------------------------------------
-🟪 Phase 2 – Work on Maeesa Branch
-(Commits after branch creation on Oct 23, 2025)
+OCTOBER 19, 2025
 -------------------------------------
+Branch: main  
+Commits:
+- "Add Designs folder with ERD, Wireframes, and Flows subfolders"  
+- "Add SRD Word document (template version)"  
+- "Add files via upload"  
+Purpose: Added SRD template and design folders for collaboration.
 
-[Oct 23, 2025 – Morning]  
-- Created new branch: **maeesa-branch**  
-- Added Docs folder and moved Design Alliance.docx inside it  
-- Deleted old Design Alliance from root directory  
-- Synced branch with main to ensure clean base  
-**Purpose:** Begin using branch workflow for structured version control.  
-
-[Oct 23, 2025 – Midday]  
-- Created new folders for SRD/evidence (Trello_Screenshots, GitHub_Commits, Meeting_Notes)  
-- Created SRD/drafts/ folders for each member: (maeesa, russell, joel, seher, toney, jamaal, oscar, dia)  
-- Added placeholder .keep files and templates for future uploads  
-**Purpose:** Prepare SRD evidence directories and assign team spaces for contribution.  
-
-[Oct 23, 2025 – Afternoon]  
-- Added commit summary templates for all members  
-- Uploaded Trello and GitHub screenshots to evidence folders  
-- Added Meeting_Notes.pdf under SRD/evidence  
-- Updated README.md to include final repo structure and evidence references  
-**Purpose:** Set up all evidence directories required for SRD Section 6 and collaboration proof.  
-
-[Oct 23, 2025 – Evening]  
-- Performed multiple test merges between maeesa-branch and main (PR #2–#6)  
-- Accidentally created duplicate PR (#4) while testing workflow  
-- Redid folder structure for SRD/evidence to fix duplicate paths  
-- Verified all merges, deleted redundant files, and synced main with branch  
-**Purpose:** Test and verify pull request workflow, resolve structure consistency, and confirm final repo layout.  
+Pull Request:
+- **PR #1 – Initial Repository Setup**  
+  Purpose: Set up project foundation and upload initial documentation.  
+  Status: ✅ Directly merged into main (pre-branch setup).
 
 -------------------------------------
-📦 Key Merge Activities (Linked with Pull Requests)
+OCTOBER 23, 2025 
 -------------------------------------
-- PR #1 – Initial repo setup (direct on main)  
-- PR #2 – Move Design Alliance to Docs folder  
-- PR #3 – Add SRD/evidence and Meeting Notes folders  
-- PR #4 – ⚠️ Duplicate merge test (closed)  
-- PR #5 – Rebuilt evidence folder structure correctly  
-- PR #6 – Final verified merge of commit summaries + evidence  
+Branch: maeesa-branch  
+Commits:
+- "Maeesa Branch creation evidence" – Created personal branch for version control.  
+- "Moved Design Alliance Word doc to Docs folder" – Organised project files.  
+- "Deleted placeholder files from Docs/" – Cleaned unnecessary files.  
+- "Created SRD/evidence folder" – Set up evidence section.  
+- "Added subfolders: Trello, GitHub_Commits, and Meeting_Notes" – Structured evidence directories.  
+- "Created commit_summary files for all members" – Added placeholders for teammates.  
+- "Created SRD/drafts folders for all members" – Stored individual draft areas.  
+- "Updated README.md with Week 6–7 information" – Logged updated project details.  
+Purpose: Organised repository and evidence structure for SRD submission.
 
-✅ All verified by GitHub and merged successfully.
+Pull Requests:
+- **PR #2 – Move Design Alliance to Docs folder**  
+  Purpose: Relocate and tidy project documents.  
+  Status: ✅ Merged to main.  
+
+- **PR #3 – Add SRD/evidence and Meeting Notes folders**  
+  Purpose: Introduce collaboration evidence directories.  
+  Status: ✅ Merged to main.  
+
+-------------------------------------
+OCTOBER 23, 2025 (Afternoon)
+-------------------------------------
+Branch: maeesa-branch  
+Commits:
+- "Create Submission_Plan.txt" – Added project timeline and checklist.  
+- "Update Submission_Plan.txt" – Updated with new due dates.  
+- "Weeks 1–4 Team Formation notes" – Logged initial planning meetings.  
+- "Week 5 Meeting Notes" – Added documentation on Trello and GitHub setup.  
+- "Update commit_summary_maeesa.txt" – Logged verified progress.  
+- "Update README.md properly in Week 6 or 7" – Refined README content.  
+Purpose: Add management evidence and align SRD with progress documentation.
+
+Pull Requests:
+- **PR #4 – Test Merge (duplicate)**  
+  Purpose: Practice pull request workflow.  
+  Status: ⚠️ Closed / replaced by PR #5.  
+
+- **PR #5 – Redo of Evidence Folder Structure**  
+  Purpose: Clean rebuild of evidence folders.  
+  Status: ✅ Merged successfully.  
+
+-------------------------------------
+OCTOBER 23, 2025 (Evening)
+-------------------------------------
+Branch: maeesa-branch  
+Commits:
+- "docs(final): Added meeting notes, submission plan, and README update"  
+  – Combined management files, verified commits, prepared repo for submission.  
+Purpose: Complete all SRD evidence, merge summaries, and finalise structure.
+
+Pull Requests:
+- **PR #6 – Add Commit Summaries and Evidence Proofs**  
+  Purpose: Upload commit summaries and screenshots for assessment.  
+  Status: ✅ Merged successfully.  
+
+- **PR #7 – docs(final): Added meeting notes, submission plan, and README update**  
+  Purpose: Final merge for SRD preparation, ensuring all proof and documentation included.  
+  Status: ✅ Merged successfully (✔ Verified).  
+
+-------------------------------------
+
+-------------------------------------
+ REFLECTION
+This log demonstrates consistent project management and repository maintenance.  
+Commits were initially made directly to the main branch, followed by controlled 
+branch-based work on *maeesa-branch* to ensure safe merging and traceability.  
+Each pull request documents key integration points and verified evidence, 
+aligning with Aston’s collaboration and version control assessment criteria.
+
+-------------------------------------
+✅ END OF FILE
+-------------------------------------
