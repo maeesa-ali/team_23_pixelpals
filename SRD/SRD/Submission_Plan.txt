@@ -1,1 +1,9 @@
-
+Final Submission Checklist
+---------------------------
+All SRD drafts merged and proofread
+Design Alliance uploaded (Word + PDF)
+Trello screenshots added to evidence
+GitHub commit + PR summaries uploaded
+README.md updated and verified
+Main branch synced and verified on GitHub
+Blackboard submission ready (by 14 Nov 2PM)
