@@ -1,1 +1,82 @@
+-------------------------------------
+Team 23 – PixelPals
+GitHub Commit Summary: Maeesa Ali
+Branches: main + maeesa-branch
+-------------------------------------
 
+🧠 Role:
+Project Manager + Backend Support  
+Responsible for managing the repo structure, backend (ERD), documentation uploads, merges, and SRD evidence.
+
+-------------------------------------
+🟦 Phase 1 – Work on Main Branch
+(Direct commits made before creating maeesa-branch)
+-------------------------------------
+
+[Oct 18–19, 2025]  
+- Initial commit (project setup)  
+- Added initial SRD.docx and folder structure  
+- Uploaded Design Alliance.docx to root directory  
+- Added Designs folder with subfolders for ERD, Wireframes, and Flows  
+- Added README.md and initial project overview  
+**Purpose:** Establish base repository and file structure for Team 23 – PixelPals.  
+
+[Oct 20–21, 2025]  
+- Updated SRD.docx with revised layout  
+- Added updated README.md including tools and deliverables  
+- Uploaded Design Alliance draft to verify format compatibility  
+- Cleaned placeholder files and organised structure  
+**Purpose:** Begin structuring the documentation for team writing consistency.  
+
+[Oct 22, 2025]  
+- Completed Design Alliance version 1  
+- Updated SRD.docx and adjusted directory layout  
+- Removed duplicate SRD files and unused folders  
+- Updated README.md to reflect current project state  
+**Purpose:** Prepare repository for transition to branching workflow and evidence setup.  
+
+✅ *All commits above were made directly on `main` while initial setup and structural changes were ongoing.*
+
+-------------------------------------
+🟪 Phase 2 – Work on Maeesa Branch
+(Commits after branch creation on Oct 23, 2025)
+-------------------------------------
+
+[Oct 23, 2025 – Morning]  
+- Created new branch: **maeesa-branch**  
+- Added Docs folder and moved Design Alliance.docx inside it  
+- Deleted old Design Alliance from root directory  
+- Synced branch with main to ensure clean base  
+**Purpose:** Begin using branch workflow for structured version control.  
+
+[Oct 23, 2025 – Midday]  
+- Created new folders for SRD/evidence (Trello_Screenshots, GitHub_Commits, Meeting_Notes)  
+- Created SRD/drafts/ folders for each member: (maeesa, russell, joel, seher, toney, jamaal, oscar, dia)  
+- Added placeholder .keep files and templates for future uploads  
+**Purpose:** Prepare SRD evidence directories and assign team spaces for contribution.  
+
+[Oct 23, 2025 – Afternoon]  
+- Added commit summary templates for all members  
+- Uploaded Trello and GitHub screenshots to evidence folders  
+- Added Meeting_Notes.pdf under SRD/evidence  
+- Updated README.md to include final repo structure and evidence references  
+**Purpose:** Set up all evidence directories required for SRD Section 6 and collaboration proof.  
+
+[Oct 23, 2025 – Evening]  
+- Performed multiple test merges between maeesa-branch and main (PR #2–#6)  
+- Accidentally created duplicate PR (#4) while testing workflow  
+- Redid folder structure for SRD/evidence to fix duplicate paths  
+- Verified all merges, deleted redundant files, and synced main with branch  
+**Purpose:** Test and verify pull request workflow, resolve structure consistency, and confirm final repo layout.  
+
+-------------------------------------
+📦 Key Merge Activities (Linked with Pull Requests)
+-------------------------------------
+- PR #1 – Initial repo setup (direct on main)  
+- PR #2 – Move Design Alliance to Docs folder  
+- PR #3 – Add SRD/evidence and Meeting Notes folders  
+- PR #4 – ⚠️ Duplicate merge test (closed)  
+- PR #5 – Rebuilt evidence folder structure correctly  
+- PR #6 – Final verified merge of commit summaries + evidence  
+
+✅ All verified by GitHub and merged successfully.
