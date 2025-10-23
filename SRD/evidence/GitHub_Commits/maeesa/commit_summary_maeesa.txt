@@ -1,1 +1,63 @@
+-------------------------------------
+Team 23 – PixelPals
+GitHub Commit Summary: Maeesa Ali
+Branch: maeesa-branch
+-------------------------------------
+
+Role:
+Project Manager + Backend Support
+Responsible for GitHub structure, version control management, SRD merging, and evidence uploads.
+
+-------------------------------------
+Repository Setup & Initial Commits
+-------------------------------------
+[Oct 18–19, 2025]
+- Initial commit (project setup)
+- Renamed SRD and added main README
+- Added SRD Word document (template version)
+- Added Designs folder with ERD, Wireframes, and Flows subfolders
+- Uploaded SRD and supporting files via upload
+
+Purpose: created the full GitHub structure and initial SRD placeholders.
+
+-------------------------------------
+Documentation & Report Updates
+-------------------------------------
+[Oct 22–23, 2025]
+- Design Alliance completed by whole team
+- Updated SRD layout + README.md
+- Deleted outdated SRD doc and duplicates
+- Moved Design Alliance document into /Docs folder
+- Created member folders under SRD/drafts/
+- Uploaded each team member’s SRD draft placeholders
+
+Purpose: improved structure, linked Design Alliance with SRD, added draft spaces for each contributor.
+
+-------------------------------------
+ Evidence Creation & Maintenance
+-------------------------------------
+[Oct 23, 2025]
+- Created evidence folder (Trello, GitHub_Commits, Meeting Notes)
+- Added meeting notes
+- Added commit summary templates for all members
+- Uploaded Trello screenshots + GitHub commit proofs
+- Verified SRD/evidence directory and subfolders
+
+Purpose: built organised evidence for collaboration and version control traceability.
+
+-------------------------------------
+ Merge Requests & Branch Management
+-------------------------------------
+[Oct 23, 2025 – ongoing]
+- Created and maintained personal branch (maeesa-branch)
+- Synced with main (20+ commits behind resolved)
+- Merged PRs (#2, #3, #4, #5, #6) from maeesa-branch → main
+- Verified all merges (green "Merged" status)
+- Cleaned duplicate directories and placeholder files
+
+Purpose: kept repo synchronised, handled version control merging and project clean-up.
+
+-------------------------------------
+
+-------------------------------------
 
