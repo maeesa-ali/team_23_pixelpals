@@ -46,31 +46,31 @@ The project combines elements of fun, well-being, and technology to help childre
 
 
 
-**Russell**--Backend Lead--Creates the ERD diagram and writes Functional Requirements (Section 3.2).
+**Russell**--Backend Lead--Creates the ERD diagram and writes Functional Requirements.
 
 
 
-**Joel**--Backend Developer--Supports ERD and writes Non-Functional Requirements (Section 4).
+**Joel**--Backend Developer--Supports ERD and writes Non-Functional Requirements.
 
 
 
-**Seher**--UI/UX Designer--Creates the logo, wireframes, and brand visuals, and writes Usability \& Accessibility (Section 4.3).
+**Seher**--UI/UX Designer--Creates the site map , wireframes, and brand visuals, and writes Usability \& Accessibility.
 
 
 
-**Toney**--Tester + Design Support--Tests Seher’s visuals, provides feedback, proofs SRD, and writes Section 6.5 (Design \& Technical Overview).
+**Toney**--Tester + Design Support--Tests Seher’s visuals, provides feedback, proofs SRD.
 
 
 
-**Oscar**--Front-End Developer (Products Page)--Writes Use Cases for the Product Page (Section 5.2) and provides layout sketches.
+**Oscar**--Front-End Developer (Products Page)--Writes Use Cases for the Product Page and provides layout sketches.
 
 
 
-**Jamaal**--Front-End Developer (Accounts \& Basket)--Writes Use Cases for Login and Basket (Section 5.3) and designs a user journey diagram.
+**Jamaal**--Front-End Developer (Accounts \& Basket)--Writes Use Cases for Login and Basket and designs a user journey diagram.
 
 
 
-**Dia**--Marketing \& Content--Writes the Vision and Target Audience sections (2.2–2.3).
+**Dia**--Marketing \& Content--Writes the Vision and Target Audience sections.
 
 Repository Layout
 
@@ -80,43 +80,7 @@ Repository Layout
 
 **pixelpals-ecommerce folder structure**
 
-
-
-
-
-pixelpals-ecommerce/
-
-│
-
-├── SRD/
-
-│   ├── PixelPals\_SRD.docx        # Main Software Requirements \& Design report
-
-│   ├── PixelPals\_SRD.pdf         # Final submission version
-
-│
-
-├── Designs/
-
-│   ├── ERD/
-
-│   │   └── PixelPals\_ERD\_final.png
-
-│   ├── Wireframes/
-
-│   │   ├── home-wireframe.png
-
-│   │   └── product-wireframe.png
-
-│   ├── Flows/
-
-│   │   └── journey-login-basket.png
-
-│
-
-├── README.md                     # Project documentation (this file)
-
-└── .gitignore                    # Laravel / PHP / temporary file filter
+To be updated (Soon)
 
 
 
@@ -206,4 +170,5 @@ For project questions or file submissions:
 Project Manager: Maeesa
 
 Contact via: Trello or Discord
+
 
