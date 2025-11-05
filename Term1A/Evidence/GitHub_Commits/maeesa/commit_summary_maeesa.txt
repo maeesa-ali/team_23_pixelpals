@@ -1,0 +1,204 @@
+-------------------------------------
+Team 23 – PixelPals
+Author: Maeesa Ali
+Role: Project Manager / Backend Support
+Branches: main + maeesa-branch
+-------------------------------------
+
+ OVERVIEW
+Chronological log of all GitHub commits and pull requests made by Maeesa Ali.  
+Each entry lists the date, purpose, branch used, and associated pull requests.  
+This file is continuously updated as work progresses.
+
+-------------------------------------
+ OCTOBER 18, 2025
+-------------------------------------
+Branch: main  
+Commits:
+- "Initial commit" – Created repository with base README.md and .gitignore.  
+- "Rename SDR to SRD and add README" – Corrected folder name and added SRD structure.  
+Purpose: Established the base repository and prepared SRD documentation layout.
+
+-------------------------------------
+OCTOBER 19, 2025
+-------------------------------------
+Branch: main  
+Commits:
+- "Add Designs folder with ERD, Wireframes, and Flows subfolders"  
+- "Add SRD Word document (template version)"  
+- "Add files via upload"  
+Purpose: Added SRD template and design folders for collaboration.
+
+Pull Request:
+- **PR #1 – Initial Repository Setup**  
+  Purpose: Set up project foundation and upload initial documentation.  
+  Status: ✅ Directly merged into main (pre-branch setup).
+
+-------------------------------------
+OCTOBER 23, 2025 
+-------------------------------------
+Branch: maeesa-branch  
+Commits:
+- "Maeesa Branch creation evidence" – Created personal branch for version control.  
+- "Moved Design Alliance Word doc to Docs folder" – Organised project files.  
+- "Deleted placeholder files from Docs/" – Cleaned unnecessary files.  
+- "Created SRD/evidence folder" – Set up evidence section.  
+- "Added subfolders: Trello, GitHub_Commits, and Meeting_Notes" – Structured evidence directories.  
+- "Created commit_summary files for all members" – Added placeholders for teammates.  
+- "Created SRD/drafts folders for all members" – Stored individual draft areas.  
+- "Updated README.md with Week 6–7 information" – Logged updated project details.  
+Purpose: Organised repository and evidence structure for SRD submission.
+
+Pull Requests:
+- **PR #2 – Move Design Alliance to Docs folder**  
+  Purpose: Relocate and tidy project documents.  
+  Status: ✅ Merged to main.  
+
+- **PR #3 – Add SRD/evidence and Meeting Notes folders**  
+  Purpose: Introduce collaboration evidence directories.  
+  Status: ✅ Merged to main.  
+
+-------------------------------------
+OCTOBER 23, 2025 (Afternoon)
+-------------------------------------
+Branch: maeesa-branch  
+Commits:
+- "Create Submission_Plan.txt" – Added project timeline and checklist.  
+- "Update Submission_Plan.txt" – Updated with new due dates.  
+- "Weeks 1–4 Team Formation notes" – Logged initial planning meetings.  
+- "Week 5 Meeting Notes" – Added documentation on Trello and GitHub setup.  
+- "Update commit_summary_maeesa.txt" – Logged verified progress.  
+- "Update README.md properly in Week 6 or 7" – Refined README content.  
+Purpose: Add management evidence and align SRD with progress documentation.
+
+Pull Requests:
+- **PR #4 – Test Merge (duplicate)**  
+  Purpose: Practice pull request workflow.  
+  Status: ⚠️ Closed / replaced by PR #5.  
+
+- **PR #5 – Redo of Evidence Folder Structure**  
+  Purpose: Clean rebuild of evidence folders.  
+  Status: ✅ Merged successfully.  
+
+-------------------------------------
+OCTOBER 23, 2025 (Evening)
+-------------------------------------
+Branch: maeesa-branch  
+Commits:
+- "docs(final): Added meeting notes, submission plan, and README update"  
+  – Combined management files, verified commits, prepared repo for submission.  
+Purpose: Complete all SRD evidence, merge summaries, and finalise structure.
+
+Pull Requests:
+- **PR #6 – Add Commit Summaries and Evidence Proofs**  
+  Purpose: Upload commit summaries and screenshots for assessment.  
+  Status: ✅ Merged successfully.  
+
+- **PR #7 – docs(final): Added meeting notes, submission plan, and README update**  
+  Purpose: Final merge for SRD preparation, ensuring all proof and documentation included.  
+  Status: ✅ Merged successfully (✔ Verified).  
+-------------------------------------
+OCTOBER 26, 2025
+-------------------------------------
+Branch: maeesa-branch
+Commits:
+- "Maeesa v1 draft: sections 2.4, 4.2, 4.4 completed"
+  Purpose: Added planned SRD content for Technologies and Tools, Security, and Maintainability sections.
+
+Pull Request:
+- **PR #10 – Merge Maeesa’s updated SRD sections**
+  Purpose: Merge completed SRD content from maeesa-branch into main for team use.
+  Status: ✅ Merged successfully (✔ Verified)
+-------------------------------------
+OCTOBER 28, 2025
+-------------------------------------
+Branch: maeesa-branch → merged into main
+
+Commits:
+- "Week 6 Meeting notes"
+  Purpose: Uploaded documentation of team discussion and planning progress.
+- "Trello board at week 6 & Maeesa tasks W6"
+  Purpose: Added proof of Trello workload and project tracking for assessment.
+
+Pull Requests:
+- **PR #14 – Merge main into maeesa-branch**
+  Purpose: Updated maeesa-branch to latest project state for consistency.
+  Status: ✅ Merged successfully (✔ Verified)
+
+- **PR #15 – Merge Maeesa Evidence (W6 Proof)**
+  Purpose: Uploaded and merged Trello + meeting evidence for submission.
+  Status: ✅ Merged successfully (✔ Verified)
+
+- **PR #17 – Merge Week 6 Work (Maeesa-branch)**
+  Purpose: Final merge of Week 6 contributions into main branch.
+  Status: ✅ Merged successfully (✔ Verified)
+-------------------------------------
+NOVEMBER 3, 2025
+-------------------------------------
+Branch: maeesa-branch
+
+Commits:
+- "Updating layout" – Reorganised repo into Term1A structure (SRD report / Design alliance / Evidence).
+- "Create Design_Alliance" – Added Design Alliance folder with starter files.
+- "Delete SRD/Design_Alliance" – Removed old/misplaced folder after restructure.
+- "Create Evidence_README" – Short guide for Evidence folder (Trello, Meetings, GitHub).
+- "Standardise drafts & filenames" – Renamed/moved all member README files into SRD/drafts/<name>/; 
+  corrected Russell/Jamaal doc names; moved Submission_Plan.txt to SRD/submission_plan; general tidy.
+- "Create Design_Alliance (doc)" – Initial Design Alliance document added.
+
+Pull Requests:
+- **PR #19 – Sync main → maeesa-branch**  
+  Purpose: Bring branch up to date before restructure.  
+  Status: ✅ Merged (✔ Verified)
+
+- **PR #20 – Merge maeesa-branch → main (layout normalisation)**  
+  Purpose: Apply Term1A structure + file standardisation to main.  
+  Status: ✅ Merged (✔ Verified)
+
+-------------------------------------
+NOVEMBER 4, 2025
+-------------------------------------
+Branch: maeesa-branch
+
+Commits:
+- "updated draft v2" – Finalised SRD sections 6.1, 6.2, 6.4, 6.6 + Appendix G (Maeesa).
+- "Create Term 1A README.md" – Added concise Term 1A overview; later refined.
+- "Maeesa trello tasks w7" – Uploaded Trello evidence for Week 7 prep.
+- "Upload correct weekly meeting notes (w5&6)" – Replaced older screenshots/files with clean versions.
+- "Delete … Week 5 Task and Tool setup notes.png" & "Delete … Week 6 meeting notes .png" – Removed incorrect assets.
+- "Create .keep" – Preserve empty directories in Evidence where needed.
+- "Rename Team Project New – Designed Alliance.pdf to Team Project New – Designed Alliance.pdf" – Filename hygiene (consistent naming).
+- "sections 6.1,6.2,6.4,6.6,appx G" – Content update commit for SRD drafts.
+- "Update and rename README.md to Term_1A_README.md" – Final naming/style alignment for the Term 1A front-readme.
+- "Delete Term1A_README.md" – Removed earlier placeholder after adding final version.
+
+Pull Requests:
+- **PR #21 – Sync main → maeesa-branch**  
+  Purpose: Keep branch current before content merges.  
+  Status: ✅ Merged (✔ Verified)
+
+- **PR #22 – maeesa-branch → main (Evidence README + structure fixes)**  
+  Purpose: Evidence folder clean-up and guidance file.  
+  Status: ✅ Merged (✔ Verified)
+
+- **PR #23 – maeesa-branch → main (Meeting notes & images)**  
+  Purpose: Upload corrected Week 5 & Week 6 notes with proper assets.  
+  Status: ✅ Merged (✔ Verified)
+
+- **PR #24 – maeesa-branch → main (Term 1A README + tidy)**  
+  Purpose: Add final Term 1A README and apply naming consistency repo-wide.  
+  Status: ✅ Merged (✔ Verified)
+
+-------------------------------------
+
+-------------------------------------
+ REFLECTION
+This log demonstrates consistent project management and repository maintenance.  
+Commits were initially made directly to the main branch, followed by controlled 
+branch-based work on *maeesa-branch* to ensure safe merging and traceability.  
+Each pull request documents key integration points and verified evidence, 
+aligning with Aston’s collaboration and version control assessment criteria.
+
+-------------------------------------
+✅ END OF FILE
+-------------------------------------
