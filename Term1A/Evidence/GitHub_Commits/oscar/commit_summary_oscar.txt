@@ -1,1 +1,56 @@
+-------------------------------------
+Team 23 – PixelPals
+Author: Oscar Metcalf
+Role: Forunt end Devloper
+Branches: main + maeesa-branch
+-------------------------------------
 
+ OVERVIEW
+Chronological log of all GitHub commits and pull requests made by Maeesa Ali.  
+Each entry lists the date, purpose, branch used, and associated pull requests.  
+This file is continuously updated as work progresses.
+
+-------------------------------------
+ OCTOBER 28, 2025
+-------------------------------------
+Branch: main  
+Commits:
+- "Here is what I have done for my section of the report, if amount of words needs cutting down please message me" – uploaded use case diagrams
+- "Product grid diagram sketch" – uploaded proudct grid diagram sketch
+- "Functional requirements for Front-End Development (Products Page)"- uploaded functionol requirements for frount end devlopment
+Purpose: to share the work i completed with my team
+
+Pull Request:
+- **PR #16, #11, #13 – merging my uploads to main*  
+  Purpose: to make sure my sections of the project are on main 
+  Status: ✅ Directly merged into main (pre-branch setup).
+
+
+-------------------------------------
+
+-------------------------------------
+NOVEMBER 5, 2025
+-------------------------------------
+Branch: oscar-branch
+
+Commits:
+-"added files via upload" - added use case diagrams and graph sketch
+- "Delete Term1A/SRD report/drafts/oscar/uml diag.pptm"- deleted file that was acsidentally uploaded
+-"added files via upload" - added functional requirements for Front-End Development
+
+Pull Requests:
+- **PR #28, #31, #33, 34*  
+  Purpose: merge branch with main, uploading evidence and completed work
+  Status: ✅ Merged (✔ Verified)
+
+-------------------------------------
+
+-------------------------------------
+ REFLECTION
+This log demonstrates consistent uploads of work that I have completed and evidence to prove so.  
+Each pull request documents key integration points and verified evidence, 
+aligning with Aston’s collaboration and version control assessment criteria.
+
+-------------------------------------
+✅ END OF FILE
+-------------------------------------
