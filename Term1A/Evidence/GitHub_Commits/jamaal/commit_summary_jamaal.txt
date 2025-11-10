@@ -1,1 +1,23 @@
+-------------------------------------
+Team 23 – PixelPals
+Author: Jamaal Pickford
+Role: Front-end Developer
+Branches: main + Jamaal-branch
+-------------------------------------
 
+OVERVIEW
+Chronological log of all GitHub commits made by Jamaal Pickford.  
+Each entry lists the date, purpose, branch used, and associated pull requests.  
+This file is continuously updated as work progresses.
+
+-------------------------------------
+OCTOBER 27, 2025
+-------------------------------------
+
+-------------------------------------
+NOVEMBER 5, 2025
+-------------------------------------
+
+-------------------------------------
+NOVEMBER 10, 2025
+-------------------------------------
