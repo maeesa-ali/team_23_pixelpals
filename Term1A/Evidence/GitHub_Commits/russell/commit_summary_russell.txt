@@ -1,7 +1,7 @@
 -------------------------------------
 Team 23 – PixelPals
 Author: Russell Chamabe
-Role: Back end Devloper
+Role: Back End Lead Devloper
 Branches: Russell_branch
 -------------------------------------
 
