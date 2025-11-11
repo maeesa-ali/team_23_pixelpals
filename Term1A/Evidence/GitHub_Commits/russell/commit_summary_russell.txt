@@ -1,1 +1,60 @@
+-------------------------------------
+Team 23 – PixelPals
+Author: Russell Chamabe
+Role: Back end Devloper
+Branches: main + Russell_branch
+-------------------------------------
 
+ OVERVIEW
+Chronological log of all GitHub commits and pull requests made by Maeesa Ali.  
+Each entry lists the date, purpose, branch used, and associated pull requests.  
+This file is continuously updated as work progresses.
+
+-------------------------------------
+ OCTOBER 22, 2025
+-------------------------------------
+Branch: Russell-branch  
+Commits:
+- "filled in function requirements" - Report - function requirements by Russell 
+Purpose: To share my work about the functional requirements
+
+Pull Request:
+- **PR #1– function requirements by Russell*  
+  Status: ❌ Closed (✔ Verified)
+
+-------------------------------------
+ OCTOBER 24, 2025
+-------------------------------------
+Branch: Russell-branch  
+Commits:
+- " " - updated srd file
+- "updated" - Here is my Updated SRD file :D - Russell
+Purpose: To share my work about the functional requirements
+
+Pull Request:
+- **PR #8– updated srd file*  
+  Status: ❌ Closed (✔ Verified)
+- **PR #9– Here is my Updated SRD file :D*  
+  Status: ✅ Merged (✔ Verified)
+-------------------------------------
+NOVEMBER 5, 2025
+-------------------------------------
+Branch: Russell-branch
+
+Commits:
+-" " - ERD image and document
+
+Pull Requests:
+- **PR #53*  
+  Purpose: Completed work, for creating ERD diagram, alongside putting the ERD diagram in a word document and briefly describing how and what the erd does as system 
+  Status: ✅ Merged (✔ Verified)
+
+-------------------------------------
+ REFLECTION
+This log demonstrates consistent uploads of work that I have completed and evidence to prove so.  
+Each pull request documents key integration points and verified evidence, 
+aligning with Aston’s collaboration and version control assessment criteria.
+
+-------------------------------------
+✅ END OF FILE
+-------------------------------------
