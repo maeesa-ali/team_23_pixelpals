@@ -2,11 +2,11 @@
 Team 23 – PixelPals
 Author: Russell Chamabe
 Role: Back end Devloper
-Branches: main + Russell_branch
+Branches: Russell_branch
 -------------------------------------
 
  OVERVIEW
-Chronological log of all GitHub commits and pull requests made by Maeesa Ali.  
+Chronological log of all GitHub commits and pull requests made by Russell Chamabe.  
 Each entry lists the date, purpose, branch used, and associated pull requests.  
 This file is continuously updated as work progresses.
 
