@@ -13,11 +13,68 @@ This file is continuously updated as work progresses.
 -------------------------------------
 OCTOBER 27, 2025
 -------------------------------------
+Branch: Jamaal-branch
+Commits:
+- First Draft - Created a draft of FR3, FR4 and 5.3
+Purpose: Uploading my weekly progress for the report
+
+Pull Requests:
+PR #12 - First draft 
+Description: Created a draft of FR3, FR4 and 5.3. I'll probably change most things later as this was done kind of in a rush, but I wanted something done atleast.
+Pull request successfully merged and closed
+
+-------------------------------------
+NOVEMBER 4, 2025
+-------------------------------------
+Branch: Jamaal-branch
+Commits:
+- 2nd draft - Finished 3.2 FR3, FR4 and 5.3
+Purpose: Uploading my weekly progress for the report
 
 -------------------------------------
 NOVEMBER 5, 2025
 -------------------------------------
+Branch: Jamaal-branch
+Commits:
+- Draft v2 again - Uploading draft v2 again to go along with the updated layout
+- Delete SRD/SRD/drafts/jamaal directory - deleted old location
+Purpose: My branch was behind on layout so I needed to update it
+
+Pull Requests:
+PR #27 - 2nd draft
+Description: Finished 3.2 FR3, FR4 and 5.3
+Pull request successfully merged and closed
+
+PR #29 - Updating my branch
+Description - Getting my branch up to date
+Pull request successfully merged and closed
+
+PR #30 - Draft v2 following updated layout
+Description - Uploaded and reorganised to follow with the new layout
+Pull request successfully merged and closed
+
+PR #32 - Updating main
+Description - Making sure main is updated with new changes
+Pull request successfully merged and closed
 
 -------------------------------------
 NOVEMBER 10, 2025
 -------------------------------------
+Branch: Jamaal-branch
+Commits:
+- Trello Evidence
+- Started commit_summary_jamaal.txt - Made a start at this document but I want to have a conversation with Maeesa about how she did hers
+- 3rd Draft - Just added in user flow diagram
+Purpose: Uploading my weekly progress and putting in all evidence of my activity over the weeks
+
+-------------------------------------
+NOVEMBER 12, 2025
+-------------------------------------
+Branch: Jamaal-branch
+Commits:
+- Update commit_summary_jamaal.txt - Put down all my commits and pull requests so far
+- Branch creation evidence - Uploaded evidence of my branch creation
+Purpose: Finishing off all the leftover tasks I need to do
+
+Pull Requests:
+
