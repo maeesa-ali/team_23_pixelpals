@@ -77,4 +77,7 @@ Commits:
 Purpose: Finishing off all the leftover tasks I need to do
 
 Pull Requests:
+PR #60 - 3rd draft and evidence upload
+Description: This should be everything I need to upload alon with draft and evidence
+Pull request successfully merged and closed
 
