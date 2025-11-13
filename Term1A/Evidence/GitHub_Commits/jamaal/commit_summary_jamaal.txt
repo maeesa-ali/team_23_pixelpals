@@ -81,3 +81,8 @@ PR #60 - 3rd draft and evidence upload
 Description: This should be everything I need to upload alon with draft and evidence
 Pull request successfully merged and closed
 
+-------------------------------------
+
+-------------------------------------
+REFLECTION
+This log shows I've been consisting working and updating my part of the report. Commits were made to a branch I had created which would then be added to main by a pull request to ensure a consistent and high standard of work was maintained.
