@@ -1,0 +1,147 @@
+d5bafdf moved files
+738bef8 added harvard style citation and reference
+a47a568 Merge branch 'dia-branch' of github.com:maeesa-ali/team_23_pixelpals into dia-branch
+dda97fe added 2 and 6.3
+8cdf0e5 Merge pull request #44 from maeesa-ali/main
+0b1b4b0 update toneys branch
+e8427f3 update toneys branch
+df508e8 update sehers branch
+87d854b update sehers branch
+cc367f6 Merge pull request #38 from maeesa-ali/Russell-develop
+70b9783 Merge pull request #37 from maeesa-ali/main
+cc7e1d4 Merge pull request #36 from maeesa-ali/Joel_Branch
+60dbd58 update joels branch
+9cbd129 Merge pull request #34 from maeesa-ali/Oscar-Branch
+476272d Add files via upload
+8e8b617 Delete Term1A/SRD report/drafts/oscar/uml diag.pptm
+cd3f446 Merge pull request #33 from maeesa-ali/main
+a72e222 Merge pull request #32 from maeesa-ali/Jamaal-Branch
+7971b0d Delete SRD/SRD/drafts/jamaal directory
+30440ae Add files via upload
+1284b8e Merge pull request #31 from maeesa-ali/main
+d928e4d Merge pull request #30 from maeesa-ali/main
+0e7e9ca Delete SRD/SRD/drafts/jamaal directory
+99bdd37 Add files via upload
+a1cc14e Draft v2 again
+81aee54 Merge pull request #29 from maeesa-ali/main
+52dda0c Merge pull request #28 from maeesa-ali/main
+0ce46fb Merge pull request #27 from maeesa-ali/Jamaal-Branch
+2566669 2nd draft
+8b04e11 Merge pull request #26 from maeesa-ali/Maeesa-branch
+65ba83d Update commit_summary_maeesa.txt
+980b947 Merge pull request #25 from maeesa-ali/Maeesa-branch
+f1bcb75 updated draft v2
+fa5bc68 Delete Term1A/SRD report/drafts/maeesa/Team 23_PixelPals_SRD_Maeesa_v2.docx
+29c658a Create Term 1A README.md
+c178a5d Maeesa trello tasks w7
+428f3aa Merge pull request #24 from maeesa-ali/main
+ff69441 Rename Team Project New – Designed Alliance.pdf to Team Project New – Designed Alliance.pdf
+bb49caa Create .keep
+5e3acd6 Delete Term_1A_README.md
+6bfa7f2 Merge pull request #23 from maeesa-ali/Maeesa-branch
+0e7b9b9 Upload correct weekly meeting notes (w5&6)
+b3de116 Delete Term1A/Evidence/Meeting_notes/Week 5 Task and Tool setup notes.png
+6625013 Delete Term1A/Evidence/Meeting_notes/Week 6 meeting notes .png
+fac07a7 Merge pull request #22 from maeesa-ali/Maeesa-branch
+046bcda sections 6.1,6.2,6.4,6.6,apx G
+30d5855 Merge pull request #21 from maeesa-ali/main
+0d72a6a Delete Term1A/Evidence/Evidence_README
+45f2db1 Update and rename README.md to Term_1A_README.md
+5c29f37 Merge pull request #20 from maeesa-ali/Maeesa-branch
+7e1c4c8 Create Evidence_README
+b27e381 Updating layout
+e24692b Delete SRD/Design_Alliance
+d68f04f Create Design_Alliance
+00035c2 Rename SRD/SRD/drafts/maeesa/Team 23_PixelPals_SRD_Maeesa_v1.docx to SRD/drafts/maeesa/Team 23_PixelPals_SRD_Maeesa_v1.docx
+0aea0f0 Rename SRD/SRD/drafts/maeesa/README.md to SRD/drafts/maeesa/README.md
+41351e6 Rename SRD/SRD/drafts/toney/README.md to SRD/drafts/toney/README.md
+87c254a Rename SRD/SRD/drafts/seher/README.md to SRD/drafts/seher/README.md
+9ad7132 Rename SRD/SRD/drafts/russell/PixelPals_SRD_Chamabe_v1.docx to SRD/drafts/russell/PixelPals_SRD_Chamabe_v1.docx
+3479a53 Rename SRD/SRD/drafts/russell/README.md to SRD/drafts/russell/README.md
+2168921 Rename SRD/SRD/drafts/oscar/README.md to SRD/drafts/oscar/README.md
+b1c027e Rename SRD/SRD/drafts/joel/README.md to SRD/drafts/joel/README.md
+40f8597 Rename SRD/SRD/drafts/jamaal/PixelPals_SRD_Jamaal_v1.docx to SRD/drafts/jamaal/PixelPals_SRD_Jamaal_v1.docx
+7f1cc6b Rename SRD/SRD/drafts/jamaal/README.md to SRD/drafts/jamaal/README.md
+1d6565c Rename SRD/SRD/drafts/dia/README.md to SRD/drafts/dia/README.md
+82ecece Rename SRD/SRD/Submission_Plan.txt to SRD/Submission_Plan.txt
+90fb478 Merge pull request #19 from maeesa-ali/main
+4c1837d Merge pull request #18 from maeesa-ali/Maeesa-branch
+a193de5 Update commit_summary_maeesa.txt
+4d4e303 Merge pull request #17 from maeesa-ali/Maeesa-branch
+2c00791 Week 6 Meeting notes
+003d2b2 Trello board at week 6 & Maeesa tasks W6
+5dcb250 Merge pull request #16 from maeesa-ali/main
+0c3c2f9 Merge pull request #15 from maeesa-ali/Maeesa-branch
+9b8bde3 Merge pull request #14 from maeesa-ali/main
+c1f2938 Merge pull request #13 from maeesa-ali/Oscar-Branch
+987a84b Merge pull request #12 from maeesa-ali/Jamaal-Branch
+c64ddd9 Merge pull request #11 from maeesa-ali/main
+aa24ce0 First draft
+536469f Delete old SRD/PixelPals_SRD.docx
+4ac0740 Update commit_summary_maeesa.txt
+29d9a12 Merge pull request #10 from maeesa-ali/Maeesa-branch
+ebbb8a2 Maeesa v1 draft: sections 2.4,4.2,4.4 completed
+f16f5ba Merge pull request #9 from maeesa-ali/Russell-develop
+1fec57a Here is my Updated SRD file :D - Russell
+88c98e3 Update commit_summary_maeesa.txt
+61971b8 Merge pull request #7 from maeesa-ali/Maeesa-branch
+23eaa1f Update read me properly in week 6 or 7 - need more info
+f29b487 Week 5 meeting notes
+28a3181 Delete SRD/evidence/Meeting_notes/.keep
+e7404bb Weeks 1 – 4: Team Formation notes
+816de54 Update Submission_Plan.txt
+a8a7a2b Create Submission_Plan.txt
+9c78bd5 Update commit_summary_maeesa.txt
+1fea6e5 Maeesa Branch creation evidence
+57d8802 Update commit_summary_maeesa.txt up to oct 23 summarised
+1fdf6b4 Merge pull request #6 from maeesa-ali/main
+051df32 Create commit_summary_seher.txt
+2f2a64d Create commit_summary_oscar.txt
+db095ec Create commit_summary_dia.txt
+840b2f7 Create commit_summary_jamaal.txt
+e4f1c4b Create commit_summary_toney.txt
+cf74c55 Create commit_summary_joel.txt
+7ba028c Create commit_summary_russell.txt
+aa4b5a6 Create commit_summary_maeesa.txt
+400ecd1 Create  meeting notes
+04641df Create github commits (done properly)
+e16dc36 Create trello ss (done properly)
+1941c68 Create evidence folder- (done properly)
+3bb09ed Merge pull request #5 from maeesa-ali/Maeesa-branch- redo of #4
+658817b Create Github branches+commits again
+bda92f9 Create trello ss again
+0c31c3a Create Evidence again
+ad98700 Delete SRD/evidence directory
+a294db9 Delete SRD/evidence/Trello_Screenshots directory
+fa656a9 Merge pull request #4 from maeesa-ali/Maeesa-branch
+07fa01e Create Trello_Meeting_Notes
+a7aa359 Delete SRD/evidence/GitHub_Commits/.keep
+b36c5f7 Delete SRD/evidence/.keep
+aaedb09 Merge pull request #3 from maeesa-ali/Maeesa-branch
+8eda4d9 Create Github branch evidence
+1a06453 Create area for trello board for relevant weeks
+4ab4d06 Created evidence folder
+4fe3259 Delete SRD/README.md, caused duplication of readme
+e44bd69 Merge pull request #2 from maeesa-ali/Maeesa-branch
+a6ec02b Delete Docs/placeholder.txt
+692352b Moved design alliance word doc to Docs folder
+efecaf8 for design alliance doc
+16140e9 Update README.md
+4fd2428 No need for this directory. will all be in SRD
+1cd6a85 maeesa created members own file 8
+0b42cde Maeesa created members own file 7
+8aa862b maeesa created members own file 6
+8241f0e Maeesa created members own file 5
+3a02fc2 Maeesa uploaded members own file 4
+802638d Maeesa uploaded members own file 3
+9b8398a Maeesa uploaded members own file 2
+aeb2d46 Maeesa uploaded members own file 1
+939be94 Design alliance completed by whole team.
+bc328f6 Update README.md
+a9148ee Maeesa Updated layout for SRD report.
+77603a3 Delete SRD/PixelPals_SRD.docx
+2adf809 Add files via upload
+28ec5ce Add SRD Word document (template version)
+14e1f7c Add Designs folder with ERD, Wireframes, and Flows subfolders
+60021ca Rename SDR to SRD and add README
+13abce9 Initial commit
