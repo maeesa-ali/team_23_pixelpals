@@ -1,17 +1,19 @@
-uploaded updated SRD - Nov 6
-uploading my first version of the draft - Nov 6
-uploading my third version of the draft - Nov 6
+uploaded updated SRD - 6/11/25
+uploading my first version of the draft - 6/11/25
+uploading my third version of the draft - 6/11/25
 
-fourth version of the SRD draft - Nov 7
-Added first version of draft - Nov 10
-uploaded draft.v2 - Nov 10
-Uploaded draft.v3 - Nov 10
-Uploaded draft.v4 - Nov 10
+fourth version of the SRD draft - 7/11/25
+Added first version of draft - 10/11/25
+uploaded draft.v2 - 10/11/25
+Uploaded draft.v3 - 10/11/25
+Uploaded draft.v4 - 10/11/25
 
-Uploading Trello evidence - Nov 11
-Uploading Trello evidence - Nov 11
-Uploading Trello evidence - Nov 11
+Uploading Trello evidence - 11/11/25
+Uploading Trello evidence - 11/11/25
+Uploading Trello evidence - 11/11/25
 Uploaded draft.v4 - Nov 11
-Uploaded draft.v4 - Nov 11
-requesting a merge - Nov 11
-Merge main branch - Nov 13
+Uploaded draft.v4 - 11/11/25
+requesting a merge - 11/11/25
+
+Merge main branch - 13/11/25
+Update commit summary evidence - 13/11/2
