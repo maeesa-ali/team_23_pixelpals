@@ -1,6 +1,6 @@
-// login.php will process login form submissions in the future, more code will be put in later stages.
-<?php 
 
+<?php 
+// login.php will process login form submissions in the future, more code will be put in later stages.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
 }
