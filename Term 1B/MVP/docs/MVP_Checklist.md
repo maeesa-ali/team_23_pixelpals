@@ -4,109 +4,97 @@ This checklist explains what members needs to finish for the MVP.
 Everyone should follow this so we don’t overlap or miss anything, also not be confusing 
 Feel free to let me know additional tasks needed or done. 
 
----
+1. Basic Website Structure (Frontend files)
 
-These are the basic web requirements:
-The website looks clean and simple
-Same colours, fonts and style on every page
-Navigation links work on every page
-Homepage exists
- About page exists
- Products page exists
- Basket page exists
- Login page exists
- Register page exists
- Contact page exists
-Product descriptions written
- All images have ALT text (for people with screen readers)
- Wireframes and UI guide uploaded
+Home page file: index.html
+About page file: about.html
+Products page: products.html
+Basket page: basket.html
+Login page: login.html
+Register page: register.html
+Contact page: contact.html
+Single product page template: product.html (for Oscar to style)
 
----
+2. Backend & Environment – Maeesa (PM + Backend Support)
 
-Maeesa (PM and backend support responsibilties)
- Install and use XAMPP so the website can run like a real website  
- Make the backend folder and organise files  
- Create simple PHP files:  
-  - config.php  
-  - routes.php  
-  - login.php  
-  - register.php  
-  - sample-data.php  
-Connect forms (login/register/contact) to backend routes  
-Keep the GitHub tidy and clean  
-  Write RACI diagram  
-   Write meeting minutes  
-  Write MVP summary  
-Test backend lightly and pass onto Joel.
+XAMPP installed and Apache running
+Project copied into C:\xampp\htdocs\pixelpals-mvp\
+Backend folder created
+config.php created
+routes.php created
+login.php created
+register.php created
+sample-data.php created using Russell’s data
 
----
+To do later:
+Connect login form to login.php
+Connect register form to register.php
+Connect contact form to routes.php
+Simple basket backend logic
+Update architecture diagram in /docs
+Write final PM summary in /docs
 
-Russel- backend developer 
-Write a document explaining what data the website needs (users, products, etc.)
-Create the product CSV or JSON file  
-Explain how the backend *should* behave (even if not fully built)
-Upload these documents into `docs/`
+3. Data & Specification – Russell (Backend Developer)
 
----
+Write data specification document
+Prepare product CSV or JSON
+Define product fields (name, price, description, stock)
+Write backend behaviour notes
 
-Joel- systems tester:
-Test forms (login, register, contact) — press submit and see if the backend receives info  
-Check that POST requests work (when you press submit, does the backend get the data?)  
-Take screenshots showing tests  
-Write a simple report:  
-  - What works  
-  - What doesn’t work  
-  - What bugs you found  
-Upload your screenshots + report into `docs/`
+4. System Testing – Joel (Systems Tester)
 
+Test login form once backend is connected
+Test register form
+Test contact form
+Test basket once built
+Take screenshots of tests
+Write System Testing Report
 
+5. UI & Design – Seher (UI Designer)
 
----
+Finalise colour palette and fonts
+Complete wireframes for all pages
+Make UI style guide
+Check accessibility (contrast, text size)
+Upload sitemap, wireframes, style guide
 
-Seher- UX UI designer
-Choose colours for the website  
-Choose fonts  
-Make wireframes for each page  
-Create UI guide (colours, buttons, sizes)  
-Check contrast and accessibility  
-Upload site map  
-Upload all design documents into `docs/`
+6. Main Pages – Oscar (Frontend – Main Pages)
 
----
+Build and style:
+• index.html
+• about.html
+• products.html
 
-Oscar- front end developer- main pages
-Build Home page  
-Build About page  
-Build Products page  
-Make navigation bar  
-Apply Seher’s UI style guide  
-Upload pages into `frontend/`
+Replace placeholders with real layout
+Link product cards → product.html
+Apply UI style guide with Seher
 
----
+7. Forms & Interaction – Jamaal (Frontend – Forms + Basket)
 
-Jamaal- front end developer - forms and interacting 
-Build Login page  
-Build Register page  
-Build Basket page  
-Connect the forms to backend routes  
-Upload pages into `frontend/`
+Build and style:
+• login.html
+• register.html
+• basket.html
 
----
+Add form fields
+Add “Add to basket” buttons
+Later: Connect forms to backend
 
-DIA- content creator 
-Write the text for Home, About, Products  
-Write product descriptions  
-Write ALT text for all images  
-Check writing is easy to read  
-Upload the content document into `docs/`
+8. Content & Accessibility – Dia
 
----
+Write final content for home, about, products
+Write all product descriptions
+Write ALT text for images
+Ensure readability
+Upload content document
 
-Toney- quality assurance:
-Test the whole website (desktop + phone)  
-Test speed  
-Test accessibility (tab navigation, alt text)  
-Write final testing report  
-Make submission ZIP  
-Upload ZIP to Blackboard  
-Upload submission proof + update README using mvp checklist and plan files on github
+9. Final Testing & Submission – Toney (QA + Submission Lead)
+
+Test all pages on desktop + mobile
+Check performance
+Check accessibility
+Write Final Testing Report
+Create final ZIP
+Upload to Blackboard
+Upload submission proof
+Update README.md
