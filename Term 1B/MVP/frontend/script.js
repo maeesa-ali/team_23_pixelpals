@@ -110,6 +110,8 @@ function setupFilters(products, displayProducts) {
     // Custom price toggle
     const customPriceToggle = document.getElementById("customPriceToggle");
     const customPriceFields = document.getElementById("customPriceFields");
+    
+ 
 
     function updatePriceFields() {
         if (customPriceToggle.checked) {
@@ -155,6 +157,8 @@ function setupFilters(products, displayProducts) {
 
         //PRICE FILTER
         const pricePreset = document.querySelector("input[name='pricePreset']:checked");
+
+        
 
         let priceMin = 0;
         let priceMax = Infinity;
@@ -230,6 +234,8 @@ function setupFilters(products, displayProducts) {
         });
     }
 
+   
+
     function detectCategory(product) {
         const name = product.name.toLowerCase();
     
@@ -291,6 +297,29 @@ function loadProductPage() {
         </div>
     `;
 }
+
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("add-to-basket")) {
+        const productCard = e.target.closest(".product-page-card");
+        if (!productCard) return;
+
+        const name = productCard.querySelector("h2").textContent;
+        const description = productCard.querySelector("p").textContent;
+        const priceText = productCard.querySelector("p strong:nth-of-type(1)").nextSibling.textContent.trim();
+        const price = parseFloat(priceText.replace("£","")) || 0;
+
+        // Get existing basket from localStorage
+        let basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+        // Add current product
+        basket.push({ name, description, price });
+
+        // Save updated basket
+        localStorage.setItem("basket", JSON.stringify(basket));
+
+        alert(`${name} added to basket!`);
+    }
+});
 
 
 
