@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    <link rel = "stylesheet"  type="text/css" href="css/styles.css" />
+    <link rel = "stylesheet"  type="text/css" href="css/style.css" />
    
 </head>
 <body>
@@ -46,8 +46,8 @@
                     <input type="radio" name="pricePreset" value="custom" id="customPriceToggle"> Custom price range
                 </label>
                 <div id="customPriceFields" style="opacity:0.4; pointer-events:none; margin-top:5px;">
-                    From <input type="text" class="priceInput" id="priceFromCustom" placeholder="£0.00"><br>
-                    To <input type="text" class="priceInput" id="priceToCustom" placeholder="£0.00">
+                    From <input type="number" class="priceInput" id="priceFromCustom" placeholder="£0.00"><br>
+                    To <input type="number" class="priceInput" id="priceToCustom" placeholder="£0.00">
                 </div>
             </div>
 
@@ -61,8 +61,8 @@
                     <input type="radio" name="agePreset" value="custom" id="customAgeToggle"> Custom age range
                 </label>
                 <div id="customAgeFields" style="opacity:0.4; pointer-events:none; margin-top:5px;">
-                    From <input type="text" id="minAge" class="ageInput" placeholder="0"><br>
-                    To <input type="text" id="maxAge" class="ageInput" placeholder="0">
+                    From <input type="number" id="minAge" class="ageInput" placeholder="0"><br>
+                    To <input type="number" id="maxAge" class="ageInput" placeholder="0">
                 </div>
             </div>
 
