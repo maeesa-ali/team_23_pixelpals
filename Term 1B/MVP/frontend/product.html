@@ -1,44 +1,39 @@
-//replace with oscars code
-
-<!-- 
-    Single Product Page Template (placeholder)
-    This file will be completed and styled by Oscar.
-    Purpose: when a user clicks a product on products.html,
-    they are taken to this page to see the product image,
-    name, description, price and an add to basket button.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PixelPals – Product</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+  <!-- Header with logo and search -->
+<header class="search-bar">
+  <img src="pixelPals.png" alt="" width="100" height="50">
+  <form id="searchForm" style="flex:1; display:flex; gap:5px;">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <button type="submit">Search</button>
+  </form>
+</header>
+<nav>
+
+  
+   <!-- Navigation -->
+  <ul>
+    <li><a href="index.html">Home<img src="home.png" alt=""  width="20" height="20"></a></li>
+    <li><a href="products.html">Products </a></li>
+    <li><a href="About.html">About Us</a></li>
+    <!-- Any icons I used were from Microsoft Powerpoint--> 
+  </ul>
+</nav>
 <body>
 
-    <header>
-        <h1>PixelPals</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="basket.html">Basket</a>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Product Name</h2>
+<main id="productDetails">
+  <!-- JS will insert product details here -->
+</main>
 
-        <section class="product-detail">
-            
-            <!-- Image section -->
-            <div class="product-image">
-                <img src="images/placeholder.png" alt="Product image placeholder">
-            </div>
+<script src="js/script.js"></script>
 
-            <!-- Product text info -->
-            <div class="product-info">
-                <p class="product-description">
-                    This is a placeholder description. The real product information 
-                    will be added by Oscar once the product flow is
+
+</body>
+</html>

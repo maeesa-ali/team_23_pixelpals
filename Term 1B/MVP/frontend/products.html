@@ -1,40 +1,79 @@
-//This is a skeleton to test if the website will work- team code will be implemented after
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PixelPals – Products</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel = "stylesheet"  type="text/css" href="css/styles.css" />
+   
 </head>
 <body>
-
-    <header>
-        <h1>PixelPals</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="basket.html">Basket</a>
-        </nav>
+  <!-- Header with logo and search -->
+    <header class="search-bar">
+        <img src="pixelPals.png" alt="" width="100" height="50">
+        <form id="searchForm" style="flex:1; display:flex; gap:5px;">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
     </header>
+    <nav>
+           <!-- Navigation -->
+        <ul>
+          <li><a href="index.html">Home<img src="home.png" alt=""  width="20" height="20"></a></li>
+          <li><a href="products.html">Products </a></li>
+          <li><a href="About.html">About Us</a></li>
+          <!-- Any icons I used were from Microsoft Powerpoint--> 
+        </ul>
+      </nav>
 
-    <main>
-        <h2>Our Products</h2>
-        <p>This page will show a list of all available PixelPals products.</p>
 
-        <!-- Placeholder section for Oscar to fill -->
-        <section class="products-placeholder">
-            <p>
-                Product cards will be added here by the frontend developer (Oscar).
-                Each product card will link to <strong>product.html</strong>.
-            </p>
-        </section>
-    </main>
+    <div class="page-container">
 
-    <footer>
-        <p>&copy; 2025 PixelPals</p>
-    </footer>
+        <!-- Product Grid -->
+        <main class="product-grid" id="productGrid"></main>
+
+        <!-- Filters -->
+        <aside class="filters">
+            <h3>Filters</h3>
+
+            <!-- Price Filter -->
+            <div class="filter-group">
+                <h4>Price</h4>
+                <label><input type="radio" name="pricePreset" value="0-10"> £0 – £10</label><br>
+                <label><input type="radio" name="pricePreset" value="10-20"> £10 – £20</label><br>
+                <label><input type="radio" name="pricePreset" value="20-50"> £20 – £50</label><br>
+                <label>
+                    <input type="radio" name="pricePreset" value="custom" id="customPriceToggle"> Custom price range
+                </label>
+                <div id="customPriceFields" style="opacity:0.4; pointer-events:none; margin-top:5px;">
+                    From <input type="text" class="priceInput" id="priceFromCustom" placeholder="£0.00"><br>
+                    To <input type="text" class="priceInput" id="priceToCustom" placeholder="£0.00">
+                </div>
+            </div>
+
+            <!-- Age Filter -->
+            <div class="filter-group">
+                <h4>Recommended Age</h4>
+                <label><input type="radio" name="agePreset" value="3"> 3+</label><br>
+                <label><input type="radio" name="agePreset" value="5"> 5+</label><br>
+                <label><input type="radio" name="agePreset" value="7"> 7+</label><br>
+                <label>
+                    <input type="radio" name="agePreset" value="custom" id="customAgeToggle"> Custom age range
+                </label>
+                <div id="customAgeFields" style="opacity:0.4; pointer-events:none; margin-top:5px;">
+                    From <input type="text" id="minAge" class="ageInput" placeholder="0"><br>
+                    To <input type="text" id="maxAge" class="ageInput" placeholder="0">
+                </div>
+            </div>
+
+            <button id="applyFilters">Apply Filters</button>
+        </aside>
+
+    </div>
+
+    
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>
