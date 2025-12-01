@@ -1,44 +1,97 @@
-brief plan for the two submission dates, so the 5th dec and 8th dec: 
 
+This MVP plan explains what each person must finish by 5th Dec and what we will show on 8th Dec.
+
+---
 5th dec:
 
-front end:
-- Basic layout completed for all core pages (Home, About, Products, Basket)
-- Consistent header, navigation and footer across all pages
-- Placeholder content added so the pages are not empty
-- Basic branding applied (colours, logo, fonts)
-
-back end: 
-- Backend folder prepared (config, routes, placeholders)
-- No advanced backend required yet (MVP can be simple)
-
-organisation:
-- GitHub structure created (frontend, backend, docs)
-- MVP skeleton created for the team to add their work
-- MVP checklist completed
-- All pages linked correctly
+Maeesa
+- Set up XAMPP and get the website running locally  
+- Create backend folder and PHP placeholder files  
+- Make sure the forms point to the correct backend files  
+- Upload RACI, meeting notes, architecture diagram  
+- Keep GitHub organised  
 
 ---
 
-8th dec
-
-what we may show:
-- Homepage
-- Products page
-- Add-to-basket flow (once backend is added)
-- Basket page
-
-Maeesa(PM) will show:
-- Explain project structure
-- Explain how I set up the templates/layout for all pages
-- Explain how the team will build the final version
+Russell
+- Upload product data (CSV/JSON)  
+- Upload data specification document  
+- Explain backend behaviour (how login/register *should* work)  
 
 ---
 
-Maeesas general responsibilties as PM and back end support
+Joel
+- Test forms to see if they send data  
+- Take screenshots of testing  
+- Write a simple test report  
+- Upload everything into `docs/`
 
-- Prepared website file structure
-- Created all page skeletons with consistent layout
-- Ensured the project is ready for XAMPP (server environment)
-- Organised GitHub repo for clarity and teamwork
-- Wrote MVP checklist and plan to guide team progress
+
+
+---
+
+Seher
+- Finish wireframes  
+- Finish the UI style guide  
+- Check accessibility  
+- Upload site map + wireframes + UI guide to `docs/`
+
+---
+
+Oscar
+- Build Landing, About, Products pages  
+- Make sure pages use the shared header/footer  
+- Add CSS styling with Seher’s guide  
+
+---
+
+Jamaal
+- Build Login, Register, Basket pages  
+- Link forms to backend file routes  
+- Upload final versions into `frontend/`
+
+---
+
+Dia
+- Write text for all pages  
+- Write product descriptions  
+- Add ALT text  
+- Upload content document  
+
+---
+
+Toney
+- Test the whole website  
+- Write Final Testing Report  
+- Prepare ZIP  
+- Upload to Blackboard  
+- Upload proof + update README using mvp checklist and plan on github 
+
+---
+
+8th dec- live demo slot
+
+what we will show
+- Homepage  
+- About page  
+- Products page  
+- Basket page  
+- Login/Register flow  
+- Accessibility features  
+- Data specification and UI Designs  
+
+Maeesa will talk about
+- Setting up the project structure  
+- Setting up XAMPP  
+- Making backend placeholder files  
+- Coordinating the team  
+- Preparing documentation (MVP Plan, Checklist, Minutes)  
+- Helping with integration and backend connections  
+
+---
+
+overall
+- Combine all pages on 3rd–4th December  
+- Test everything on 4th December  
+- Submit on 5th  
+- Practise the demo on the 7th
