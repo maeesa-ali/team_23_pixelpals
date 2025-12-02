@@ -44,14 +44,13 @@ main {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
+  background-color: #2dff3b;
   border: none;
   border-radius: 5px;
 }
 
 .shop-now-btn:hover {
-  background-color: #0056b3;
+  background-color: #1cdd29;
 }
 
 #welcome-message{
@@ -140,8 +139,7 @@ main {
 
 .veiw-product {
   margin-top: auto;
-  background-color: #0078ff;
-  color: white;
+  background-color: #2dff3b;
   border: none;
   padding: 10px;
   width: 100%;
@@ -152,7 +150,7 @@ main {
 }
 
 .veiw-prodcut:hover {
-  background-color: #005fcc;
+  background-color: #1cdd29;
 }
 
 .image-placeholder {
