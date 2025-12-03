@@ -1,30 +1,36 @@
-//This is a skeleton to test if the website will work- team code will be implemented after
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PixelPals – Contact</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>PixelPals</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="basket.html">Basket</a>
+    <head>
+        <title>Contact Form</title>
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="stylesheet" type="text/css" href="">
+    </head>
+    <body>
+        <h1>PixelPals - Contact Us</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="login.html">Account</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+
+            <div class="contact-container">
+                <p>Please fill out the contact form below.</p>
+                <form action="../backend/routes.php" method="POST">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" required></textarea><br>
+
+                    <button type="submit">Submit</button>
+                    
+                </form>
+            </div>
+
         </nav>
-    </header>
-
-    <main>
-        <h2>Contact us</h2>
-        <p>Contact us!</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 PixelPals</p>
-    </footer>
-</body>
 </html>
