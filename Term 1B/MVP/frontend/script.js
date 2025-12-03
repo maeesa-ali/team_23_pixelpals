@@ -8,6 +8,95 @@ const products2 = [
 ];
 document.addEventListener("DOMContentLoaded", () => {
 
+    
+
+    const mainImg = document.getElementById("mainImage");
+  
+    const thumbnailContainer = document.getElementById("thumbnailContainer");
+
+    thumbnailContainer.addEventListener("click", function (e) {
+        if (!e.target.classList.contains("thumb")) return;
+
+        function initGalleryBehavior() {
+            const mainImg = document.getElementById("mainImage");
+            const thumbContainer = document.getElementById("thumbnailContainer");
+          
+            // Build an array from current DOM thumbnails (src + alt)
+            function readThumbArray() {
+              return Array.from(thumbContainer.querySelectorAll(".thumb")).map(img => ({
+                src: img.src,
+                alt: img.alt
+              }));
+            }
+          
+            // Render thumbnails array back to DOM (keeps exactly 4 thumbs if present)
+            function renderThumbs(arr) {
+              thumbContainer.innerHTML = "";
+              arr.slice(0, 4).forEach(item => {
+                const img = document.createElement("img");
+                img.className = "thumb";
+                img.src = item.src;
+                img.alt = item.alt;
+                thumbContainer.appendChild(img);
+              });
+            }
+          
+            // Initial array
+            let thumbs = readThumbArray();
+          
+            // Delegate click on container (works if we re-render thumbs)
+            thumbContainer.addEventListener("click", (e) => {
+              const clicked = e.target;
+              if (!clicked.classList.contains("thumb")) return;
+          
+              // Find index of clicked thumbnail in the array
+              const clickedIndex = thumbs.findIndex(t => t.src === clicked.src && t.alt === clicked.alt);
+              if (clickedIndex === -1) return;
+          
+              // Save previous main
+              const oldMain = { src: mainImg.src, alt: mainImg.alt };
+          
+              // New main becomes clicked thumb
+              const newMain = thumbs[clickedIndex];
+          
+              // Update main image element
+              mainImg.src = newMain.src;
+              mainImg.alt = newMain.alt;
+          
+              // Remove the clicked thumbnail from array
+              thumbs.splice(clickedIndex, 1);
+          
+              // Insert old main at start (position 1)
+              thumbs.unshift(oldMain);
+          
+              // If you want to keep exactly 4 thumbnails, ensure length 4 (it should)
+              // Render updated thumbnails
+              renderThumbs(thumbs);
+            });
+          }
+          
+          // run after DOM loaded
+          document.addEventListener("DOMContentLoaded", initGalleryBehavior);
+    
+        // clicked thumbnail
+        const clickedThumb = e.target;
+    
+        // save old main
+        const oldMainSrc = mainImg.src;
+        const oldMainAlt = mainImg.alt;
+    
+        // update main image
+        mainImg.src = clickedThumb.src;
+        mainImg.alt = clickedThumb.alt;
+    
+        // move old main into the clicked thumbnail's position
+        clickedThumb.src = oldMainSrc;
+        clickedThumb.alt = oldMainAlt;
+    });
+
+
+    
+
     const products = [
         { name: "Green headphones", price: 12.00 },
         { name: "Red gaming chair", price: 20.00 },
@@ -288,25 +377,24 @@ function loadProductPage() {
 
     container.innerHTML = `
         <div class="product-page-card">
-            <div class="image-placeholder large"></div>
+         
             <h2>${product.name}</h2>
             <p>${product.description}</p>
             <p><strong>Price:</strong> £${product.price.toFixed(2)}</p>
             <p><strong>Age Range:</strong> ${product.minAge}–${product.maxAge}</p>
-            <button class="add-to-basket">Add to basket</button>
+            <button class="add-basket-btn">Add to basket</button>
         </div>
     `;
 }
 
 document.addEventListener("click", function(e) {
-    if (e.target.classList.contains("add-to-basket")) {
+    if (e.target.classList.contains("add-basket-btn")) {
         const productCard = e.target.closest(".product-page-card");
         if (!productCard) return;
 
         const name = productCard.querySelector("h2").textContent;
-        const description = productCard.querySelector("p").textContent;
-        const priceText = productCard.querySelector("p strong:nth-of-type(1)").nextSibling.textContent.trim();
-        const price = parseFloat(priceText.replace("£","")) || 0;
+        const description = productCard.querySelector(".product-description").textContent;
+        const price = parseFloat(productCard.querySelector(".product-price").dataset.value);
 
         // Get existing basket from localStorage
         let basket = JSON.parse(localStorage.getItem("basket")) || [];
@@ -320,6 +408,8 @@ document.addEventListener("click", function(e) {
         alert(`${name} added to basket!`);
     }
 });
+
+
 
 
 
