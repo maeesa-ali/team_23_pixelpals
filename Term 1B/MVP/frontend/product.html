@@ -1,44 +1,73 @@
-//replace with oscars code
-
-<!-- 
-    Single Product Page Template (placeholder)
-    This file will be completed and styled by Oscar.
-    Purpose: when a user clicks a product on products.html,
-    they are taken to this page to see the product image,
-    name, description, price and an add to basket button.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PixelPals – Product</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
+
+
 <body>
 
-    <header>
-        <h1>PixelPals</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="basket.html">Basket</a>
-        </nav>
-    </header>
+  <!-- Header with logo and search -->
+<header class="topBar">
+  <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
 
-    <main>
-        <h2>Product Name</h2>
+  <!-- Search Bar -->
+  <div class="searchContainer">
+      <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search">
+      </form>
+      <button class="clear-btn">×</button>
+  </div>
 
-        <section class="product-detail">
-            
-            <!-- Image section -->
-            <div class="product-image">
-                <img src="images/placeholder.png" alt="Product image placeholder">
-            </div>
 
-            <!-- Product text info -->
-            <div class="product-info">
-                <p class="product-description">
-                    This is a placeholder description. The real product information 
-                    will be added by Oscar once the product flow is
+
+  <!-- Wishlist & Basket Links -->
+  <div class="topLinks">
+      <a href="basket.html"> Basket</a>
+  </div>
+</header>
+
+
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+  <a href="index.html"> Home</a>
+  <a href="products.html"> Products</a>
+  <a href="contact.html"> Contact Us</a>
+</nav>
+
+<main class="product-page">
+
+    <!-- Main image -->
+  <div class="main-image">
+    <img id="mainImage" src="images/default.png" alt="Main Product Image">
+   
+</div>
+
+<!-- Side thumbnails -->
+<div class="side-images" id="thumbnailContainer">
+    <img class="thumb" src="images/default1.png" alt="Product Image1">
+    <img class="thumb" src="images/default2.png" alt="Product Image2">
+    <img class="thumb" src="images/default3.png" alt="Product Image3">
+    <img class="thumb" src="images/default4.png" alt="Product Image4">
+</div>
+    <!-- Product information -->
+    <div class="product-info" id="productDetails">
+
+        <!-- JS fills this automatically.  
+             This is the template that will be replaced. -->
+        <h1>Loading...</h1>
+        <p>Please wait.</p>
+
+    </div>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
