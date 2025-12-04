@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Initial array
             let thumbs = readThumbArray();
           
-            // Delegate click on container (works if we re-render thumbs)
+            // Delegate click on container 
             thumbContainer.addEventListener("click", (e) => {
               const clicked = e.target;
               if (!clicked.classList.contains("thumb")) return;
@@ -69,13 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
               // Insert old main at start (position 1)
               thumbs.unshift(oldMain);
           
-              // If you want to keep exactly 4 thumbnails, ensure length 4 (it should)
-              // Render updated thumbnails
+              // Render thumbnails
               renderThumbs(thumbs);
             });
           }
-          
-          // run after DOM loaded
+         
           document.addEventListener("DOMContentLoaded", initGalleryBehavior);
     
         // clicked thumbnail
@@ -268,7 +266,7 @@ function setupFilters(products, displayProducts) {
         }
 
 
-        //AGE FILTER
+        //Age filters
         const agePreset = document.querySelector("input[name='agePreset']:checked");
 
         let ageMin = 0;
@@ -289,7 +287,7 @@ function setupFilters(products, displayProducts) {
         }
 
 
-        //APPLY FILTERS
+        //Apply filters
         filtered = filtered.filter(p => {
 
             const priceMatch = p.price >= priceMin && p.price <= priceMax;
