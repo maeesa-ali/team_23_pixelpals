@@ -1,0 +1,123 @@
+<!-- Registration Form-->
+<form id="regForm" action="../backend/registration.php" method="POST" novalidate>
+    <!-- First Name input field-->
+    <label>First Name</label>
+    <input type="text" id="firstName" name="firstName">
+
+    <!-- Last Name input field-->
+    <label>Last Name</label>
+    <input type="text" id="lastName" name="lastName">
+
+
+    <!-- Email input field-->
+    <label>Email</label>
+    <input type="email" id="regEmail" name="email">
+
+    <!-- Password input field-->
+    <label>Password</label>
+    <input type="password" id="regPassword" name="password">
+
+    <!-- Confirm Password input field-->
+    <label>Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword">
+
+    <!-- Register button-->
+    <button type="submit">Register</button>
+
+    <!-- Links to login page-->
+    <a href="login.html">Already have an account?</a>
+    
+    <p id="error" style="color:red;"></p> <!-- Error message display-->
+    <p id="success" style="color:green;"></p> <!-- Success message display-->
+    <!-- this will be replaced later with redirection to dashboard-->
+</form>
+
+<!-- Styles for registration form-->
+<style>
+    body /*body styles*/
+    {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    form /*form container styles*/
+    {
+        background: white;
+        padding: 20px;
+        width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label /*input field labels*/
+    {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    input /*input field styles*/
+    {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    input:focus /*input focus styles*/
+    {
+        outline: none;
+        border-color: #4A90E2;
+        box-shadow: 0 0 5px rgba(74,144,226,0.5);
+    }
+
+    button /*login button styles*/
+    {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background: #4A90E2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover /*login button hover styles*/
+    {
+        background: #3a7ac8;
+    }
+
+    a /*registration link styles*/
+    {
+        text-align: center;
+        display: block;
+        margin-top: 12px;
+        color: #4A90E2;
+        text-decoration: none;
+    }
+
+    a:hover /*registration link hover styles*/
+    {
+        text-decoration: underline;
+    }
+
+    #error, #success /*error and success message styles*/
+    {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+</style>
+
+<!-- Links to validation script-->
+
+<script src="validation.js"></script>
