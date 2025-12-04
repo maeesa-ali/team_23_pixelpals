@@ -1,61 +1,111 @@
-Team 23: PixelPals
+Team 23 – PixelPals
 Combined README (Term 1A + Term 1B MVP)
-
 About the Project
-PixelPals is a CS2TP team project focused on designing ergonomic and accessible gaming accessories for children.
-This repository includes all Term 1A design and planning work, as well as the Term 1B MVP website.
+
+PixelPals is a CS2TP team project focusing on healthy gaming for children through ergonomic and accessible designs.
+This repository includes all Term 1A planning and design work as well as the Term 1B MVP website.
 
 Repository Overview
-This repository contains two main sections:
-Term 1A: SRD & Design
-Software Requirements & Design (SRD) documents
-Design Alliance report
-Trello evidence, meeting notes, draft sections
-Term 1B: MVP Development
-Frontend: HTML, CSS, JS for all website pages
-Backend: PHP structure for login, registration, contact and sample data
-Documentation: Backend Architecture, RACI, MVP summary, Testing Reports, Submission Proof
+Term 1A – SRD & Design Documents
+
+Final SRD Report (PDF & DOCX)
+
+Design Alliance Report
+
+Draft SRD sections
+
+Trello screenshots
+
+Meeting notes
+
+Evidence of commits
+
+Term 1B – MVP Development
+
+Frontend: HTML, CSS, JS
+
+Backend: PHP files (login, registration, routes, config, sample-data)
+
+Documentation:
+
+Backend Architecture
+
+RACI Diagram
+
+MVP Summary
+
+Testing Reports
+
+Submission Proof
 
 Team Members & Roles
+
 Maeesa – Project Manager & Backend Support
+
 Russell – Backend Developer
+
 Joel – Systems Tester & Backend Support
+
 Seher – UI/UX Designer
+
 Oscar – Front-End Developer (Main Pages)
+
 Jamaal – Front-End Developer (Forms & Basket)
+
 Dia – Content & Accessibility
+
 Toney – Quality Assurance & Submission Lead
 
 Statement of Contribution
+Maeesa – Project Manager & Backend Support
 
-Maeesa: Organised team workflow, structured GitHub, set up backend environment, implemented all MVP PHP files, integrated frontend forms, created backend architecture documentation, MVP summary, and supported QA.
+Organised team workflow, GitHub structure, meetings, and documentation. Set up XAMPP backend, implemented PHP files (login, registration, routes, config), integrated frontend forms, created Backend Architecture and MVP Summary, and supported QA.
 
-Russell: Created the product dataset, backend data specification, CSV files, and documented backend behaviour.
+Russell – Backend Developer
 
-Joel: Tested navigation, forms, and basket behaviour. Produced the Systems Testing Report with evidence.
+Created product dataset, backend data specification, CSV files, and documented backend behaviour.
 
-Seher: Designed the UI Style Guide, wireframes, sitemap, and ensured accessibility compliance.
+Joel – Systems Tester
 
-Oscar: Built Home, About, Products and Product pages. Implemented structure and navigation based on UI guidelines.
+Tested navigation, login, registration, contact forms, and basket functionality. Produced Systems Testing Report with screenshots.
 
-Jamaal: Developed Login, Registration, Basket, and Checkout pages. Implemented basket functionality and form interactions.
+Seher – UI/UX Designer
 
-Dia: Wrote page content, ALT text, and product descriptions. Checked readability and accessibility.
+Created UI Style Guide, colour palette, typography, spacing rules, sitemap, and wireframes. Ensured accessibility compliance.
 
-Toney: Performed full QA checks, logged issues, verified fixes, produced the Final Testing Report, and prepared the submission package.
+Oscar – Front-End Developer (Main Pages)
+
+Developed Home, About, Products, and Product pages. Implemented navigation and layout following the UI Style Guide.
+
+Jamaal – Front-End Developer (Forms & Basket)
+
+Built Login, Registration, Basket, and Checkout pages. Implemented form interactions, validation, and basket functionality.
+
+Dia – Content & Accessibility
+
+Wrote content for Home, About, and Products pages. Created product descriptions, ALT text, and checked readability/accessibility.
+
+Toney – Quality Assurance & Submission Lead
+
+Conducted full QA testing, logged issues, verified fixes, produced Final Testing Report, and prepared final submission package.
 
 Submission Details
 Term 1A
-Submitted: SRD Report (PDF), Design Alliance Report (PDF)
+
+Submitted: SRD Report + Design Alliance
 Date: 14 November 2025
 
 Term 1B (MVP)
-Submitted: MVP Website + Documentation Pack
+
+Submitted: MVP Website + Documentation
 Date: 5 December 2025
 
 Project Links
+
 Trello Board: https://trello.com/b/MgNq9DBY
-GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals
+
+GitHub Repo: https://github.com/maeesa-ali/team_23_pixelpals
 
 Project Motto
-“Designing healthier gaming experiences for young players.”
+
+"Designing healthier gaming experiences for young players."
