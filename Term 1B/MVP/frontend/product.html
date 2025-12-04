@@ -4,37 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-  <!-- Header with logo and search -->
-<header class="search-bar">
-  <img src="pixelPals.png" alt="" width="100" height="50">
-  <form id="searchForm" style="flex:1; display:flex; gap:5px;">
-      <input type="text" id="searchInput" placeholder="Search products...">
-      <button type="submit">Search</button>
-  </form>
-</header>
-<nav>
 
-  
-   <!-- Navigation -->
-  <ul>
-    <li><a href="index.html">Home<img src="home.png" alt=""  width="20" height="20"></a></li>
-    <li><a href="products.html">Products </a></li>
-    <li><a href="About.html">About Us</a></li>
-    <li><a href= "basket.html"> Basket </a></li>
-    <!-- Any icons I used were from Microsoft Powerpoint--> 
-  </ul>
-</nav>
+
+
 <body>
 
+  <!-- Header with logo and search -->
+<header class="topBar">
+  <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
 
-<main id="productDetails">
-  <!-- JS will insert product details here -->
+  <!-- Search Bar -->
+  <div class="searchContainer">
+      <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="Search">
+      </form>
+      <button class="clear-btn">×</button>
+  </div>
+
+
+
+  <!-- Wishlist & Basket Links -->
+  <div class="topLinks">
+      <a href="basket.html"> Basket</a>
+  </div>
+</header>
+
+
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+  <a href="index.html"> Home</a>
+  <a href="products.html"> Products</a>
+  <a href="contact.html"> Contact Us</a>
+</nav>
+
+<main class="product-page">
+
+    <!-- Main image -->
+  <div class="main-image">
+    <img id="mainImage" src="images/default.png" alt="Main Product Image">
+   
+</div>
+
+<!-- Side thumbnails -->
+<div class="side-images" id="thumbnailContainer">
+    <img class="thumb" src="images/default1.png" alt="Product Image1">
+    <img class="thumb" src="images/default2.png" alt="Product Image2">
+    <img class="thumb" src="images/default3.png" alt="Product Image3">
+    <img class="thumb" src="images/default4.png" alt="Product Image4">
+</div>
+    <!-- Product information -->
+    <div class="product-info" id="productDetails">
+
+        <!-- JS fills this automatically.  
+             This is the template that will be replaced. -->
+        <h1>Loading...</h1>
+        <p>Please wait.</p>
+
+    </div>
+
 </main>
 
 <script src="js/script.js"></script>
-
 
 </body>
 </html>
