@@ -1,30 +1,165 @@
-//This is a skeleton to test if the website will work- team code will be implemented after
+<!-- Top blue bar -->
+<header class="topBar">
+    <img src="pixelPalsLogo.png" class="logo">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PixelPals – Contact</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>PixelPals</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="basket.html">Basket</a>
-        </nav>
-    </header>
+    <!-- Search Bar -->
+    <div class="searchContainer">
+        <input type="text" placeholder="Search">
+    </div>
 
-    <main>
-        <h2>Contact us</h2>
-        <p>Contact us!</p>
-    </main>
+    <!-- Basket link -->
+    <div class="topLinks">
+        <a href="basket.html"> Basket</a>
+    </div>
+</header>
 
-    <footer>
-        <p>&copy; 2025 PixelPals</p>
-    </footer>
-</body>
-</html>
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+    <a href="login.html"> Login</a>
+    <a href="index.html"> Home</a>
+    <a href="products.html"> Products</a>
+    <a href="about.html"> About Us</a>
+    <a href="contact.html"> Contact Us</a>
+</nav>
+
+<!-- Contact Page -->
+<div class="pageWrapper">
+    <h1>Contact Form</h1>
+
+    <!-- Contact form container -->
+    <div class="contactContainer">
+        <p>Please fill out the contact form below.</p>
+
+        <!-- Contact form -->
+        <form action="../backend/routes.php" method="POST">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit"><strong>Submit</strong></button>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Overall page style */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #DE4FFF, #77ADFF, #D5A4FF);
+        min-height: 100vh;
+    }
+
+    .pageWrapper {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding-top: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    /* TOP BLUE NAV BAR — copied from basket.html */
+    .topBar {
+        background: #3F8BE0;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .topBar .logo {
+        height: 60px;
+    }
+
+    .searchContainer {
+        flex: 1;
+        position: relative;
+    }
+
+    .searchContainer input {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .topLinks a {
+        color: white;
+        font-size: 18px;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    /* BOTTOM PURPLE NAV BAR — copied from basket.html */
+    .bottomNav {
+        background: #8962C6;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bottomNav a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    /* Contact form container */
+    .contactContainer {
+        margin: 0 auto;
+        background: #C9DAFF;
+        padding: 20px;
+        width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Form field styling */
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0 14px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    form textarea {
+        height: 200px;
+        resize: vertical;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background: #C0ED45;
+        color: black;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
