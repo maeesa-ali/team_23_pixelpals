@@ -1,3 +1,26 @@
+<!-- Top blue bar -->
+<header class="topBar">
+    <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
+
+    <!-- Search Bar -->
+    <div class="searchContainer">
+        <input type="text" placeholder="Search">
+        <button class="clear-btn">×</button>
+    </div>
+
+    <!-- Basket Link -->
+    <div class="topLinks">
+        <a href="basket.html"> Basket</a>
+    </div>
+</header>
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+    <a href="index.html"> Home</a>
+    <a href="products.html"> Products</a>
+    <a href="contact.html"> Contact Us</a>
+</nav>
+
 <!-- Basket Page -->
 <div class="pageWrapper">
     <h1>Basket</h1>
@@ -214,10 +237,81 @@
         font-size: 16px;
         margin-top: 15px;
     }
-
+    
     .checkoutButton:hover /*checkout button hover styles*/
     {
         background: #b8f046;
+    }
+
+    .topBar /* Top blue bar*/
+    {
+        background: #3a8fe7;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .topBar .logo /* Logo*/
+    {
+        height: 60px;
+    }
+
+    .searchContainer /* Search bar*/
+    {
+        flex: 1;
+       position: relative;
+    }
+
+    .searchContainer input /* Search bar input field*/
+    {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .searchContainer .clear-btn /*search bar clear button*/
+    {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .topLinks a /* Basket Link*/
+    {
+        color: white;
+        font-size: 18px;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    .bottomNav /* Purple nav bar*/
+    {
+        background: #9b59b6;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bottomNav a /* Navigation links*/
+    {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 </style>
 
