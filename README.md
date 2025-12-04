@@ -43,7 +43,7 @@ This repository contains all planning and design work from **Term 1A** before th
 ---
 
 ## SRD Section Responsibilities  
-- 1.1 – Team Roles → Toney  
+- 1.1 – Team Roles → Toney & Maeesa  
 - 1.2 – Team Logo & Identity → Seher  
 - 2.1–2.3 – Vision & Target Audience → Dia  
 - 2.4 – Tools & Project Resources → Maeesa & Russell  
