@@ -153,7 +153,7 @@ function setupFilters(products, displayProducts) {
 
         let filtered = [...products2];
 
-        //PRICE FILTER
+        //Price filter
         const pricePreset = document.querySelector("input[name='pricePreset']:checked");
 
         let priceMin = 0;
@@ -175,7 +175,7 @@ function setupFilters(products, displayProducts) {
         }
 
 
-        //AGE FILTER
+        //Age filter
         const agePreset = document.querySelector("input[name='agePreset']:checked");
 
         let ageMin = 0;
@@ -196,7 +196,7 @@ function setupFilters(products, displayProducts) {
         }
 
 
-        //APPLY FILTERS
+        //Apply filters
         filtered = filtered.filter(p => {
 
             const priceMatch = p.price >= priceMin && p.price <= priceMax;
@@ -213,10 +213,10 @@ function setupFilters(products, displayProducts) {
 
         // Search submit
         searchForm.addEventListener("submit", e => {
-            e.preventDefault();
+            e.preventDefault(); // prevent page reload
             const inputVal = searchInput.value.toLowerCase().trim();
             const words = inputVal.split(/\s+/);
-
+        
             const filtered = products2.filter(p => {
                 const name = p.name.toLowerCase();
                 const desc = p.description.toLowerCase();
@@ -225,7 +225,7 @@ function setupFilters(products, displayProducts) {
                     desc.includes(word)
                 );
             });
-
+        
             displayProducts(filtered);
         });
     }
@@ -287,7 +287,7 @@ function loadProductPage() {
             <p>${product.description}</p>
             <p><strong>Price:</strong> £${product.price.toFixed(2)}</p>
             <p><strong>Age Range:</strong> ${product.minAge}–${product.maxAge}</p>
-            <button class="add-to-basket">Add to basket</button>
+            <button class="veiw-product"">Add to basket</button>
         </div>
     `;
 }

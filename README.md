@@ -1,78 +1,88 @@
-# Team 23 – PixelPals  
-**Aston University | CS2TP Term 1A Submission**  
- **Software Requirements & Design (SRD) + Design Alliance**
+# Team 23 – PixelPals
+### Combined README (Term 1A + Term 1B MVP)
 
 ---
 
-## Repository (team_23_pixelpals) Layout  
-
-📁 **Term 1A**  
- ├── SRD Report/  
- │  • Final SRD (.docx + .pdf)  
- │  • Draft sections by each member  
- │  • Submission Plan   
- │  
- ├── Design Alliance/  
- │  • Design Alliance document (.pdf)  
- │  
- ├── Evidence/  
- │  • Trello Screenshots  
- │  • Meeting Notes   
- │  • GitHub Commits 
- │  
- Term 1A README.md – overview of submission contents  
+## About the Project
+PixelPals is a CS2TP team project focused on promoting healthy gaming habits for children through ergonomic and accessible product designs.  
+This repository includes all Term 1A design and planning work as well as the Term 1B MVP website.
 
 ---
 
-## About the Project  
-**PixelPals** is a CS2TP team project focused on promoting healthy gaming for children through ergonomic, accessible designs.  
-This repository contains all planning and design work from **Term 1A** before the development phase begins in **Term 1B**.  
+## Repository Overview
+
+### Term 1A – SRD and Design Documents
+- Final SRD Report (PDF and DOCX)  
+- Design Alliance Report  
+- Draft SRD sections  
+- Meeting notes  
+- Trello screenshots  
+- Commit evidence  
+
+### Term 1B – MVP Development
+- Frontend: HTML, CSS, JavaScript pages  
+- Backend: PHP structure (`login.php`, `registration.php`, `routes.php`, `config.php`, `sample-data.php`)  
+- Documentation: Backend Architecture, RACI Diagram, MVP Summary, Testing Reports, Submission Proof  
 
 ---
 
-## Team Members & Roles  
-- **Maeesa** – Project Manager & Backend Support  
+## Team Members and Roles
+- **Maeesa** – Project Manager and Backend Support  
 - **Russell** – Backend Developer  
-- **Joel** – Systems Tester & Backend Support 
-- **Seher** – UI/UX Designer
-- **Oscar** – Front-End Developer
-- **Jamaal** – Front-End Developer 
-- **Dia** – Content Creator 
-- **Toney** – Quality Assurance 
+- **Joel** – Systems Tester and Backend Support  
+- **Seher** – UI/UX Designer  
+- **Oscar** – Front-End Developer (Main Pages)  
+- **Jamaal** – Front-End Developer (Forms and Basket)  
+- **Dia** – Content and Accessibility  
+- **Toney** – Quality Assurance and Submission Lead  
 
 ---
 
-## SRD Section Responsibilities  
-- 1.1 – Team Roles → Toney & Maeesa  
-- 1.2 – Team Logo & Identity → Seher  
-- 2.1–2.3 – Vision & Target Audience → Dia  
-- 2.4 – Tools & Project Resources → Maeesa & Russell  
-- 3.1–3.2 – Functional Requirements → Russell, Oscar, Jamaal, Joel  
-- 4.1–4.4 – Non-Functional Requirements → Joel, Maeesa, Seher, Toney  
-- 5.x – Use Cases & Design Diagrams → Russell, Oscar, Jamaal, Seher  
-- 6.x – Project Management → Maeesa, Toney, Dia  
-- 7 – Conclusion → Toney  
+## Statement of Contribution
+
+### Maeesa – Project Manager and Backend Support
+Organised workflow, meetings, and documentation. Set up the XAMPP backend environment, created the backend folder structure, implemented all MVP PHP files, integrated frontend forms, and produced the Backend Architecture and MVP Summary documents. Supported QA and ensured the system was ready for testing.
+
+### Russell – Backend Developer
+Created the official product dataset and backend data specification. Designed the product data structure, produced the CSV files, and documented intended backend behaviour for future implementation.
+
+### Joel – Systems Tester
+Tested navigation, login, registration, contact forms, and basket functionality. Logged issues, verified fixes, and produced the Systems Testing Report with screenshots as evidence.
+
+### Seher – UI/UX Designer
+Created the UI Style Guide (colour palette, typography, spacing rules, components), sitemap, and wireframes for key pages. Ensured accessibility and supported frontend developers in applying the design consistently.
+
+### Oscar – Front-End Developer (Main Pages)
+Developed the Home, About, Products, and Product pages. Implemented navigation and layout structure following the UI Style Guide and improved the overall visual presentation of the site.
+
+### Jamaal – Front-End Developer (Forms and Basket)
+Built the Login, Registration, Basket, and Checkout pages. Implemented form fields, interactions, validation scripts, and basket layout/behaviour, and helped link forms to backend routes.
+
+### Dia – Content and Accessibility
+Wrote website content for Home, About, and Products pages. Created product descriptions and ALT text, and checked readability and accessibility of the site.
+
+### Toney – Quality Assurance and Submission Lead
+Performed full-site QA testing, including functionality and accessibility checks. Logged issues, verified fixes, produced the Final Testing Report, and prepared the final submission ZIP and supporting documentation.
 
 ---
 
-## Evidence  
-All collaborative evidence (Trello boards, meeting notes, commit logs) can be found in the **Evidence** folder.  
+## Submission Details
 
- **Trello Board Link:** https://trello.com/b/MgNq9DBY  
- **GitHub Repository Link:** https://github.com/maeesa-ali/team_23_pixelpals 
+### Term 1A
+- Submitted: SRD Report and Design Alliance Report  
+- Date: 14 November 2025  
 
----
-
-## ✅ Submission Details  
-**Files Submitted:**  
-- SRD Report (.pdf)  
-- Design Alliance Report (.pdf)  
-    
-
-**Submitted by:** Team 23 – PixelPals  
-**Project Manager:** Maeesa Ali  
-**Submission Date:** 14 November 2025  
+### Term 1B (MVP)
+- Submitted: MVP Website and Documentation Pack  
+- Date: 5 December 2025  
 
 ---
 
-✨ *“Designing healthier gaming experiences for young players.”*
+## Project Links
+- Trello Board: https://trello.com/b/MgNq9DBY  
+- GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals  
+
+---
+
+## Project Motto
+*“Designing healthier gaming experiences for young players.”*

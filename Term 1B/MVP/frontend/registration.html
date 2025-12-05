@@ -1,52 +1,84 @@
-<!-- Registration Form-->
-<form id="regForm" action="../backend/registration.php" method="POST" novalidate>
-    <!-- First Name input field-->
-    <label>First Name</label>
-    <input type="text" id="firstName" name="firstName">
-
-    <!-- Last Name input field-->
-    <label>Last Name</label>
-    <input type="text" id="lastName" name="lastName">
-
-
-    <!-- Email input field-->
-    <label>Email</label>
-    <input type="email" id="regEmail" name="email">
-
-    <!-- Password input field-->
-    <label>Password</label>
-    <input type="password" id="regPassword" name="password">
-
-    <!-- Confirm Password input field-->
-    <label>Confirm Password</label>
-    <input type="password" id="confirmPassword" name="confirmPassword">
-
-    <!-- Register button-->
-    <button type="submit">Register</button>
-
-    <!-- Links to login page-->
-    <a href="login.html">Already have an account?</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PixelPals – Register </title>
+</head>
+<body>
     
-    <p id="error" style="color:red;"></p> <!-- Error message display-->
-    <p id="success" style="color:green;"></p> <!-- Success message display-->
-    <!-- this will be replaced later with redirection to dashboard-->
-</form>
+<!-- Top blue bar -->
+<header class="topBar">
+    <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
+
+    <!-- Search Bar -->
+    <div class="searchContainer">
+        <input type="text" placeholder="Search">
+    </div>
+
+    <!-- Basket Link -->
+    <div class="topLinks">
+        <a href="basket.html"> Basket</a>
+    </div>
+</header>
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+    <a href="login.html"> Login</a>
+    <a href="index.html"> Home</a>
+    <a href="products.html"> Products</a>
+    <a href="about.html"> About Us</a>
+    <a href="contact.html"> Contact Us</a>
+</nav>
+
+<div class="pageWrapper"> <!-- Main container for the registration page -->
+    <!-- Registration Form-->
+    <form id="regForm" action="../backend/registration.php" method="POST" novalidate>
+
+
+        <!-- Email input field-->
+        <label>Email</label>
+        <input type="email" id="regEmail" name="email" required>
+
+
+        <!-- Password input field-->
+        <label>Password</label>
+        <input type="password" id="regPassword" name="password" required>
+
+
+        <!-- Register button-->
+        <button type="submit"><strong>Register</strong></button>
+
+        <!-- Links to login page-->
+        <a href="login.html">Already have an account?</a>
+    
+        <p id="error" style="color:red;"></p> <!-- Error message display-->
+    </form>
+</div>
 
 <!-- Styles for registration form-->
 <style>
-    body /*body styles*/
+    body /*overall page style*/
     {
+        margin: 0;
         font-family: Arial, sans-serif;
-        background: #f5f5f5;
+        background: linear-gradient(#DE4FFF, #77ADFF, #D5A4Ff);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pageWrapper /* Main container*/
+    {
+        flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
     }
 
     form /*form container styles*/
     {
-        background: white;
+        margin: 0 auto;
+        background: #C9DAFF;
         padding: 20px;
         width: 300px;
         border-radius: 8px;
@@ -83,8 +115,8 @@
         width: 100%;
         padding: 10px;
         margin-top: 15px;
-        background: #4A90E2;
-        color: white;
+        background: #C0ED45;
+        color: black;
         border: none;
         border-radius: 6px;
         cursor: pointer;
@@ -116,8 +148,72 @@
         margin-top: 10px;
         font-size: 14px;
     }
+
+    .topBar /* Top blue bar*/
+    {
+        background: #3F8BE0;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .topBar .logo /* Logo*/
+    {
+        height: 60px;
+    }
+
+    .searchContainer /* Search bar*/
+    {
+        flex: 1;
+        position: relative;
+    }
+
+    .searchContainer input /* Search bar input field*/
+    {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .topLinks a /* Basket Link*/
+    {
+        color: white;
+        font-size: 18px;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    .bottomNav /* Purple nav bar*/
+    {
+        background: #8962C6;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bottomNav a /* Navigation links*/
+    {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 </style>
 
 <!-- Links to validation script-->
+<script src="js/validation.js"></script>
+</body>
+</html>
 
-<script src="validation.js"></script>
+
+
+
