@@ -1,88 +1,111 @@
-# Team 23 – PixelPals
-### Combined README (Term 1A + Term 1B MVP)
+Team 23 – PixelPals
 
----
+CS2TP Group Project Repository
 
-## About the Project
-PixelPals is a CS2TP team project focused on promoting healthy gaming habits for children through ergonomic and accessible product designs.  
-This repository includes all Term 1A design and planning work as well as the Term 1B MVP website.
+📌 Project Overview
 
----
+PixelPals is a CS2TP group project focused on promoting healthy, ergonomic, and accessible gaming habits for children through product design and a supporting website.
 
-## Repository Overview
+This repository contains all assessed work produced across Term 1A, Term 1B, and Term 2, including planning documentation, an MVP website, and the final website developed in Term 2.
 
-### Term 1A – SRD and Design Documents
-- Final SRD Report (PDF and DOCX)  
-- Design Alliance Report  
-- Draft SRD sections  
-- Meeting notes  
-- Trello screenshots  
-- Commit evidence  
+📁 Repository Structure
 
-### Term 1B – MVP Development
-- Frontend: HTML, CSS, JavaScript pages  
-- Backend: PHP structure (`login.php`, `registration.php`, `routes.php`, `config.php`, `sample-data.php`)  
-- Documentation: Backend Architecture, RACI Diagram, MVP Summary, Testing Reports, Submission Proof  
+The repository is organised by academic term to clearly distinguish planning, MVP development, and final implementation work.
 
----
+🔵 Term 1A – Design & Planning
 
-## Team Members and Roles
-- **Maeesa** – Project Manager and Backend Support  
-- **Russell** – Backend Developer  
-- **Joel** – Systems Tester and Backend Support  
-- **Seher** – UI/UX Designer  
-- **Oscar** – Front-End Developer (Main Pages)  
-- **Jamaal** – Front-End Developer (Forms and Basket)  
-- **Dia** – Content and Accessibility  
-- **Toney** – Quality Assurance and Submission Lead  
+Location: Term1A/
 
----
+Software Requirements Document (final and draft sections)
 
-## Statement of Contribution
+Design Alliance Report
 
-### Maeesa – Project Manager and Backend Support
-Organised workflow, meetings, and documentation. Set up the XAMPP backend environment, created the backend folder structure, implemented all MVP PHP files, integrated frontend forms, and produced the Backend Architecture and MVP Summary documents. Supported QA and ensured the system was ready for testing.
+Meeting notes and planning evidence
 
-### Russell – Backend Developer
-Created the official product dataset and backend data specification. Designed the product data structure, produced the CSV files, and documented intended backend behaviour for future implementation.
+Trello screenshots and contribution evidence
 
-### Joel – Systems Tester
-Tested navigation, login, registration, contact forms, and basket functionality. Logged issues, verified fixes, and produced the Systems Testing Report with screenshots as evidence.
+🟢 Term 1B – MVP Website
 
-### Seher – UI/UX Designer
-Created the UI Style Guide (colour palette, typography, spacing rules, components), sitemap, and wireframes for key pages. Ensured accessibility and supported frontend developers in applying the design consistently.
+Location: Term1B/MVP/
 
-### Oscar – Front-End Developer (Main Pages)
-Developed the Home, About, Products, and Product pages. Implemented navigation and layout structure following the UI Style Guide and improved the overall visual presentation of the site.
+frontend/ – HTML, CSS, JavaScript pages
 
-### Jamaal – Front-End Developer (Forms and Basket)
-Built the Login, Registration, Basket, and Checkout pages. Implemented form fields, interactions, validation scripts, and basket layout/behaviour, and helped link forms to backend routes.
+backend/ – PHP backend structure (authentication, routing, configuration, sample data)
 
-### Dia – Content and Accessibility
-Wrote website content for Home, About, and Products pages. Created product descriptions and ALT text, and checked readability and accessibility of the site.
+docs/ – Backend architecture, RACI diagram, MVP summary, and testing documentation
 
-### Toney – Quality Assurance and Submission Lead
-Performed full-site QA testing, including functionality and accessibility checks. Logged issues, verified fixes, produced the Final Testing Report, and prepared the final submission ZIP and supporting documentation.
+🟣 Term 2 – Final Website (In Progress)
 
----
+Location: Team23_PixelPals_Term2_Final/
 
-## Submission Details
+This folder is reserved for the final PixelPals website, which will be completed in Term 2 and used for Blackboard submission and live demonstration.
 
-### Term 1A
-- Submitted: SRD Report and Design Alliance Report  
-- Date: 14 November 2025  
+The internal structure of this folder will be finalised during Term 2 development.
 
-### Term 1B (MVP)
-- Submitted: MVP Website and Documentation Pack  
-- Date: 5 December 2025  
+👥 Team Roles and Responsibilities (By Term)
 
----
+To avoid confusion between documentation produced in different terms, team roles are defined per term.
 
-## Project Links
-- Trello Board: https://trello.com/b/MgNq9DBY  
-- GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals  
+Term 1A & Term 1B Roles
 
----
+(As referenced in the SRD, Design Alliance, and MVP documentation)
 
-## Project Motto
-*“Designing healthier gaming experiences for young players.”*
+Maeesa – Project Manager & Backend Support
+
+Russell – Backend Developer
+
+Joel – Systems Tester & Backend Support
+
+Seher – UI/UX Designer
+
+Oscar – Front-End Developer (Main Pages)
+
+Jamaal – Front-End Developer (Forms & Basket)
+
+Dia – Content & Accessibility
+
+Toney – Quality Assurance & Submission Lead
+
+Term 2 Roles
+
+(To be confirmed and may differ from Term 1 roles)
+
+Maeesa –
+
+Russell –
+
+Joel –
+
+Seher –
+
+Oscar –
+
+Jamaal –
+
+Dia –
+
+Toney –
+
+Term 2 roles will be updated to reflect changes in responsibilities during final implementation and live demonstration.
+
+🧾 Statement of Contribution
+
+Individual contribution statements are documented within the Term 1 reports and will be updated and finalised as part of the Term 2 submission.
+
+📅 Submission Timeline
+
+Term 1A: Design and planning documentation
+
+Term 1B: MVP website development
+
+Term 2: Final website implementation, Blackboard submission, and live demonstration
+
+🔗 Project Links
+
+Trello Board: https://trello.com/b/MgNq9DBY
+
+GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals
+
+🎯 Project Motto
+
+“Designing healthier gaming experiences for young players.”
