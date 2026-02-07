@@ -131,7 +131,7 @@ The final software product is demonstrated live during assessment, showcasing:
 ## 🔗 Project Tools & Links
 
 - **Version Control:** GitHub  
-- **Task Tracking:** Trello  
+- **Task Tracking:** Trello: https://trello.com/b/MgNq9DBY/team-23-pixelpalscs2tp
 - **Repository:** https://github.com/maeesa-ali/team_23_pixelpals  
 
 ---
