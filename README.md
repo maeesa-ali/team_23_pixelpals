@@ -1,88 +1,141 @@
-# Team 23 – PixelPals
-### Combined README (Term 1A + Term 1B MVP)
+# Team 23 – PixelPals  
+**CS2TP Group Project Repository**
 
 ---
 
-## About the Project
-PixelPals is a CS2TP team project focused on promoting healthy gaming habits for children through ergonomic and accessible product designs.  
-This repository includes all Term 1A design and planning work as well as the Term 1B MVP website.
+## 📌 Project Overview
+
+**PixelPals** is a Computer Science Team Project (CS2TP) focused on promoting **healthy, ergonomic, and accessible gaming habits for children** through a designed software product and supporting website.
+
+This repository contains all assessed work produced across **Term 1A, Term 1B, and Term 2**, including planning documentation, an MVP implementation, and the final software product prepared for live demonstration.
 
 ---
 
-## Repository Overview
+## ⭐ Assessment Context
 
-### Term 1A – SRD and Design Documents
-- Final SRD Report (PDF and DOCX)  
-- Design Alliance Report  
-- Draft SRD sections  
-- Meeting notes  
-- Trello screenshots  
-- Commit evidence  
+This project is assessed on the following criteria:
+- **Software Quality & Scope**
+- **Team Working**
+- **Project Management & Process**
+- **Exposition & Impact**
 
-### Term 1B – MVP Development
-- Frontend: HTML, CSS, JavaScript pages  
-- Backend: PHP structure (`login.php`, `registration.php`, `routes.php`, `config.php`, `sample-data.php`)  
-- Documentation: Backend Architecture, RACI Diagram, MVP Summary, Testing Reports, Submission Proof  
+The repository structure and documentation are designed to clearly evidence these areas.
 
 ---
 
-## Team Members and Roles
-- **Maeesa** – Project Manager and Backend Support  
+## 📁 Repository Structure
+
+The repository is organised by **academic term** to clearly separate planning, MVP development, and final implementation work.
+
+---
+
+### 🔵 Term 1A – Design & Planning  
+**Location:** `Term1A/`
+
+Contains early-stage project planning and design artefacts, including:
+- Software Requirements Document (SRD)
+- Design Alliance Report
+- Meeting notes and planning evidence
+- Trello screenshots and contribution evidence
+
+---
+
+### 🟢 Term 1B – MVP Website  
+**Location:** `Term1B/MVP/`
+
+Contains the **Minimum Viable Product (MVP)** developed during Term 1B.
+
+Includes:
+- **frontend/** – HTML, CSS, and JavaScript pages  
+- **backend/** – PHP backend structure and configuration  
+- **docs/** – Architecture overview, RACI diagram, MVP summary, and testing documentation  
+
+This stage demonstrates incremental development, version control, and quality assurance.
+
+---
+
+### 🟣 Term 2 – Final Team Submission  
+**Location:** `Team23_PixelPals_Term2_Final/`
+
+This folder is reserved for the **final team submission** and contains:
+- The completed **software product**
+- Team-level **project and evaluation documentation**
+
+The contents of this folder are used for:
+- Blackboard submission  
+- 15-minute live demonstration  
+
+---
+
+## 👥 Team Roles & Responsibilities (By Term)
+
+To avoid confusion between documents produced at different stages, **team roles are defined per term**.
+
+---
+
+### Term 1A & Term 1B Roles  
+*(As referenced in SRD, Design Alliance, and MVP documentation)*
+
+- **Maeesa** – Project Manager & Backend Support  
 - **Russell** – Backend Developer  
-- **Joel** – Systems Tester and Backend Support  
+- **Joel** – Systems Tester & Backend Support  
 - **Seher** – UI/UX Designer  
-- **Oscar** – Front-End Developer (Main Pages)  
-- **Jamaal** – Front-End Developer (Forms and Basket)  
-- **Dia** – Content and Accessibility  
-- **Toney** – Quality Assurance and Submission Lead  
+- **Oscar** – Front-End Developer  
+- **Jamaal** – Front-End Developer  
+- **Dia** – Content & Accessibility  
+- **Toney** – Quality Assurance & Submission Lead  
 
 ---
 
-## Statement of Contribution
+### Term 2 Roles  
+*(Updated for final implementation and live demonstration)*
 
-### Maeesa – Project Manager and Backend Support
-Organised workflow, meetings, and documentation. Set up the XAMPP backend environment, created the backend folder structure, implemented all MVP PHP files, integrated frontend forms, and produced the Backend Architecture and MVP Summary documents. Supported QA and ensured the system was ready for testing.
-
-### Russell – Backend Developer
-Created the official product dataset and backend data specification. Designed the product data structure, produced the CSV files, and documented intended backend behaviour for future implementation.
-
-### Joel – Systems Tester
-Tested navigation, login, registration, contact forms, and basket functionality. Logged issues, verified fixes, and produced the Systems Testing Report with screenshots as evidence.
-
-### Seher – UI/UX Designer
-Created the UI Style Guide (colour palette, typography, spacing rules, components), sitemap, and wireframes for key pages. Ensured accessibility and supported frontend developers in applying the design consistently.
-
-### Oscar – Front-End Developer (Main Pages)
-Developed the Home, About, Products, and Product pages. Implemented navigation and layout structure following the UI Style Guide and improved the overall visual presentation of the site.
-
-### Jamaal – Front-End Developer (Forms and Basket)
-Built the Login, Registration, Basket, and Checkout pages. Implemented form fields, interactions, validation scripts, and basket layout/behaviour, and helped link forms to backend routes.
-
-### Dia – Content and Accessibility
-Wrote website content for Home, About, and Products pages. Created product descriptions and ALT text, and checked readability and accessibility of the site.
-
-### Toney – Quality Assurance and Submission Lead
-Performed full-site QA testing, including functionality and accessibility checks. Logged issues, verified fixes, produced the Final Testing Report, and prepared the final submission ZIP and supporting documentation.
+- **Maeesa** – Project Manager & Backend  
+- **Seher** – UI/UX Designer & Frontend  
+- **Russell** – Backend Lead  
+- **Jamaal** – Frontend & Quality Assurance  
+- **Joel** – Systems Tester & Backend  
+- **Oscar** – Frontend Lead  
+- **Toney** – Quality Assurance & Backend  
+- **Dia** – Content Creator & Frontend  
 
 ---
 
-## Submission Details
+### Role Evolution (Term 2)
 
-### Term 1A
-- Submitted: SRD Report and Design Alliance Report  
-- Date: 14 November 2025  
+Term 2 project requirements increased in scope, particularly in relation to final software quality, testing, documentation, and live demonstration. As a result, team roles were further developed from those defined in Terms 1A and 1B.
 
-### Term 1B (MVP)
-- Submitted: MVP Website and Documentation Pack  
-- Date: 5 December 2025  
+This included the introduction of additional **quality assurance responsibilities** across both frontend and backend team members, as well as a more balanced distribution of frontend and backend development roles to support efficient delivery and system reliability.
+
+These changes reflect the evolving needs of the project and are explained further within the Term 2 team submissions, including the evaluation report.
 
 ---
 
-## Project Links
-- Trello Board: https://trello.com/b/MgNq9DBY  
-- GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals  
+## 🧪 Software Demonstration
+
+The final software product is demonstrated live during assessment, showcasing:
+- Core functionality and system scope  
+- Usability and accessibility considerations  
+- Overall software quality and reliability  
 
 ---
 
-## Project Motto
-*“Designing healthier gaming experiences for young players.”*
+## 📅 Submission Overview
+
+- **Term 1A:** Design and planning documentation  
+- **Term 1B:** MVP software development  
+- **Term 2:** Final software product, evaluation documentation, and live demonstration  
+
+---
+
+## 🔗 Project Tools & Links
+
+- **Version Control:** GitHub  
+- **Task Tracking:** Trello: https://trello.com/b/MgNq9DBY/team-23-pixelpalscs2tp
+- **Repository:** https://github.com/maeesa-ali/team_23_pixelpals  
+
+---
+
+## 🎯 Project Aim
+
+> *Designing healthier gaming experiences for young players.*
