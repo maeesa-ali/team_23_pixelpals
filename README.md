@@ -4,19 +4,35 @@ CS2TP Group Project Repository
 
 📌 Project Overview
 
-PixelPals is a CS2TP group project focused on promoting healthy, ergonomic, and accessible gaming habits for children through product design and a supporting website.
+PixelPals is a Computer Science Team Project (CS2TP) focused on promoting healthy, ergonomic, and accessible gaming habits for children through a designed software product.
 
-This repository contains all assessed work produced across Term 1A, Term 1B, and Term 2, including planning documentation, an MVP website, and the final website developed in Term 2.
+This repository contains all assessed work for the project across Term 1A, Term 1B, and Term 2, including planning artefacts, an MVP implementation, and the final software product prepared for live demonstration.
+
+⭐ Assessment Context (Important)
+
+This project is assessed on:
+
+Software Quality & Scope – demonstrated through the final software product and live demo
+
+Team Working – collaboration, leadership, and role allocation
+
+Project Management & Process – planning, QA, version control, and task tracking
+
+Exposition & Impact – clarity and presentation of all work
+
+The repository structure and documentation are designed to clearly evidence these areas.
 
 📁 Repository Structure
 
-The repository is organised by academic term to clearly distinguish planning, MVP development, and final implementation work.
+The repository is organised by academic term to reflect the evolution of the project and to avoid confusion between planning, MVP development, and final implementation.
 
 🔵 Term 1A – Design & Planning
 
 Location: Term1A/
 
-Software Requirements Document (final and draft sections)
+Contains early-stage planning and design artefacts, including:
+
+Software Requirements Document (SRD)
 
 Design Alliance Report
 
@@ -24,31 +40,49 @@ Meeting notes and planning evidence
 
 Trello screenshots and contribution evidence
 
+These materials demonstrate project scoping, early team working, and design rationale.
+
 🟢 Term 1B – MVP Website
 
 Location: Term1B/MVP/
 
-frontend/ – HTML, CSS, JavaScript pages
+Contains the Minimum Viable Product (MVP) developed in Term 1B.
 
-backend/ – PHP backend structure (authentication, routing, configuration, sample data)
+Includes:
 
-docs/ – Backend architecture, RACI diagram, MVP summary, and testing documentation
+frontend/ – HTML, CSS, and JavaScript pages
 
-🟣 Term 2 – Final Website (In Progress)
+backend/ – PHP backend structure and configuration
+
+docs/ – Architecture overview, RACI diagram, MVP summary, and testing evidence
+
+This stage demonstrates incremental development, version control, and quality assurance.
+
+🟣 Term 2 – Final Team Submission
 
 Location: Team23_PixelPals_Term2_Final/
 
-This folder is reserved for the final PixelPals website, which will be completed in Term 2 and used for Blackboard submission and live demonstration.
+This folder is reserved for the final team submission and contains:
 
-The internal structure of this folder will be finalised during Term 2 development.
+The completed software product
 
-👥 Team Roles and Responsibilities (By Term)
+Team-level project and evaluation documentation
 
-To avoid confusion between documentation produced in different terms, team roles are defined per term.
+The contents of this folder will be used for:
+
+Blackboard submission
+
+15-minute live demonstration
+
+The internal layout will be finalised during Term 2 development.
+
+👥 Team Roles & Responsibilities (By Term)
+
+To avoid confusion between documents produced at different stages, roles are defined per term.
 
 Term 1A & Term 1B Roles
 
-(As referenced in the SRD, Design Alliance, and MVP documentation)
+(As referenced in SRD, Design Alliance, and MVP documentation)
 
 Maeesa – Project Manager & Backend Support
 
@@ -58,9 +92,9 @@ Joel – Systems Tester & Backend Support
 
 Seher – UI/UX Designer
 
-Oscar – Front-End Developer (Main Pages)
+Oscar – Front-End Developer
 
-Jamaal – Front-End Developer (Forms & Basket)
+Jamaal – Front-End Developer
 
 Dia – Content & Accessibility
 
@@ -68,7 +102,7 @@ Toney – Quality Assurance & Submission Lead
 
 Term 2 Roles
 
-(To be confirmed and may differ from Term 1 roles)
+(May differ from Term 1 roles and will be updated during Term 2)
 
 Maeesa –
 
@@ -86,26 +120,32 @@ Dia –
 
 Toney –
 
-Term 2 roles will be updated to reflect changes in responsibilities during final implementation and live demonstration.
+🧪 Software Demonstration
 
-🧾 Statement of Contribution
+The final software product will be demonstrated live during assessment, showing:
 
-Individual contribution statements are documented within the Term 1 reports and will be updated and finalised as part of the Term 2 submission.
+Core functionality
 
-📅 Submission Timeline
+Usability and accessibility considerations
+
+Overall scope and completeness of the system
+
+📅 Submission Overview
 
 Term 1A: Design and planning documentation
 
-Term 1B: MVP website development
+Term 1B: MVP software development
 
-Term 2: Final website implementation, Blackboard submission, and live demonstration
+Term 2: Final software product, evaluation documentation, and live demonstration
 
-🔗 Project Links
+🔗 Project Tools & Links
 
-Trello Board: https://trello.com/b/MgNq9DBY
+Version Control: GitHub
 
-GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals
+Task Tracking: Trello
 
-🎯 Project Motto
+Repository: https://github.com/maeesa-ali/team_23_pixelpals
 
-“Designing healthier gaming experiences for young players.”
+🎯 Project Aim
+
+Designing healthier gaming experiences for young players.
