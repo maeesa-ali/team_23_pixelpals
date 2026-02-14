@@ -106,7 +106,7 @@ To avoid confusion between documents produced at different stages, **team roles 
 
 Term 2 project requirements increased in scope, particularly in relation to final software quality, testing, documentation, and live demonstration. As a result, team roles were further developed from those defined in Terms 1A and 1B.
 
-This included the introduction of additional **quality assurance responsibilities** across both frontend and backend team members, as well as a more balanced distribution of frontend and backend development roles to support efficient delivery and system reliability.
+This included the introduction of additional **quality assurance responsibilities** across both frontend and backend team members, as well as a more balanced distribution of frontend, backend development, Systems testing and security roles to support efficient delivery and system reliability.
 
 These changes reflect the evolving needs of the project and are explained further within the Term 2 team submissions, including the evaluation report.
 
