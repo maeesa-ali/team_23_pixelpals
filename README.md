@@ -90,14 +90,15 @@ To avoid confusion between documents produced at different stages, **team roles 
 ### Term 2 Roles  
 *(Updated for final implementation and live demonstration)*
 
-- **Maeesa** – Project Manager & Backend  
-- **Seher** – UI/UX Designer & Frontend  
-- **Russell** – Backend Lead  
-- **Jamaal** – Frontend & Quality Assurance  
-- **Joel** – Systems Tester & Backend  
-- **Oscar** – Frontend Lead  
-- **Toney** – Quality Assurance & Backend  
-- **Dia** – Content Creator & Frontend  
+- **Maeesa** – Project Manager + Back-end  
+- **Seher** – Front-end + UI/UX designer  
+- **Russell** – Back-end lead + security   
+- **Jamaal** – Front-end + Quality assurance   
+- **Joel** – Back-end + Systems tester  
+- **Oscar** – Front-end + Systems tester 
+- **Toney** – Back-end + Quality assurance  
+- **Dia** – Front-end + Content creator  
+
 
 ---
 
