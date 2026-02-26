@@ -24,13 +24,17 @@ if (regForm)
 function displayError(message)
 {
     document.getElementById("error").textContent = message; //displays error message
-    document.getElementById("success").textContent = ""; //clears success message
 }
 
 //success message display function
-function displaySuccess(message)
+function success()
 {
-    document.getElementById("success").textContent = message; //displays success message
+     window.location.href = "index.html"; //redirects to home page
+}
+
+function successRegister()
+{
+     window.location.href = "login.html"; //redirects to login page
 }
 
 //login validation function
@@ -44,27 +48,22 @@ function validateLogin()
     if (!email.includes("@")) return displayError("Invalid email format"); //checks the email field has @ in it
 
     displayError(""); //clears any previous error messages if validation passes
-    displaySuccess("Login successful!"); //displays success message (replaced later with actual login logic)
+    success(); //redirects to home page
 }
 
 //registration validation function
 function validateRegistration()
 {
     //get field values from user input
-    const fName = document.getElementById("firstName").value.trim();
-    const lName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("regEmail").value.trim();
     const password = document.getElementById("regPassword").value;
-    const confirm = document.getElementById("confirmPassword").value;
 
-    if (!fName || !lName || !email || !password || !confirm) return displayError("Atleast one field is empty"); //checks for empty fields
+    if (!email || !password) return displayError("Atleast one field is empty"); //checks for empty fields
 
     if (!email.includes("@")) return displayError("Invalid email format"); //checks the email field has @ in it
-
-    if (password !== confirm) return displayError("Passwords do not match"); //checks password and confirm password match
 
     if (password.length < 8) return displayError("Password must be at least 8 characters long"); //checks password length
 
     displayError(""); //clears any previous error messages if validation passes
-    displaySuccess("Registration successful!"); //displays success message (replaced later with actual registration logic)
+    successRegister(); //redirects to login page
 }

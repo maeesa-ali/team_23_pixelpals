@@ -1,3 +1,11 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PixelPals – Checkout</title>
+</head>
+
+<body>
 <!-- Top blue bar -->
 <header class="topBar">
     <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
@@ -8,18 +16,18 @@
         <button class="clear-btn">×</button>
     </div>
 
-    <!-- Wishlist & Basket Links -->
+    <!-- Basket Link -->
     <div class="topLinks">
-        <a href="wishlist.html"> Wishlist</a>
         <a href="basket.html"> Basket</a>
     </div>
 </header>
 
 <!-- Bottom purple nav bar -->
 <nav class="bottomNav">
+    <a href="login.html"> Login</a>
     <a href="index.html"> Home</a>
     <a href="products.html"> Products</a>
-    <a href="account.html"> Account</a>
+    <a href="about.html"> About Us</a>
     <a href="contact.html"> Contact Us</a>
 </nav>
 
@@ -126,14 +134,21 @@
         </div>
     </div>
 </div>
+</body>
+</html>
 
 <!-- Styles for the checkout page -->
 <style>
+    * 
+    {
+        box-sizing: border-box;
+    }
+
     body /*overall page style*/
     {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(#c5e1ff, #d5a3ff);
+        background: linear-gradient(#DE4FFF, #77ADFF, #D5A4Ff);
     }
 
     .pageWrapper /*main container for checkout page*/
@@ -213,7 +228,7 @@
         margin-top: 20px;
         padding: 15px;
         width: 250px;
-        background: #c5ff61;
+        background: #C0ED45;
         border-radius: 15px;
         font-size: 20px;
         font-weight: bold;
@@ -283,7 +298,7 @@
 
     .topBar /* Top blue bar*/
     {
-        background: #3a8fe7;
+        background: #3F8BE0;
         display: flex;
         align-items: center;
         padding: 10px 20px;
@@ -324,7 +339,7 @@
         cursor: pointer;
     }
 
-    .topLinks a /* Wishlist & Basket Links*/
+    .topLinks a /* Basket Link*/
     {
         color: white;
         font-size: 18px;
@@ -334,7 +349,7 @@
 
     .bottomNav /* Purple nav bar*/
     {
-        background: #9b59b6;
+        background: #8962C6;
         display: flex;
         justify-content: space-evenly;
         padding: 10px 0;
@@ -355,3 +370,4 @@
 
 <!-- JavaScript for checkout functionality -->
 <script src="checkout.js"></script> 
+
