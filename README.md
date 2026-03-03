@@ -271,6 +271,15 @@ Admin customer management pages:
 - admin/customers.php
 - admin/customer_edit.php
 
+- **Maeesa** – Project Manager + Back-end  
+- **Seher** – Front-end + UI/UX designer  
+- **Russell** – Back-end lead + security   
+- **Jamaal** – Front-end + Quality assurance   
+- **Joel** – Back-end + Systems tester  
+- **Oscar** – Front-end + Systems tester 
+- **Toney** – Back-end + Quality assurance  
+- **Dia** – Front-end + Content creator  
+
 
 ---
 
@@ -296,6 +305,7 @@ Admin order management:
 Customer order pages:
 - orders.php
 - order_view.php
+This included the introduction of additional **quality assurance responsibilities** across both frontend and backend team members, as well as a more balanced distribution of frontend, backend development, Systems testing and security roles to support efficient delivery and system reliability.
 
 
 ---
