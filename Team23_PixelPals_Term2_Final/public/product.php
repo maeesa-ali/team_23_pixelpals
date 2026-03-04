@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
+
+
+<body>
+
+  <!-- Header with logo and search -->
+<header class="topBar">
+  <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
+
+  <!-- Search Bar -->
+  <div class="searchContainer">
+    <form  action="products.html"  method="GET">
+      <input type="text" id="searchInput" name="q" placeholder="Search">
+      </form>
+      <button class="clear-btn">×</button>
+  </div>
+
+
+
+  <!-- Wishlist & Basket Links -->
+  <div class="topLinks">
+      <a href="basket.html"> Basket</a>
+  </div>
+</header>
+
+
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+  <a href="index.php"> Home</a>
+  <a href="login.php">Log in</a>
+  <a href="products.php"> Products</a>
+  <a href="contact.php"> Contact Us</a>
+  <a href="about.php">About Us</a>
+</nav>
+
+<main class="product-page">
+
+    <!-- Main image -->
+  <div class="main-image">
+    <img id="mainImage" src="images/default.png" alt="Main Product Image">
+   
+</div>
+
+<!-- Side thumbnails -->
+<div class="side-images" id="thumbnailContainer">
+    <img class="thumb" src="default1.png" alt="Product Image1">
+    <img class="thumb" src="default2.png" alt="Product Image2">
+    <img class="thumb" src="default3.png" alt="Product Image3">
+    <img class="thumb" src="default4.png" alt="Product Image4">
+</div>
+    <!-- Product information -->
+    <div class="product-info" id="productDetails">
+
+        <!-- JS fills this automatically.  
+             This is the template that will be replaced. -->
+        <h1>Loading...</h1>
+        <p>Please wait.</p>
+
+    </div>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
