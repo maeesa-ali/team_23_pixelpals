@@ -1,38 +1,37 @@
 # Team 23 – PixelPals  
-**CS2TP Group Project Repository**
+### CS2TP Group Project Repository
 
 ---
 
-## 📌 Project Overview
+#  Project Overview
+PixelPals is a **Computer Science Team Project (CS2TP)** focused on promoting healthy, ergonomic, and accessible gaming habits for children through a designed software product and supporting website.
 
-**PixelPals** is a Computer Science Team Project (CS2TP) focused on promoting **healthy, ergonomic, and accessible gaming habits for children** through a designed software product and supporting website.
-
-This repository contains all assessed work produced across **Term 1A, Term 1B, and Term 2**, including planning documentation, an MVP implementation, and the final software product prepared for live demonstration.
+This repository contains all assessed work produced across **Term 1A, Term 1B, and Term 2**, including planning documentation, an MVP implementation, and the **final software product prepared for live demonstration**.
 
 ---
 
-## ⭐ Assessment Context
-
+#  Assessment Context
 This project is assessed on the following criteria:
-- **Software Quality & Scope**
-- **Team Working**
-- **Project Management & Process**
-- **Exposition & Impact**
+
+- Software Quality & Scope  
+- Team Working  
+- Project Management & Process  
+- Exposition & Impact  
 
 The repository structure and documentation are designed to clearly evidence these areas.
 
 ---
 
-## 📁 Repository Structure
-
-The repository is organised by **academic term** to clearly separate planning, MVP development, and final implementation work.
+#  Repository Structure
+The repository is organised by academic term to clearly separate planning, MVP development, and final implementation work.
 
 ---
 
-### 🔵 Term 1A – Design & Planning  
-**Location:** `Term1A/`
+# Term 1A – Design & Planning
+Location: `Term1A/`
 
 Contains early-stage project planning and design artefacts, including:
+
 - Software Requirements Document (SRD)
 - Design Alliance Report
 - Meeting notes and planning evidence
@@ -40,103 +39,396 @@ Contains early-stage project planning and design artefacts, including:
 
 ---
 
-### 🟢 Term 1B – MVP Website  
-**Location:** `Term1B/MVP/`
+#  Term 1B – MVP Website
+ Location: `Term1B/MVP/`
 
-Contains the **Minimum Viable Product (MVP)** developed during Term 1B.
+Contains the Minimum Viable Product (MVP) developed during Term 1B.
+
+### Includes
+
+**frontend/**
+- HTML pages
+- CSS styling
+- JavaScript functionality
+
+**backend/**
+- PHP backend structure
+- Configuration files
+
+**docs/**
+- Architecture overview
+- RACI diagram
+- MVP summary
+- Testing documentation
+
+This stage demonstrates **incremental development, version control, and quality assurance**.
+
+---
+
+#  Term 2 – Final Team Submission
+ Location: `Team23_PixelPals_Term2_Final/`
+
+This folder contains the **final implementation of the PixelPals software system**, prepared for both submission and live demonstration.
 
 Includes:
-- **frontend/** – HTML, CSS, and JavaScript pages  
-- **backend/** – PHP backend structure and configuration  
-- **docs/** – Architecture overview, RACI diagram, MVP summary, and testing documentation  
 
-This stage demonstrates incremental development, version control, and quality assurance.
+- Completed PHP-based web application
+- Backend logic and database integration
+- Admin management system
+- Customer shopping system
+- Evaluation and supporting documentation
 
----
+This folder is used for:
 
-### 🟣 Term 2 – Final Team Submission  
-**Location:** `Team23_PixelPals_Term2_Final/`
-
-This folder is reserved for the **final team submission** and contains:
-- The completed **software product**
-- Team-level **project and evaluation documentation**
-
-The contents of this folder are used for:
-- Blackboard submission  
-- 15-minute live demonstration  
+- Blackboard submission
+- Final software demonstration
 
 ---
 
-## 👥 Team Roles & Responsibilities (By Term)
+#  Final Software Architecture (Term 2)
 
-To avoid confusion between documents produced at different stages, **team roles are defined per term**.
+The final system separates **frontend pages, backend logic, and database structure** for clarity and maintainability.
+
+```
+Team23_PixelPals_Term2_Final/
+│
+├── public/
+│   │
+│   ├── index.php
+│   ├── about.php
+│   ├── contact.php
+│   ├── products.php
+│   ├── product.php
+│   ├── signup.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── change_password.php
+│   ├── basket.php
+│   ├── checkout.php
+│   ├── order_success.php
+│   ├── account.php
+│   ├── orders.php
+│   ├── order_view.php
+│   │
+│   ├── admin/
+│   │   │
+│   │   ├── dashboard.php
+│   │   ├── products.php
+│   │   ├── product_create.php
+│   │   ├── product_edit.php
+│   │   ├── stock_incoming.php
+│   │   ├── orders.php
+│   │   ├── order_view.php
+│   │   ├── admin_login.php
+│   │   ├── customers.php
+│   │   ├── customer_edit.php
+│   │   └── messages.php
+│   │
+│   └── assets/
+│       │
+│       ├── css/
+│       │   └── styles.css
+│       │
+│       └── img/
+│           ├── logo.png
+│           ├── categories/
+│           └── products/
+│
+├── app/
+│   │
+│   ├── config/
+│   │   ├── db.php
+│   │   └── config.php
+│   │
+│   ├── includes/
+│   │   ├── header.php
+│   │   ├── footer.php
+│   │   ├── auth.php
+│   │   └── flash.php
+│   │
+│   └── actions/
+│       │
+│       ├── signup_post.php
+│       ├── login_post.php
+│       ├── change_password_post.php
+│       │
+│       ├── basket_add.php
+│       ├── basket_update.php
+│       ├── basket_remove.php
+│       │
+│       ├── checkout_place_order.php
+│       ├── return_request.php
+│       │
+│       ├── admin_order_status_update.php
+│       │
+│       ├── admin_product_create.php
+│       ├── admin_product_update.php
+│       ├── admin_product_delete.php
+│       ├── admin_stock_incoming_post.php
+│       │
+│       ├── review_add.php
+│       │
+│       ├── contact_submit.php
+│       │
+│       ├── account_update.php
+│       ├── account_delete.php
+│       │
+│       ├── admin_customer_update.php
+│       └── admin_customer_delete.php
+│
+├── database/
+│   ├── schema.sql
+│   └── seed.sql
+│
+├── README.md
+└── .gitignore
+```
+
+This structure separates:
+
+- **Frontend pages** → `public/`
+- **Admin system** → `public/admin/`
+- **Backend logic** → `app/actions/`
+- **Shared configuration & security** → `app/config/`, `app/includes/`
+- **Database schema & test data** → `database/`
 
 ---
 
-### Term 1A & Term 1B Roles  
-*(As referenced in SRD, Design Alliance, and MVP documentation)*
+#  File Ownership (Term 2 Implementation)
 
-- **Maeesa** – Project Manager & Backend Support  
-- **Russell** – Backend Developer  
-- **Joel** – Systems Tester & Backend Support  
-- **Seher** – UI/UX Designer  
-- **Oscar** – Front-End Developer  
-- **Jamaal** – Front-End Developer  
-- **Dia** – Content & Accessibility  
-- **Toney** – Quality Assurance & Submission Lead  
+Each major system component was allocated to specific team members to ensure **clear responsibility and traceability**.
 
----
-
-### Term 2 Roles  
-*(Updated for final implementation and live demonstration)*
-
-- **Maeesa** – Project Manager + Back-end  
-- **Seher** – Front-end + UI/UX designer  
-- **Russell** – Back-end lead + security   
-- **Jamaal** – Front-end + Quality assurance   
-- **Joel** – Back-end + Systems tester  
-- **Oscar** – Front-end + Systems tester 
-- **Toney** – Back-end + Quality assurance  
-- **Dia** – Front-end + Content creator  
-
+| Team Member | Responsibility |
+|--------------|---------------|
+| **Maeesa** | Project Manager & Backend (Authentication System) |
+| **Seher** | UI/UX Designer & Frontend |
+| **Russell** | Backend Lead (Database & Security) |
+| **Jamaal** | Frontend & Quality Assurance |
+| **Joel** | Backend & Systems Tester (Orders System) |
+| **Oscar** | Frontend Lead (Shopping Interface) |
+| **Toney** | Backend & Quality Assurance (Inventory System) |
+| **Dia** | Content Creator & Frontend |
 
 ---
 
-### Role Evolution (Term 2)
+#  Authentication System
+**Owner:** Maeesa
 
-Term 2 project requirements increased in scope, particularly in relation to final software quality, testing, documentation, and live demonstration. As a result, team roles were further developed from those defined in Terms 1A and 1B.
+Handles user authentication and access control, along side project managing
 
+Key components:
+
+- User registration
+- Login authentication
+- Password change functionality
+- Admin access protection
+
+Backend files include:
+- auth.php
+- signup_post.php
+- login_post.php
+- change_password_post.php
+
+
+---
+
+#  UI / Layout System
+**Owner:** Seher
+
+Responsible for the visual consistency and layout across the site.
+
+Key files:
+- styles.css
+- header.php
+- footer.php
+- index.php
+
+
+Focus areas:
+
+- Navigation structure
+- Colour scheme
+- Page layout consistency
+- Responsive design
+
+---
+
+# Database & Security System
+**Owner:** Russell
+
+Responsible for the database structure and core configuration.
+
+Files include:
+- database/schema.sql
+- database/seed.sql
+- app/config/db.php
+- app/config/config.php
+- app/includes/flash.php
+
+
+Admin customer management pages:
+- admin/dashboard.php
+- admin/messages.php
+- admin/customers.php
+- admin/customer_edit.php
+- - admin/admin_login.php
+
+
+---
+
+#  Orders & Checkout System
+**Owner:** Joel
+
+Responsible for the complete **shopping pipeline**.
+
+Backend logic includes:
+- basket_add.php
+- basket_update.php
+- basket_remove.php
+- checkout_place_order.php
+- return_request.php
+- admin_order_status_update.php
+
+
+Admin order management:
+- admin/orders.php
+- admin/order_view.php
+
+
+Customer order pages:
+- orders.php
+- order_view.php
 This included the introduction of additional **quality assurance responsibilities** across both frontend and backend team members, as well as a more balanced distribution of frontend, backend development, Systems testing and security roles to support efficient delivery and system reliability.
 
-These changes reflect the evolving needs of the project and are explained further within the Term 2 team submissions, including the evaluation report.
 
 ---
 
-## 🧪 Software Demonstration
+#  Inventory Management System
+**Owner:** Toney
 
-The final software product is demonstrated live during assessment, showcasing:
-- Core functionality and system scope  
-- Usability and accessibility considerations  
-- Overall software quality and reliability  
+Responsible for product and stock management.
+
+Admin pages:
+- admin/products.php
+- admin/product_create.php
+- admin/product_edit.php
+- admin/stock_incoming.php
+
+
+Backend logic:
+- admin_product_create.php
+- admin_product_update.php
+- admin_product_delete.php
+- admin_stock_incoming_post.php
+- review_add.php
+
+
+This system handles:
+
+- Product creation
+- Stock tracking
+- Low stock alerts
+- Product reviews
 
 ---
 
-## 📅 Submission Overview
+#  Customer Shopping Interface
+**Owner:** Oscar
 
-- **Term 1A:** Design and planning documentation  
-- **Term 1B:** MVP software development  
-- **Term 2:** Final software product, evaluation documentation, and live demonstration  
+Responsible for the user shopping experience.
+
+Pages include:
+- products.php
+- product.php
+- basket.php
+- checkout.php
+- orders.php
+- order_view.php
+
+
+Focus areas:
+
+- Product browsing
+- Basket management interface
+- Checkout user experience
 
 ---
 
-## 🔗 Project Tools & Links
+#  Account & Authentication Pages
+**Owner:** Jamaal
 
-- **Version Control:** GitHub  
-- **Task Tracking:** Trello: https://trello.com/b/MgNq9DBY/team-23-pixelpalscs2tp
-- **Repository:** https://github.com/maeesa-ali/team_23_pixelpals  
+Responsible for user account interface pages.
+
+Files include:
+- signup.php
+- login.php
+- change_password.php
+- account.php
+
 
 ---
 
-## 🎯 Project Aim
+#  Content & Static Pages
+**Owner:** Dia
 
-> *Designing healthier gaming experiences for young players.*
+Responsible for informational pages and content assets.
+
+Pages include:
+- about.php
+- contact.php
+- order_success.php
+
+
+Also responsible for:
+
+- Product images
+- Category images
+- Informational content
+
+---
+
+#  Software Demonstration
+
+The final software system demonstrates:
+
+- Core website functionality
+- Customer shopping experience
+- Admin management system
+- Database-driven product and order management
+- Usability and accessibility considerations
+
+---
+
+#  Submission Overview
+
+**Term 1A**
+- Planning and design documentation
+
+**Term 1B**
+- MVP software development
+
+**Term 2**
+- Final system implementation
+- Evaluation documentation
+- Live demonstration
+
+---
+
+#  Project Tools & Links
+
+Version Control  
+GitHub
+
+Task Management  
+Trello  
+https://trello.com/b/MgNq9DBY/team-23-pixelpalscs2tp
+
+Repository  
+https://github.com/maeesa-ali/team_23_pixelpals
+
+---
+
+#  Project Aim
+
+Designing healthier gaming experiences for young players.
+
