@@ -1,17 +1,13 @@
 <?php
-$DB_HOST = "localhost";
-$DB_USER = "cs2team23";
-$DB_PASS = "5JWJ5aZvA1TzknSYRW8I1niW1"; 
-$DB_NAME = "cs2team23_db";
-$DB_PORT = 3306;
+$host = 'localhost';
+$db_name = 'cs2team23_db'; 
+$username = 'cs2team23'; 
+$password = '5JWJ5aZvA1TzknSYRW8I1niW1';
 
 try {
-    $dsn = "mysql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_NAME;charset=utf8mb4";
-    $db = new PDO($dsn, $DB_USER, $DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-} catch (PDOException $e) {
-    exit("Database connection failed.");
+    $db = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
 ?>
