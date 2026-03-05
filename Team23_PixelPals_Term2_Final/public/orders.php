@@ -1,16 +1,21 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "cs2team23_db");
+session_start();
+require 'db_connect.php';
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
 }
 
-$sql = "SELECT * FROM orders ORDER BY created_at DESC";
-$result = $conn->query($sql);
+$user_id = $_SESSION['user_id'];
 
-if (!$result) {
-    die("Query failed: " . $conn->error);
-}
+// get orders for current user
+$sql = "SELECT * FROM orders WHERE user_id = ? ORDER BY order_date DESC";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +56,7 @@ if (!$result) {
 </nav>
 
 <!-- Page Content -->
-<main style="padding:40px;">
+<main>
     <h1>Past Orders</h1>
 
     <?php if ($result->num_rows > 0): ?>
