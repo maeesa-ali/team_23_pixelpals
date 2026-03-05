@@ -1,88 +1,434 @@
-# Team 23 – PixelPals
-### Combined README (Term 1A + Term 1B MVP)
+# Team 23 – PixelPals  
+### CS2TP Group Project Repository
 
 ---
 
-## About the Project
-PixelPals is a CS2TP team project focused on promoting healthy gaming habits for children through ergonomic and accessible product designs.  
-This repository includes all Term 1A design and planning work as well as the Term 1B MVP website.
+#  Project Overview
+PixelPals is a **Computer Science Team Project (CS2TP)** focused on promoting healthy, ergonomic, and accessible gaming habits for children through a designed software product and supporting website.
+
+This repository contains all assessed work produced across **Term 1A, Term 1B, and Term 2**, including planning documentation, an MVP implementation, and the **final software product prepared for live demonstration**.
 
 ---
 
-## Repository Overview
+#  Assessment Context
+This project is assessed on the following criteria:
 
-### Term 1A – SRD and Design Documents
-- Final SRD Report (PDF and DOCX)  
-- Design Alliance Report  
-- Draft SRD sections  
-- Meeting notes  
-- Trello screenshots  
-- Commit evidence  
+- Software Quality & Scope  
+- Team Working  
+- Project Management & Process  
+- Exposition & Impact  
 
-### Term 1B – MVP Development
-- Frontend: HTML, CSS, JavaScript pages  
-- Backend: PHP structure (`login.php`, `registration.php`, `routes.php`, `config.php`, `sample-data.php`)  
-- Documentation: Backend Architecture, RACI Diagram, MVP Summary, Testing Reports, Submission Proof  
+The repository structure and documentation are designed to clearly evidence these areas.
 
 ---
 
-## Team Members and Roles
-- **Maeesa** – Project Manager and Backend Support  
-- **Russell** – Backend Developer  
-- **Joel** – Systems Tester and Backend Support  
-- **Seher** – UI/UX Designer  
-- **Oscar** – Front-End Developer (Main Pages)  
-- **Jamaal** – Front-End Developer (Forms and Basket)  
-- **Dia** – Content and Accessibility  
-- **Toney** – Quality Assurance and Submission Lead  
+#  Repository Structure
+The repository is organised by academic term to clearly separate planning, MVP development, and final implementation work.
 
 ---
 
-## Statement of Contribution
+# Term 1A – Design & Planning
+Location: `Term1A/`
 
-### Maeesa – Project Manager and Backend Support
-Organised workflow, meetings, and documentation. Set up the XAMPP backend environment, created the backend folder structure, implemented all MVP PHP files, integrated frontend forms, and produced the Backend Architecture and MVP Summary documents. Supported QA and ensured the system was ready for testing.
+Contains early-stage project planning and design artefacts, including:
 
-### Russell – Backend Developer
-Created the official product dataset and backend data specification. Designed the product data structure, produced the CSV files, and documented intended backend behaviour for future implementation.
-
-### Joel – Systems Tester
-Tested navigation, login, registration, contact forms, and basket functionality. Logged issues, verified fixes, and produced the Systems Testing Report with screenshots as evidence.
-
-### Seher – UI/UX Designer
-Created the UI Style Guide (colour palette, typography, spacing rules, components), sitemap, and wireframes for key pages. Ensured accessibility and supported frontend developers in applying the design consistently.
-
-### Oscar – Front-End Developer (Main Pages)
-Developed the Home, About, Products, and Product pages. Implemented navigation and layout structure following the UI Style Guide and improved the overall visual presentation of the site.
-
-### Jamaal – Front-End Developer (Forms and Basket)
-Built the Login, Registration, Basket, and Checkout pages. Implemented form fields, interactions, validation scripts, and basket layout/behaviour, and helped link forms to backend routes.
-
-### Dia – Content and Accessibility
-Wrote website content for Home, About, and Products pages. Created product descriptions and ALT text, and checked readability and accessibility of the site.
-
-### Toney – Quality Assurance and Submission Lead
-Performed full-site QA testing, including functionality and accessibility checks. Logged issues, verified fixes, produced the Final Testing Report, and prepared the final submission ZIP and supporting documentation.
+- Software Requirements Document (SRD)
+- Design Alliance Report
+- Meeting notes and planning evidence
+- Trello screenshots and contribution evidence
 
 ---
 
-## Submission Details
+#  Term 1B – MVP Website
+ Location: `Term1B/MVP/`
 
-### Term 1A
-- Submitted: SRD Report and Design Alliance Report  
-- Date: 14 November 2025  
+Contains the Minimum Viable Product (MVP) developed during Term 1B.
 
-### Term 1B (MVP)
-- Submitted: MVP Website and Documentation Pack  
-- Date: 5 December 2025  
+### Includes
+
+**frontend/**
+- HTML pages
+- CSS styling
+- JavaScript functionality
+
+**backend/**
+- PHP backend structure
+- Configuration files
+
+**docs/**
+- Architecture overview
+- RACI diagram
+- MVP summary
+- Testing documentation
+
+This stage demonstrates **incremental development, version control, and quality assurance**.
 
 ---
 
-## Project Links
-- Trello Board: https://trello.com/b/MgNq9DBY  
-- GitHub Repository: https://github.com/maeesa-ali/team_23_pixelpals  
+#  Term 2 – Final Team Submission
+ Location: `Team23_PixelPals_Term2_Final/`
+
+This folder contains the **final implementation of the PixelPals software system**, prepared for both submission and live demonstration.
+
+Includes:
+
+- Completed PHP-based web application
+- Backend logic and database integration
+- Admin management system
+- Customer shopping system
+- Evaluation and supporting documentation
+
+This folder is used for:
+
+- Blackboard submission
+- Final software demonstration
 
 ---
 
-## Project Motto
-*“Designing healthier gaming experiences for young players.”*
+#  Final Software Architecture (Term 2)
+
+The final system separates **frontend pages, backend logic, and database structure** for clarity and maintainability.
+
+```
+Team23_PixelPals_Term2_Final/
+│
+├── public/
+│   │
+│   ├── index.php
+│   ├── about.php
+│   ├── contact.php
+│   ├── products.php
+│   ├── product.php
+│   ├── signup.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── change_password.php
+│   ├── basket.php
+│   ├── checkout.php
+│   ├── order_success.php
+│   ├── account.php
+│   ├── orders.php
+│   ├── order_view.php
+│   │
+│   ├── admin/
+│   │   │
+│   │   ├── dashboard.php
+│   │   ├── products.php
+│   │   ├── product_create.php
+│   │   ├── product_edit.php
+│   │   ├── stock_incoming.php
+│   │   ├── orders.php
+│   │   ├── order_view.php
+│   │   ├── admin_login.php
+│   │   ├── customers.php
+│   │   ├── customer_edit.php
+│   │   └── messages.php
+│   │
+│   └── assets/
+│       │
+│       ├── css/
+│       │   └── styles.css
+│       │
+│       └── img/
+│           ├── logo.png
+│           ├── categories/
+│           └── products/
+│
+├── app/
+│   │
+│   ├── config/
+│   │   ├── db.php
+│   │   └── config.php
+│   │
+│   ├── includes/
+│   │   ├── header.php
+│   │   ├── footer.php
+│   │   ├── auth.php
+│   │   └── flash.php
+│   │
+│   └── actions/
+│       │
+│       ├── signup_post.php
+│       ├── login_post.php
+│       ├── change_password_post.php
+│       │
+│       ├── basket_add.php
+│       ├── basket_update.php
+│       ├── basket_remove.php
+│       │
+│       ├── checkout_place_order.php
+│       ├── return_request.php
+│       │
+│       ├── admin_order_status_update.php
+│       │
+│       ├── admin_product_create.php
+│       ├── admin_product_update.php
+│       ├── admin_product_delete.php
+│       ├── admin_stock_incoming_post.php
+│       │
+│       ├── review_add.php
+│       │
+│       ├── contact_submit.php
+│       │
+│       ├── account_update.php
+│       ├── account_delete.php
+│       │
+│       ├── admin_customer_update.php
+│       └── admin_customer_delete.php
+│
+├── database/
+│   ├── schema.sql
+│   └── seed.sql
+│
+├── README.md
+└── .gitignore
+```
+
+This structure separates:
+
+- **Frontend pages** → `public/`
+- **Admin system** → `public/admin/`
+- **Backend logic** → `app/actions/`
+- **Shared configuration & security** → `app/config/`, `app/includes/`
+- **Database schema & test data** → `database/`
+
+---
+
+#  File Ownership (Term 2 Implementation)
+
+Each major system component was allocated to specific team members to ensure **clear responsibility and traceability**.
+
+| Team Member | Responsibility |
+|--------------|---------------|
+| **Maeesa** | Project Manager & Backend (Authentication System) |
+| **Seher** | UI/UX Designer & Frontend |
+| **Russell** | Backend Lead (Database & Security) |
+| **Jamaal** | Frontend & Quality Assurance |
+| **Joel** | Backend & Systems Tester (Orders System) |
+| **Oscar** | Frontend Lead (Shopping Interface) |
+| **Toney** | Backend & Quality Assurance (Inventory System) |
+| **Dia** | Content Creator & Frontend |
+
+---
+
+#  Authentication System
+**Owner:** Maeesa
+
+Handles user authentication and access control, along side project managing
+
+Key components:
+
+- User registration
+- Login authentication
+- Password change functionality
+- Admin access protection
+
+Backend files include:
+- auth.php
+- signup_post.php
+- login_post.php
+- change_password_post.php
+
+
+---
+
+#  UI / Layout System
+**Owner:** Seher
+
+Responsible for the visual consistency and layout across the site.
+
+Key files:
+- styles.css
+- header.php
+- footer.php
+- index.php
+
+
+Focus areas:
+
+- Navigation structure
+- Colour scheme
+- Page layout consistency
+- Responsive design
+
+---
+
+# Database & Security System
+**Owner:** Russell
+
+Responsible for the database structure and core configuration.
+
+Files include:
+- database/schema.sql
+- database/seed.sql
+- app/config/db.php
+- app/config/config.php
+- app/includes/flash.php
+
+
+Admin customer management pages:
+- admin/dashboard.php
+- admin/messages.php
+- admin/customers.php
+- admin/customer_edit.php
+- - admin/admin_login.php
+
+
+---
+
+#  Orders & Checkout System
+**Owner:** Joel
+
+Responsible for the complete **shopping pipeline**.
+
+Backend logic includes:
+- basket_add.php
+- basket_update.php
+- basket_remove.php
+- checkout_place_order.php
+- return_request.php
+- admin_order_status_update.php
+
+
+Admin order management:
+- admin/orders.php
+- admin/order_view.php
+
+
+Customer order pages:
+- orders.php
+- order_view.php
+This included the introduction of additional **quality assurance responsibilities** across both frontend and backend team members, as well as a more balanced distribution of frontend, backend development, Systems testing and security roles to support efficient delivery and system reliability.
+
+
+---
+
+#  Inventory Management System
+**Owner:** Toney
+
+Responsible for product and stock management.
+
+Admin pages:
+- admin/products.php
+- admin/product_create.php
+- admin/product_edit.php
+- admin/stock_incoming.php
+
+
+Backend logic:
+- admin_product_create.php
+- admin_product_update.php
+- admin_product_delete.php
+- admin_stock_incoming_post.php
+- review_add.php
+
+
+This system handles:
+
+- Product creation
+- Stock tracking
+- Low stock alerts
+- Product reviews
+
+---
+
+#  Customer Shopping Interface
+**Owner:** Oscar
+
+Responsible for the user shopping experience.
+
+Pages include:
+- products.php
+- product.php
+- basket.php
+- checkout.php
+- orders.php
+- order_view.php
+
+
+Focus areas:
+
+- Product browsing
+- Basket management interface
+- Checkout user experience
+
+---
+
+#  Account & Authentication Pages
+**Owner:** Jamaal
+
+Responsible for user account interface pages.
+
+Files include:
+- signup.php
+- login.php
+- change_password.php
+- account.php
+
+
+---
+
+#  Content & Static Pages
+**Owner:** Dia
+
+Responsible for informational pages and content assets.
+
+Pages include:
+- about.php
+- contact.php
+- order_success.php
+
+
+Also responsible for:
+
+- Product images
+- Category images
+- Informational content
+
+---
+
+#  Software Demonstration
+
+The final software system demonstrates:
+
+- Core website functionality
+- Customer shopping experience
+- Admin management system
+- Database-driven product and order management
+- Usability and accessibility considerations
+
+---
+
+#  Submission Overview
+
+**Term 1A**
+- Planning and design documentation
+
+**Term 1B**
+- MVP software development
+
+**Term 2**
+- Final system implementation
+- Evaluation documentation
+- Live demonstration
+
+---
+
+#  Project Tools & Links
+
+Version Control  
+GitHub
+
+Task Management  
+Trello  
+https://trello.com/b/MgNq9DBY/team-23-pixelpalscs2tp
+
+Repository  
+https://github.com/maeesa-ali/team_23_pixelpals
+
+---
+
+#  Project Aim
+
+Designing healthier gaming experiences for young players.
+
