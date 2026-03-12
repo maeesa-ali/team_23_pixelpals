@@ -35,11 +35,11 @@
 
 <!-- Bottom purple nav bar -->
 <nav class="bottomNav">
-  <a href="index.html"> Home</a>
-  <a href="login.html">Log in</a>
-  <a href="products.html"> Products</a>
-  <a href="contact.html"> Contact Us</a>
-  <a href="about.html">About Us</a>
+  <a href="index.php"> Home</a>
+  <a href="login.php">Log in</a>
+  <a href="products.php"> Products</a>
+  <a href="contact.php"> Contact Us</a>
+  <a href="about.php">About Us</a>
 </nav>
 
 <main class="product-page">

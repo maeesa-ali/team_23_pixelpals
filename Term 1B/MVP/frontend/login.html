@@ -1,6 +1,14 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PixelPals – Login</title>
+</head>
+
+<body>
 <!-- Top blue bar -->
 <header class="topBar">
-    <img src="pixelPalsLogo.png" class="logo">
+    <img src="pixelPals.png" class="logo">
 
     <!-- Search Bar -->
     <div class="searchContainer">
@@ -23,14 +31,14 @@
 </nav>
 <div class="pageWrapper"> <!-- Main container for the login page -->
     <!-- Login Form-->
-    <form id="loginForm" novalidate>
+    <form id="loginForm" action="../backend/login.php" method="POST" novalidate>
         <!-- Email input field-->
         <label>Email</label>
-        <input type="email" id="loginEmail">
+        <input type="email" id="loginEmail" name="email" required>
 
         <!-- Password input field-->
         <label>Password</label>
-        <input type="password" id="loginPassword">
+        <input type="password" id="loginPassword" name="password" required>
 
         <!-- Login button-->
         <button type="submit">Login</button>
@@ -41,10 +49,16 @@
         <p id="error" style="color:red;"></p> <!-- Error message display-->
     </form>
 </div>
+</body>
+</html>
 
 <!-- Styles for login form-->
 <style>
-    /* Overall page style */
+    * 
+    {
+        box-sizing: border-box;
+    }
+
    body /*overall page style*/
     {
         margin: 0;
@@ -68,7 +82,7 @@
         margin: 0 auto;
         background: #C9DAFF;
         padding: 20px;
-        width: 300px;
+        width: 400px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
@@ -198,4 +212,7 @@
 </style>
 
 <!-- Links to validation script-->
-<script src="js/validation.js"></script>
+<!-- <script src="js/validation.js"></script> -->
+
+
+
