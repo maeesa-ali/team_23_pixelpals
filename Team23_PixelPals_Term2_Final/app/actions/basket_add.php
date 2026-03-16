@@ -6,7 +6,7 @@ if (!isset($_SESSION[UserID])){
     exit;
 }
 
-if ($_SERVER['REQUIRED METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $ProductID = filter_input(INPUT_POST,'ProductID', VALIDATE_INT);
     $Quantity = filter_input(INPUT_POST,'Quantity', VALIDATE_INT);
 
@@ -34,6 +34,9 @@ if ($_SERVER['REQUIRED METHOD'] == 'POST'){
         if ($existing_item){
             $newQuantity = $existing_item["Quantity"] + $Quantity;
 
+            $basket_update = $db->prepare("INSERT INTO basketitem (BasketID, ProductID, Quantity) VALUES (?, ?, ?)");
+            $basket_update->execute([$BasketID, $ProductID, $Quantity]);
+        } else {
             $basket_update = $db->prepare("INSERT INTO basketitem (BasketID, ProductID, Quantity) VALUES (?, ?, ?)");
             $basket_update->execute([$BasketID, $ProductID, $Quantity]);
         }
