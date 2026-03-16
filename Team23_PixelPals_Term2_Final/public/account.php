@@ -92,7 +92,6 @@
     </form>
   </section>
 </body>
-</html>
 <!-- Styles for the account page -->
 <style>
     * 
@@ -201,4 +200,5 @@
       color: #4d4d4d;
     }
   </style>
+</html>
 
