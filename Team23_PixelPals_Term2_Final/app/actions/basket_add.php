@@ -7,8 +7,8 @@ if (!isset($_SESSION[UserID])){
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $ProductID = filter_input(INPUT_POST,'ProductID', VALIDATE_INT);
-    $Quantity = filter_input(INPUT_POST,'Quantity', VALIDATE_INT);
+    $ProductID = filter_input(INPUT_POST,'ProductID', FILTER_VALIDATE_INT);
+    $Quantity = filter_input(INPUT_POST,'Quantity', FILTER_VALIDATE_INT);
 
     if ($ProductID && $Quantity && $Quantity>0){
         
