@@ -83,7 +83,6 @@
     </form>
 </div>
 </body>
-</html>
 
 <!-- Styles for registration form-->
 <style>
@@ -265,4 +264,5 @@
 
 <!-- Links to validation script-->
 <script src="js/validation.js"></script>
+</html>
 
