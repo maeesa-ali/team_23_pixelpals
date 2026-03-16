@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +20,10 @@
 <nav class="navbar">
 
 <div class="nav-left">
-<img src="/assets/img/logo.png" class="logo">
+<a href="/index.php">
+<img src="/assets/img/logo.png" class="logo" alt="PixelPals Logo">
+</a>
+
 <a href="/index.php">PixelPals</a>
 </div>
 
@@ -36,8 +45,24 @@
 <a href="/signup.php">Signup</a>
 <?php endif; ?>
 
+<?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+<a href="/admin/dashboard.php">Admin</a>
+<?php endif; ?>
+
 </div>
 
 </nav>
 
+<?php if(isset($_SESSION['success'])): ?>
+<div class="flash-success">
+<?php echo $_SESSION['success']; ?>
+</div>
+<?php unset($_SESSION['success']); endif; ?>
+
+<?php if(isset($_SESSION['error'])): ?>
+<div class="flash-error">
+<?php echo $_SESSION['error']; ?>
+</div>
+<?php unset($_SESSION['error']); endif; ?>
+  
 <main class="container">
