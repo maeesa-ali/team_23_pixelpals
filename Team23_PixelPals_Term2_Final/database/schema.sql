@@ -1,1 +1,108 @@
 
+------
+
+CREATE TABLE admin (
+  AdminID INT AUTO_INCREMENT PRIMARY KEY,
+  FirstName VARCHAR(100),
+  LastName VARCHAR(100) NOT NULL,
+  Password VARCHAR(200),
+  Email VARCHAR(100),
+  Role VARCHAR(100)
+);
+
+
+CREATE TABLE users (
+  UserID INT AUTO_INCREMENT PRIMARY KEY,
+  Username VARCHAR(100),
+  FirstName VARCHAR(100),
+  LastName VARCHAR(100) NOT NULL,
+  DateOfBirth DATE,
+  Password VARCHAR(200),
+  Email VARCHAR(100)
+);
+
+CREATE TABLE parent (
+  ParentID INT AUTO_INCREMENT PRIMARY KEY,
+  FirstName VARCHAR(100),
+  LastName VARCHAR(100),
+  Email VARCHAR(100),
+  Password VARCHAR(100)
+);
+
+
+CREATE TABLE parentschilds (
+  ParentID INT,
+  UserID INT,
+  PRIMARY KEY (ParentID, UserID),
+  FOREIGN KEY (ParentID) REFERENCES parent(ParentID),
+  FOREIGN KEY (UserID) REFERENCES users(UserID)
+);
+
+
+CREATE TABLE product (
+  ProductID INT AUTO_INCREMENT PRIMARY KEY,
+  Description VARCHAR(200),
+  ProductName VARCHAR(200) NOT NULL,
+  Category VARCHAR(100) NOT NULL,
+  Price DECIMAL(10,2),
+  Stock INT
+);
+
+CREATE TABLE basket (
+  BasketID INT AUTO_INCREMENT PRIMARY KEY,
+  UserID INT NOT NULL,
+  CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (UserID) REFERENCES users(UserID)
+);
+
+
+CREATE TABLE basketitem (
+  BasketItemID INT AUTO_INCREMENT PRIMARY KEY,
+  BasketID INT NOT NULL,
+  ProductID INT NOT NULL,
+  Quantity INT NOT NULL,
+  FOREIGN KEY (BasketID) REFERENCES basket(BasketID),
+  FOREIGN KEY (ProductID) REFERENCES product(ProductID)
+);
+
+CREATE TABLE orders (
+  OrderID INT AUTO_INCREMENT PRIMARY KEY,
+  UserID INT NOT NULL,
+  Status ENUM('pending','processing','completed','delivered','cancelled'),
+  FOREIGN KEY (UserID) REFERENCES users(UserID)
+);
+
+CREATE TABLE orderitem (
+  OrderItemID INT AUTO_INCREMENT PRIMARY KEY,
+  OrderID INT NOT NULL,
+  ProductID INT NOT NULL,
+  Quantity INT NOT NULL,
+  totalProductPrice DECIMAL(10,2),
+  Subtotal DECIMAL(10,2),
+  FOREIGN KEY (OrderID) REFERENCES orders(OrderID),
+  FOREIGN KEY (ProductID) REFERENCES product(ProductID)
+);
+
+
+CREATE TABLE contact_messages (
+  MessageID INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(100) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Subject VARCHAR(150),
+  Message TEXT NOT NULL,
+  CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE reviews (
+  `ReviewID` int NOT NULL AUTO_INCREMENT,
+  `ProductID` int NOT NULL,
+  `UserID` int NOT NULL,
+  `Rating` int NOT NULL,
+  `Comment` text COLLATE utf8mb4_general_ci,
+  `CreatedAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ReviewID`),
+  CONSTRAINT `chk_rating` CHECK (`Rating` >= 1 AND `Rating` <= 5),
+  CONSTRAINT `fk_review_product` FOREIGN KEY (`ProductID`) 
+    REFERENCES `product` (`ProductID`) ON DELETE CASCADE,
+  CONSTRAINT `fk_review_user` FOREIGN KEY (`UserID`) 
+    REFERENCES `users` (`UserID`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
