@@ -32,7 +32,7 @@ if (!$user) {
     <h1>Edit User: <?php echo htmlspecialchars($user['Username']); ?></h1>
     <p><a href="../../public/admin/customers.php">Back to List</a></p>
 
-    <form action="admin_customer_update.php" method="POST">
+    <form action="../../app/actions/admin_customer_update.php" method="POST">
         <input type="hidden" name="user_id" value="<?php echo $user['UserID']; ?>">
 
         <label>Username:</label><br>
