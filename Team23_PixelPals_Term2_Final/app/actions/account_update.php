@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (PDOException $e) {
         $_SESSION['error'] = "Update failed: " . $e->getMessage();
     }
-
+// may change
     header("Location: ../../public/account.php");
     exit();
 }
