@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     } catch (PDOException $e) {
         $_SESSION['error'] = "Could not delete account.";
+        // may change
         header("Location: ../../public/account.php");
         exit();
     }

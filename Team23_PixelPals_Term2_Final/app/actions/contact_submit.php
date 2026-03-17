@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (PDOException $e) {
         $_SESSION['error'] = "Failed to send message.";
     }
-
+    // may change
     header("Location: ../../public/contact.php");
     exit();
 }
