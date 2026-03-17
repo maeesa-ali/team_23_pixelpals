@@ -119,6 +119,7 @@ Team23_PixelPals_Term2_Final/
 │   │   ├── stock_incoming.php
 │   │   ├── orders.php
 │   │   ├── order_view.php
+│   │   ├── admin_login.php
 │   │   ├── customers.php
 │   │   ├── customer_edit.php
 │   │   └── messages.php
@@ -270,15 +271,7 @@ Admin customer management pages:
 - admin/messages.php
 - admin/customers.php
 - admin/customer_edit.php
-
-- **Maeesa** – Project Manager + Back-end  
-- **Seher** – Front-end + UI/UX designer  
-- **Russell** – Back-end lead + security   
-- **Jamaal** – Front-end + Quality assurance   
-- **Joel** – Back-end + Systems tester  
-- **Oscar** – Front-end + Systems tester 
-- **Toney** – Back-end + Quality assurance  
-- **Dia** – Front-end + Content creator  
+- - admin/admin_login.php
 
 
 ---
