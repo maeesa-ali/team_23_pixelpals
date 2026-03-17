@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,59 +6,50 @@
 </head>
 
 <body>
-<!-- Top blue bar -->
 <header class="topBar">
     <img src="pixelPalsLogo.png" class="logo">
 
-    <!-- Search Bar -->
     <div class="searchContainer">
         <input type="text" placeholder="Search">
     </div>
 
-    <!-- Basket link -->
     <div class="topLinks">
-        <a href="basket.html"> Basket</a>
+        <a href="basket.php"> Basket</a>
     </div>
 </header>
 
-<!-- Bottom purple nav bar -->
 <nav class="bottomNav">
-    <a href="login.html"> Login</a>
-    <a href="index.html"> Home</a>
-    <a href="products.html"> Products</a>
-    <a href="about.html"> About Us</a>
-    <a href="contact.html"> Contact Us</a>
+    <a href="login.php"> Login</a>
+    <a href="index.php"> Home</a>
+    <a href="products.php"> Products</a>
+    <a href="about.php"> About Us</a>
+    <a href="contact.php"> Contact Us</a>
 </nav>
-<div class="pageWrapper"> <!-- Main container for the login page -->
-    <!-- Login Form-->
-    <form id="loginForm" novalidate>
-        <!-- Email input field-->
-        <label>Username</label>
-        <input type="text" id="username">
 
-        <!-- Password input field-->
-        <label>Password</label>
-        <input type="password" id="password">
+<div class="pageWrapper">
+    <form id="loginForm" method="POST" action="../app/actions/login_post.php" novalidate>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
 
-        <!-- Login button-->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+
         <button type="submit">Login</button>
 
-        <!-- Links to registration page-->
-        <a href="registration.html">Create Account</a>
-    
-        <p id="error" style="color:red;"></p> <!-- Error message display-->
+        <a href="signup.php">Create Account</a>
+
+        <p id="error" style="color:red;"></p>
     </form>
 </div>
 </body>
 
-<!-- Styles for login form-->
 <style>
     * 
     {
         box-sizing: border-box;
     }
 
-   body /*overall page style*/
+   body
     {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -68,7 +59,7 @@
         flex-direction: column;
     }
 
-    .pageWrapper /* Main container*/
+    .pageWrapper
     {
         flex: 1;
         display: flex;
@@ -76,7 +67,7 @@
         align-items: center;
     }
 
-    form /*form container styles*/
+    form
     {
         margin: 0 auto;
         background: #C9DAFF;
@@ -86,7 +77,7 @@
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    label /*input field labels*/
+    label
     {
         display: block;
         margin-top: 10px;
@@ -94,7 +85,7 @@
         font-size: 14px;
     }
 
-    input /*input field styles*/
+    input
     {
         width: 100%;
         padding: 10px;
@@ -104,14 +95,14 @@
         font-size: 14px;
     }
 
-    input:focus /*input focus styles*/
+    input:focus
     {
         outline: none;
         border-color: #4A90E2;
         box-shadow: 0 0 5px rgba(74,144,226,0.5);
     }
 
-    button /*login button styles*/
+    button
     {
         width: 100%;
         padding: 10px;
@@ -124,12 +115,12 @@
         font-size: 16px;
     }
 
-    button:hover /*login button hover styles*/
+    button:hover
     {
         background: #3a7ac8;
     }
 
-    a /*registration link styles*/
+    a
     {
         text-align: center;
         display: block;
@@ -138,19 +129,19 @@
         text-decoration: none;
     }
 
-    a:hover /*registration link hover styles*/
+    a:hover
     {
         text-decoration: underline;
     }
 
-    #error, #success /*error and success message styles*/
+    #error, #success
     {
         text-align: center;
         margin-top: 10px;
         font-size: 14px;
     }
 
-    .topBar /* Top blue bar*/
+    .topBar
     {
         background: #3F8BE0;
         display: flex;
@@ -161,18 +152,18 @@
         box-sizing: border-box;
     }
 
-    .topBar .logo /* Logo*/
+    .topBar .logo
     {
         height: 60px;
     }
 
-    .searchContainer /* Search bar*/
+    .searchContainer
     {
         flex: 1;
         position: relative;
     }
 
-    .searchContainer input /* Search bar input field*/
+    .searchContainer input
     {
         width: 100%;
         padding: 12px 40px 12px 15px;
@@ -181,7 +172,7 @@
         font-size: 16px;
     }
 
-    .topLinks a /* Basket Link*/
+    .topLinks a
     {
         color: white;
         font-size: 18px;
@@ -189,7 +180,7 @@
         text-decoration: none;
     }
 
-    .bottomNav /* Purple nav bar*/
+    .bottomNav
     {
         background: #8962C6;
         display: flex;
@@ -199,7 +190,7 @@
         box-sizing: border-box;
     }
 
-    .bottomNav a /* Navigation links*/
+    .bottomNav a
     {
         color: white;
         font-size: 18px;
@@ -210,7 +201,5 @@
     }
 </style>
 
-<!-- Links to validation script-->
 <script src="js/validation.js"></script>
 </html>
-
