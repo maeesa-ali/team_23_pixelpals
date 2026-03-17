@@ -1,131 +1,98 @@
 <?php
 
-// Start session in case feedback is later stored in session
+// Start the session so we can store success or error messages
 session_start();
 
 // Connect to the database
 require_once __DIR__ . '/../config/db.php';
 
-// Only allow POST requests from the signup form
+
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: /Team23_PixelPals_Term2_Final/public/signup.php');
     exit;
 }
 
-/*
-|--------------------------------------------------------------------------
-| Read values from signup form
-|--------------------------------------------------------------------------
-| These input names must match Jamaal's signup.php form
-|
-| Need to confirm with:
-| - Jamaal
-| Related page:
-| - public/signup.php
-*/
+
+
+// Get the values from the signup form
+$email = trim($_POST['email'] ?? '');
 $username = trim($_POST['username'] ?? '');
 $firstName = trim($_POST['first_name'] ?? '');
 $lastName = trim($_POST['last_name'] ?? '');
-$age = trim($_POST['age'] ?? '');
+$dateOfBirth = $_POST['dob'] ?? '';
 $password = $_POST['password'] ?? '';
 $confirmPassword = $_POST['confirm_password'] ?? '';
 
-// Check that no required fields are empty
+// Check that all required fields are filled in
 if (
-    $username === '' ||
-    $firstName === '' ||
-    $lastName === '' ||
-    $age === '' ||
-    $password === '' ||
-    $confirmPassword === ''
+    empty($email) ||
+    empty($username) ||
+    empty($firstName) ||
+    empty($lastName) ||
+    empty($dateOfBirth) ||
+    empty($password) ||
+    empty($confirmPassword)
 ) {
-    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php?error=missing_fields');
-    exit;
-}
-
-// Check that age is a number
-if (!is_numeric($age) || (int)$age < 0) {
-    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php?error=invalid_age');
+    $_SESSION['error'] = 'Please fill in all fields.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php');
     exit;
 }
 
 // Check that password and confirm password match
 if ($password !== $confirmPassword) {
-    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php?error=password_mismatch');
+    $_SESSION['error'] = 'Passwords do not match.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php');
     exit;
 }
 
 try {
-    /*
-    ----------------------------------------------------------------------
-    | Check if username already exists
-    ----------------------------------------------------------------------
-    | Based on Russell's message:
-    | - users table likely has UserID and Username
-    |
-    | Need final confirmation from:
-    | - Russell
-    | Related files:
-    | - database/schema.sql
-    | - app/actions/account_update.php
-    */
-    $checkStmt = $db->prepare("SELECT UserID FROM users WHERE Username = ?");
-    $checkStmt->execute([$username]);
+    // Check if username already exists
+    $checkUsername = $db->prepare("SELECT UserID FROM users WHERE Username = ?");
+    $checkUsername->execute([$username]);
 
-    if ($checkStmt->fetch()) {
-        header('Location: /Team23_PixelPals_Term2_Final/public/signup.php?error=username_exists');
+    if ($checkUsername->fetch()) {
+        $_SESSION['error'] = 'Username already exists.';
+        header('Location: /Team23_PixelPals_Term2_Final/public/signup.php');
         exit;
     }
 
-    // Hash the password before storing it
+    // Check if email already exists
+    $checkEmail = $db->prepare("SELECT UserID FROM users WHERE Email = ?");
+    $checkEmail->execute([$email]);
+
+    if ($checkEmail->fetch()) {
+        $_SESSION['error'] = 'Email already exists.';
+        header('Location: /Team23_PixelPals_Term2_Final/public/signup.php');
+        exit;
+    }
+
+    // Hash the password before saving it to the database
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    /*
-    ----------------------------------------------------------------------
-    | Insert new user into database
-    ----------------------------------------------------------------------
-    | Assumed columns from Russell's message:
-    | - Username
-    | - FirstName
-    | - LastName
-    | - Age
-    | - Password
-    |
-    | Need final confirmation from:
-    | - Russell
-    | Related files:
-    | - database/schema.sql
-    | - app/actions/account_update.php
-    */
+    // Insert the new user into the users table
     $insertStmt = $db->prepare("
-        INSERT INTO users (Username, FirstName, LastName, Age, Password)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO users (Username, FirstName, LastName, DateOfBirth, Password, Email)
+        VALUES (?, ?, ?, ?, ?, ?)
     ");
 
     $insertStmt->execute([
         $username,
         $firstName,
         $lastName,
-        (int)$age,
-        $hashedPassword
+        $dateOfBirth,
+        $hashedPassword,
+        $email
     ]);
 
-    // After successful signup, send user to login page
-    header('Location: /Team23_PixelPals_Term2_Final/public/login.php?success=account_created');
+    // Set success message and redirect to login page
+    $_SESSION['success'] = 'Account created successfully. Please log in.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/login.php');
     exit;
 
 } catch (PDOException $e) {
-    /*
-    ----------------------------------------------------------------------
-    | Temporary error handling
-    ----------------------------------------------------------------------
-    | Later this may be replaced with Russell's flash.php system
-    |
-    | Need from:
-    | - Russell
-    | Related file:
-    | - app/includes/flash.php
-    */
-    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php?error=server_error');
+    // If something goes wrong, redirect back with an error message
+    $_SESSION['error'] = 'Something went wrong. Please try again.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/signup.php');
     exit;
 }
