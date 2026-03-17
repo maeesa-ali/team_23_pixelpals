@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,91 +6,66 @@
 </head>
 
 <body>
-<!-- Top blue bar -->
 <header class="topBar">
-    <img src="pixelPalsLogo.png" class="logo"> <!-- Logo Image -->
+    <img src="pixelPalsLogo.png" class="logo">
 
-    <!-- Search Bar -->
     <div class="searchContainer">
         <input type="text" placeholder="Search">
     </div>
 
-    <!-- Basket Link -->
     <div class="topLinks">
-        <a href="basket.html"> Basket</a>
+        <a href="basket.php"> Basket</a>
     </div>
 </header>
 
-<!-- Bottom purple nav bar -->
 <nav class="bottomNav">
-    <a href="login.html"> Login</a>
-    <a href="index.html"> Home</a>
-    <a href="products.html"> Products</a>
-    <a href="about.html"> About Us</a>
-    <a href="contact.html"> Contact Us</a>
+    <a href="login.php"> Login</a>
+    <a href="index.php"> Home</a>
+    <a href="products.php"> Products</a>
+    <a href="about.php"> About Us</a>
+    <a href="contact.php"> Contact Us</a>
 </nav>
 
-<div class="pageWrapper"> <!-- Main container for the registration page -->
-    <!-- Registration Form-->
-     <form id="regForm" action="../backend/registration.php" method="POST" novalidate>
+<div class="pageWrapper">
+    <form id="regForm" action="../app/actions/signup_post.php" method="POST" novalidate>
 
-        <!-- Email input field-->
-        <label>Email</label>
-        <input type="email" id="email">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
 
-        <!-- Username input field-->
-        <label>Username</label>
-        <input type="text" id="username">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
 
-        <!-- Name input field-->
-         <label>Name</label>
-        <input type="text" id="first_Name">
+        <label for="first_Name">Name</label>
+        <input type="text" id="first_Name" name="first_name">
 
-        <!-- Last Name input field-->
-        <label>Last Name</label>
-        <input type="text" id="last_Name">
+        <label for="last_Name">Last Name</label>
+        <input type="text" id="last_Name" name="last_name">
 
-        <label>Date of Birth</label>
-        <input type="date" id="dob">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
 
-        <!-- Password input field-->
-        <label>Password</label>
-        <input type="password" id="password">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
 
-        <!-- Confirm Password input field-->
-        <label>Confirm Password</label>
-        <input type="password" id="confirm_Password">
+        <label for="confirm_Password">Confirm Password</label>
+        <input type="password" id="confirm_Password" name="confirm_password">
 
-        <div class="adminRow">
-            <!-- Admin Account Creation Checkbox-->
-            <label>Admin Account<input type="checkbox" id="adminCheckbox"></label>
-        </div>
-
-        <div id="adminPasswordRow" style="display:none;">
-            <!-- Admin Password input field (only shown if admin checkbox is checked)-->
-            <label>Admin Password</label>
-            <input type="password" id="admin_Password">
-        </div>
-
-        <!-- Register button-->
         <button type="submit"><strong>Register</strong></button>
 
-        <!-- Links to login page-->
-        <a href="login.html">Already have an account?</a>
+        <a href="login.php">Already have an account?</a>
     
-        <p id="error" style="color:red;"></p> <!-- Error message display-->
+        <p id="error" style="color:red;"></p>
     </form>
 </div>
 </body>
 
-<!-- Styles for registration form-->
 <style>
     * 
     {
         box-sizing: border-box;
     }
 
-    body /*overall page style*/
+    body
     {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -101,7 +75,7 @@
         flex-direction: column;
     }
 
-    .pageWrapper /* Main container*/
+    .pageWrapper
     {
         flex: 1;
         display: flex;
@@ -109,7 +83,7 @@
         align-items: center;
     }
 
-    form /*form container styles*/
+    form
     {
         margin: 0 auto;
         background: #C9DAFF;
@@ -119,7 +93,7 @@
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    label /*input field labels*/
+    label
     {
         display: block;
         margin-top: 10px;
@@ -127,7 +101,7 @@
         font-size: 14px;
     }
 
-    input /*input field styles*/
+    input
     {
         width: 100%;
         padding: 10px;
@@ -138,14 +112,14 @@
         background-origin: border-box;
     }
 
-    input:focus /*input focus styles*/
+    input:focus
     {
         outline: none;
         border-color: #4A90E2;
         box-shadow: 0 0 5px rgba(74,144,226,0.5);
     }
 
-    button /*login button styles*/
+    button
     {
         width: 100%;
         padding: 10px;
@@ -158,12 +132,12 @@
         font-size: 16px;
     }
 
-    button:hover /*login button hover styles*/
+    button:hover
     {
         background: #3a7ac8;
     }
 
-    a /*registration link styles*/
+    a
     {
         text-align: center;
         display: block;
@@ -172,19 +146,19 @@
         text-decoration: none;
     }
 
-    a:hover /*registration link hover styles*/
+    a:hover
     {
         text-decoration: underline;
     }
 
-    #error, #success /*error and success message styles*/
+    #error, #success
     {
         text-align: center;
         margin-top: 10px;
         font-size: 14px;
     }
 
-    .topBar /* Top blue bar*/
+    .topBar
     {
         background: #3F8BE0;
         display: flex;
@@ -196,18 +170,18 @@
         justify-content: space-between;
     }
 
-    .topBar .logo /* Logo*/
+    .topBar .logo
     {
         height: 60px;
     }
 
-    .searchContainer /* Search bar*/
+    .searchContainer
     {
         flex: 1;
         position: relative;
     }
 
-    .searchContainer input /* Search bar input field*/
+    .searchContainer input
     {
         width: 100%;
         padding: 12px 40px 12px 15px;
@@ -216,7 +190,7 @@
         font-size: 16px;
     }
 
-    .topLinks a /* Basket Link*/
+    .topLinks a
     {
         color: white;
         font-size: 18px;
@@ -224,7 +198,7 @@
         text-decoration: none;
     }
 
-    .bottomNav /* Purple nav bar*/
+    .bottomNav
     {
         background: #8962C6;
         display: flex;
@@ -234,7 +208,7 @@
         box-sizing: border-box;
     }
 
-    .bottomNav a /* Navigation links*/
+    .bottomNav a
     {
         color: white;
         font-size: 18px;
@@ -243,26 +217,7 @@
         align-items: center;
         gap: 5px;
     }
-
-    .adminRow 
-    {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;   
-    }
-
-    .adminRow input[type="checkbox"]   
-    {
-        width: auto;
-        margin: 10;
-        padding: 0;
-        transform: translateY(3px);
-    }
-
 </style>
 
-<!-- Links to validation script-->
 <script src="js/validation.js"></script>
 </html>
-
