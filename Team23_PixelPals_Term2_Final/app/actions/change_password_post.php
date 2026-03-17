@@ -1,87 +1,75 @@
 <?php
 
-// Start session because we need current logged-in user
+// Start the session so we can check which user is logged in
 session_start();
 
-// Connect to database
-require_once __DIR__ . '/../config/db.php');
 
-// User must be logged in to change password
+
+// Connect to the database
+require_once __DIR__ . '/../config/db.php';
+
+// If no normal user is logged in, send them to the login page
 if (!isset($_SESSION['user_id'])) {
+    $_SESSION['error'] = 'Please log in to change your password.';
     header('Location: /Team23_PixelPals_Term2_Final/public/login.php');
     exit;
 }
 
-// Only allow POST requests from the form
+// Only allow this file to run when the form is submitted with POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /Team23_PixelPals_Term2_Final/public/change_password.php');
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
     exit;
 }
 
-/*
-|--------------------------------------------------------------------------
-| Read values from change password form
-|--------------------------------------------------------------------------
-| These names must match Jamaal's change_password.php form
-|
-| Need to confirm with:
-| - Jamaal
-| Related page:
-| - public/change_password.php
-*/
+// Get the password values from the form
 $oldPassword = $_POST['old_password'] ?? '';
 $newPassword = $_POST['new_password'] ?? '';
 $confirmPassword = $_POST['confirm_password'] ?? '';
 
-if ($oldPassword === '' || $newPassword === '' || $confirmPassword === '') {
-    header('Location: /Team23_PixelPals_Term2_Final/public/change_password.php?error=missing_fields');
+// Check that all fields were filled in
+if (empty($oldPassword) || empty($newPassword) || empty($confirmPassword)) {
+    $_SESSION['error'] = 'Please fill in all password fields.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
     exit;
 }
 
 // Check that new password and confirm password match
 if ($newPassword !== $confirmPassword) {
-    header('Location: /Team23_PixelPals_Term2_Final/public/change_password.php?error=password_mismatch');
+    $_SESSION['error'] = 'New passwords do not match.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
     exit;
 }
 
 try {
-    /*
-    ----------------------------------------------------------------------
-    | Get current password hash from database
-    ----------------------------------------------------------------------
-    | Assumed columns:
-    | - UserID
-    | - Password
-    |
-    | Need final confirmation from:
-    | - Russell
-    | Related files:
-    | - database/schema.sql
-    | - app/actions/account_update.php
-    */
+    // Get the current logged-in user's existing password hash from the database
     $stmt = $db->prepare("SELECT Password FROM users WHERE UserID = ?");
     $stmt->execute([$_SESSION['user_id']]);
-
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check old password is correct
+    // If user not found or current password is wrong, stop
     if (!$user || !password_verify($oldPassword, $user['Password'])) {
-        header('Location: /Team23_PixelPals_Term2_Final/public/change_password.php?error=wrong_old_password');
+        $_SESSION['error'] = 'Current password is incorrect.';
+        header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
         exit;
     }
 
-    // Hash the new password
+    
+    // Hash the new password before saving it
     $newHashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-    // Update password in database
+    // Update the user's password in the database
     $updateStmt = $db->prepare("UPDATE users SET Password = ? WHERE UserID = ?");
     $updateStmt->execute([$newHashedPassword, $_SESSION['user_id']]);
 
-    // Redirect after success
-    header('Location: /Team23_PixelPals_Term2_Final/public/account.php?success=password_updated');
+    
+    // Set success message and send user back to account page
+    $_SESSION['success'] = 'Password updated successfully.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
     exit;
 
 } catch (PDOException $e) {
-    header('Location: /Team23_PixelPals_Term2_Final/public/change_password.php?error=server_error');
+    // If something goes wrong with the database, show error message
+    $_SESSION['error'] = 'Something went wrong. Please try again.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
     exit;
 }
