@@ -1,0 +1,348 @@
+/* Style sheet used across all front end pages */
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(180deg,#D2E4FF,#A1C5FB,#77ADFF,#D5A4FF); 
+    color: #000; 
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* PAGE HEADINGS */
+
+.page-title
+{
+    font-size: 28px;
+    font-weight: bold;
+    color: #023475;
+    margin-bottom: 20px;
+}
+
+/* spacing between sections */
+
+.section 
+{
+    margin-top: 40px;
+}
+
+/* Utility bar, accessibility and language options in top right corner */
+
+.utility-bar
+{
+    background: #3F8BE0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 20px;
+    font-size: 14px;
+}
+
+.utility-bar a
+{
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+
+/* Top header, blue bar */
+
+.top-header
+{
+    background: #3F8BE0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-left
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-right
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo
+{
+    height: 40px;
+}
+
+
+.search-bar
+{
+    width: 400px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* Navigation bar */
+
+.navbar
+{
+    background: #8962C6;
+    padding: 10px 20px;
+}
+
+.nav-links
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.nav-links a
+{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover
+{
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+
+.footer
+{
+    background: #3F8BE0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* BUTTONS */
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* main action */
+.btn-primary {
+    background: #C0ED45;
+    color: black;
+}
+
+/* secondary */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #C0ED45;
+}
+
+/* delete */
+.btn-danger {
+    background: #F5300A;
+    color: white;
+}
+
+/* hover states */
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 15px;
+}
+
+/* validation messages */
+
+.error-text {
+    color: red;
+    font-size: 13px;
+}
+
+.flash-success {
+    background: #C0ED45;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.flash-error {
+    background: #F5300A;
+    color: white;
+    padding: 10px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #C9DAFF;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* product specific */
+
+.product-card {
+    text-align: center;
+}
+
+.product-img {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.product-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-price {
+    color: #023475;
+    margin: 10px 0;
+}
+
+.product-actions {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   STOCK BADGES
+========================= */
+
+.badge {
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: white;
+}
+
+.badge-instock {
+    background: green;
+}
+
+.badge-lowstock {
+    background: orange;
+}
+
+.badge-outstock {
+    background: red;
+}
+
+
+/* =========================
+   TABLES
+========================= */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background: #BEBAFB;
+    text-align: left;
+}
+
+.table tr:hover {
+    background: #f2f2f2;
+}
+
+.table-actions {
+    display: flex;
+    gap: 10px;
+}
