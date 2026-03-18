@@ -5,6 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+
+    <!-- in line styling (temp) -->
+    <style>
+      a:link, a:visited {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      }
+
+      a:hover {
+          text-decoration: underline; 
+      }
+
+      a:active {
+          text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      }
+
+      .contact-page {
+        text-align: center;
+        background-color: rgb(255, 255, 255, 0.7);
+        max-width: 700px;
+        width: 90%; 
+        margin: 50px auto;
+        padding: 30px 40px;
+        border-radius: 40px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      }
+
+      .contact form {
+        background-color: #9b59b6; 
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 20px auto;
+      }
+
+      .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contact-form input, 
+      .contact-form textarea {
+        border-color: #9b59b6;
+        border-style: solid;
+        border-radius: 10px;
+        border-width: 2px;
+        box-shadow: 0 0 0 rgba(0,0,0,0.2);
+        padding: 10px;
+        display: block; 
+        margin: 0 auto;
+      }
+
+      .contact-form input {
+          width: 30%;
+          height:20px;
+      }
+
+      #order {
+        width: 20%;
+      }
+
+      .contact-form textarea {
+        width: 80%;
+        min-height: 120px;
+        max-height: 200px;
+        resize: vertical;
+      }
+
+      .contact-form button {
+        width: fit-content;
+        margin: 20px auto;
+        background-color: #3a8fe7;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        border: none;
+      }
+
+      .contact-form button:hover {
+        background-color: #3F8BE0;
+      }
+
+      .contact-form button:active {
+      background-color: #ffffff;
+      color: #3a8fe7;
+      }
+      .contact-info-2,
+      .contact-info-3 {
+        font-size: 80%;
+      }
+
+      .contact-info-3 {
+      color: rgb(219, 0, 0);
+      }
+    </style>
   </head>
 
   <body>
