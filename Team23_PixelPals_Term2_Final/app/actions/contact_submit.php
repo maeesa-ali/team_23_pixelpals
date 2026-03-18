@@ -5,18 +5,28 @@ require_once '../config/db.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name    = trim($_POST['name'] ?? '');
     $email   = trim($_POST['email'] ?? '');
-    $subject = trim($_POST['subject'] ?? '');
+    $order   = trim($_POST['order'] ?? '');
     $message = trim($_POST['message'] ?? '');
 
+    if (empty($email) || empty($message)) {
+        $_SESSION['error'] = "Email and Message are required.";
+        header("Location: ../../public/contact.php");
+        exit();
+    }
+
     try {
-        $stmt = $db->prepare("INSERT INTO contact_messages (Name, Email, Subject, Message) VALUES (?, ?, ?, ?)");
+        $sql = "INSERT INTO contact_messages (Name, Email, Subject, Message) VALUES (?, ?, ?, ?)";
+        $stmt = $db->prepare($sql);
+        
+        $subject = !empty($order) ? "Order Inquiry #$order" : "General Inquiry";
+        
         $stmt->execute([$name, $email, $subject, $message]);
         
-        $_SESSION['success'] = "Message sent successfully!";
+        $_SESSION['success'] = "Thank you! Your message has been received.";
     } catch (PDOException $e) {
-        $_SESSION['error'] = "Failed to send message.";
+        $_SESSION['error'] = "Database error. Please try again later.";
     }
-    // may change
+
     header("Location: ../../public/contact.php");
     exit();
 }
