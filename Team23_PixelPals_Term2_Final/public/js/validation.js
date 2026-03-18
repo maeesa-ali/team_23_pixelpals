@@ -4,8 +4,10 @@ if (loginForm)
 {
     loginForm.addEventListener("submit", function(event)
     {
-        event.preventDefault(); //stops page reload
-        validateLogin(); //calls validation function
+        if (!validateLogin()) //calls validation function on form submission, if validation fails, prevent form submission
+        {
+            event.preventDefault();
+        }
     });
 }
 
@@ -47,32 +49,11 @@ function displayError(message)
     document.getElementById("error").textContent = message; //displays error message
 }
 
-//success message display function
-function success()
-{
-    localStorage.setItem("isLoggedIn", "true");
-    window.location.href = "index.html"; //redirects to home page
-}
-
-function successRegister(email)
-{
-    syncAccountEmail(email); //syncs the email to localStorage for use across pages
-     window.location.href = "login.html"; //redirects to login page
-}
-
 //login validation function
 function validateLogin()
 {
     const username = document.getElementById("username").value.trim(); //gets username input value
     const password = document.getElementById("password").value; //gets password input value#
-    const savedPassword = localStorage.getItem("password"); //retrieves the saved password from localStorage
-    const savedUsername = localStorage.getItem("username"); //retrieves the saved username from localStorage
-
-    if (username !== savedUsername || password !== savedPassword) //checks if the entered username and password match the saved credentials
-    {
-        displayError("Incorrect username or password");
-        return false; //returns false to prevent form submission
-    }
 
     if (!username || !password)
         {
@@ -81,7 +62,7 @@ function validateLogin()
         }
 
     displayError(""); //clears any previous error messages if validation passes
-    success(); //redirects to home page
+    return true; //returns true to allow form submission and trigger success handler
 }
 
 //registration validation function
@@ -95,8 +76,6 @@ function validateRegistration()
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirm_Password").value;
-    const adminPassword = document.getElementById("admin_Password").value;
-    const adminCheckbox = document.getElementById("adminCheckbox");
 
     if (!username || !firstName || !lastName || !dob || !email || !password || !confirmPassword)
     {
@@ -122,43 +101,6 @@ function validateRegistration()
         return false; //returns false to prevent form submission
     }
 
-    if (adminCheckbox.checked && adminPassword != "password")
-    {
-        displayError("Admin password is incorrect");
-        return false; //returns false to prevent form submission
-    }
-
-    localStorage.setItem("password", password); //stores the password in localStorage
-    localStorage.setItem("username", username); //stores the username in localStorage
-
     displayError(""); //clears any previous error messages if validation passes
     return true; //returns true to allow form submission and trigger success handler
-    successRegister(email); //redirects to login page
-}
-
-const ACCOUNT_STORAGE_KEY = "accountProfile"; //key for storing account profile in localStorage
-const AUTH_EMAIL_KEY = "currentUserEmail"; //key for storing current authenticated user's email in localStorage
-
-function syncAccountEmail(email) //syncs the email to localStorage for use across pages
-{
-    const trimmedEmail = email.trim();
-    if (!trimmedEmail) return;
-
-    localStorage.setItem(AUTH_EMAIL_KEY, trimmedEmail); //stores the current user's email in localStorage
-
-    let profile = {};
-    try 
-    {
-        profile = JSON.parse(localStorage.getItem(ACCOUNT_STORAGE_KEY)) || {}; //retrieves the account profile from localStorage or initializes it as an empty object
-    } 
-    catch 
-    {
-        profile = {};
-    }
-
-    if (!profile.email) //if the profile doesn't already have an email, set it and save back to localStorage
-    {
-        profile.email = trimmedEmail;
-        localStorage.setItem(ACCOUNT_STORAGE_KEY, JSON.stringify(profile)); //saves the updated profile back to localStorage
-    }
 }

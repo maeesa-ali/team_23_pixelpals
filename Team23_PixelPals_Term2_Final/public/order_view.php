@@ -39,6 +39,47 @@ $stmt2 = $conn->prepare($itemsSql);
 $stmt2->bind_param("i", $orderId);
 $stmt2->execute();
 $itemsResult = $stmt2->get_result();
+?><?php
+session_start();
+require 'db_connect.php';
+
+// check login
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// check order id exists
+if (!isset($_GET['id'])) {
+    echo "Order not found.";
+    exit();
+}
+
+$order_id = $_GET['id'];
+
+// make sure order belongs to user
+$sql = "SELECT * FROM orders WHERE order_id = ? AND user_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ii", $order_id, $user_id);
+$stmt->execute();
+$order = $stmt->get_result()->fetch_assoc();
+
+if(!$order){
+    echo "Order not found or access denied.";
+    exit();
+}
+
+// get products in order
+$sql = "SELECT p.product_name, oi.quantity, oi.price
+        FROM order_items oi
+        JOIN products p ON oi.product_id = p.product_id
+        WHERE oi.order_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $order_id);
+$stmt->execute();
+$items = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +116,7 @@ $itemsResult = $stmt2->get_result();
     <a href="products.php">Products</a>
     <a href="about.php">About Us</a>
     <a href="contact.php">Contact Us</a>
-     <a href="orders.php">Orders</a>
+    <a href="orders.php">Orders</a>
 </nav>
 
 <!-- Page Content -->
