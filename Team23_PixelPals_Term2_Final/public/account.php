@@ -91,6 +91,16 @@
       </div>
     </form>
   </section>
+ <section class="danger-zone">
+    <h3>Danger Zone</h3>
+    <p>Once you delete your account, there is no going back. Please be certain.</p>
+
+    <form action="../app/actions/account_delete.php" method="POST" onsubmit="return confirm('WARNING: This will permanently delete your account and all your data. Are you absolutely sure?');">
+        <button type="submit" class="btn-delete">
+            Delete My Account
+        </button>
+    </form>
+</section>
 </body>
 <!-- Styles for the account page -->
 <style>
