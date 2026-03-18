@@ -20,6 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $_SESSION["error"] = "Failed to update basket item: Quantity must be one or more";
     }
 }
-header('Location: basket.php');
+header('Location: ../../public/basket.php');
 exit;
 ?>
