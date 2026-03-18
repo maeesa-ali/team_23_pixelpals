@@ -6,6 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+
+    <!-- in line styling (temp) -->
+    <style>
+      a:link, a:visited {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      }
+
+      a:hover {
+          text-decoration: underline; 
+      }
+
+      a:active {
+          text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      }
+
+      #about-us-info {
+        display: flex;
+        flex-direction: column; 
+        flex-wrap: wrap; 
+        margin: 20px 0;
+        max-width: 100%; 
+        box-sizing: border-box; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+
+        padding: 30px 50px; 
+        background-color: rgba(255, 255, 255, 0.7); 
+        border-radius: 40px;
+      }
+
+      .about-us-header, .outro {
+        text-align: center;
+      }
+
+      .outro {
+        width: fit-content;
+        margin: 20px auto;
+        background-color: #3F8BE0;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      }
+    </style>
   </head>
 
   <body>
