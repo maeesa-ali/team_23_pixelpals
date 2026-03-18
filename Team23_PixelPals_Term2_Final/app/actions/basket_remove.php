@@ -27,6 +27,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 }
 
-header('Location: basket.php');
+header('Location: ../../public/basket.php');
 exit;
 ?>
