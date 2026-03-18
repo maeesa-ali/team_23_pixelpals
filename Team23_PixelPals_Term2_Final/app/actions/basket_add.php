@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION[UserID])){
+if (!isset($_SESSION['UserID'])){
     header('Location: login.php');
     exit;
 }
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if ($ProductID && $Quantity && $Quantity>0){
         
-        $user_id = $_SESSION[UserID];
+        $user_id = $_SESSION['UserID'];
 
         $stmt = $db->prepare("SELECT BasketID FROM basket WHERE UserID = ?");
         $stmt->execute([$UserID]);
