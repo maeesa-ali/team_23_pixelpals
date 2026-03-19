@@ -187,7 +187,7 @@
 
         <!-- Contact form -->
         <div class="contact-form">
-          <form action="../backend/routes.php" method="POST">
+          <form action="../app/actions/contact_submit.php" method="POST">
 
             <label for="name"><b>Name</b></label>
             <input type="text" id="name" name="name" placeholder="Name">
