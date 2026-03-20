@@ -1,1 +1,325 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PixelPals – Basket</title>
+</head>
 
+<body>
+<!-- Top blue bar -->
+<header class="topBar">
+    <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
+
+    <!-- Search Bar -->
+    <div class="searchContainer">
+        <input type="text" placeholder="Search">
+    </div>
+
+    <!-- Basket Link -->
+    <div class="topLinks">
+        <a href="basket.html"> Basket</a>
+    </div>
+</header>
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+    <a href="login.html"> Login</a>
+    <a href="index.html"> Home</a>
+    <a href="products.html"> Products</a>
+    <a href="about.html"> About Us</a>
+    <a href="contact.html"> Contact Us</a>
+</nav>
+
+<!-- Basket Page -->
+<div class="pageWrapper">
+    <h1>Basket</h1>
+
+    <!-- Basket layout with items and order summary -->
+    <div class="basketLayout">
+        <div class="basketItems" id="basketItems">
+            <!-- Basket items will be dynamically inserted here -->
+        </div>
+        
+        <!-- Order summary section -->
+        <div class="orderSummary">
+            <h2>Order Summary</h2>
+
+            <!-- Delivery options -->
+            <div class="summaryOptions">
+
+                <!-- Home delivery option -->
+                <label class="deliveryOption">
+                    <input type="radio" name="delivery" checked>
+                    <div class="deliverytext">
+                        <strong>Home delivery</strong>
+                        <p>Spend more than £100 to be eligible for FREE delivery</p>
+                    </div>
+                </label>
+
+                <!-- Click & Collect option -->
+                <label class="deliveryOption">
+                    <input type="radio" name="delivery" checked>
+                    <div class="deliverytext">
+                        <strong>Click & Collect</strong>
+                        <p>
+                            Free collection within 2 hours<br>
+                            We will hold your order for 4 days
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Price breakdown -->
+            <div class="priceLines">
+                <p>Subtotal: <span id="subtotal">£0.00</span></p>
+                <p>Delivery: <span id="delivery">£0.00</span></p>
+                <p class="total">Total: <span id="total">£0.00</span></p>
+            </div>
+            
+            <!-- Checkout button -->
+            <a href="checkout.html">
+                <button id="checkoutButton" class="checkoutButton">
+                    Checkout Securely
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!-- Styles for the basket page -->
+<style>
+    * 
+    {
+        box-sizing: border-box;
+    }
+
+    body /*overall page style*/
+    {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(#DE4FFF, #77ADFF, #D5A4FF);
+        min-height: 100vh;
+    }
+
+    .pageWrapper /*main container for basket page*/
+    {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding-top: 30px;
+    }
+
+    h1 /*main heading style*/
+    {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .basketLayout /*layout for basket items and summary*/
+    {
+        display: flex;
+        gap: 20px;
+    }
+
+    .basketItems /*basket items section*/
+    {
+        flex: 2;
+    }
+
+    .itemCard /*individual item card style*/
+    {
+        display: flex;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .itemCard img /*item image styles*/
+    {
+        width: 120px;
+        height: 120px;
+        background: white;
+        border-radius: 8px;
+        margin-right: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .itemInfo /*item information section*/
+    {
+        flex: 1;
+    }
+
+    .quantityControls /*quantity adjustment styles*/
+    {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 8px 0;
+    }
+
+    .quantityControls button /*quantity buttons styles*/
+    {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: #C0ED45;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .quantityControls button:hover /*quantity buttons hover styles*/
+    {
+        background: #C0ED45;
+    }
+
+    .itemPrice /*item price styles*/
+    {
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 20px;
+    }
+
+    .orderSummary /*order summary container*/
+    {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.65);
+        padding: 20px;
+        border-radius: 12px;
+        height: fit-content;
+    }
+
+    .orderSummary h2 /*order summary heading styles*/
+    {
+        text-align: center;
+    }
+
+    .summaryOptions /*delivery options container*/
+    {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px
+    }
+
+    .deliveryOption /*individual delivery option styles*/
+    {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    .deliveryOption input[type="radio"] /*radio button styles*/
+    {
+        width: 20px;
+        height: 20px;
+        margin-top: 4px;
+        cursor: pointer
+    }
+
+    .deliverytext p /*delivery option text styles*/
+    {
+        margin: 4px 0;
+        color: #444;
+        font-size: 14px;
+    }
+
+    .priceLines p /*price breakdown styles*/
+    {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .priceLines .total /*total price styles*/
+    {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .checkoutButton /*checkout button styles*/
+    {
+        width: 100%;
+        padding: 12px;
+        background: #C0ED45;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    
+    .checkoutButton:hover /*checkout button hover styles*/
+    {
+        background: #C0ED45;
+    }
+
+    .topBar /* Top blue bar*/
+    {
+        background: #3F8BE0;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .topBar .logo /* Logo*/
+    {
+        height: 60px;
+    }
+
+    .searchContainer /* Search bar*/
+    {
+        flex: 1;
+        position: relative;
+    }
+
+    .searchContainer input /* Search bar input field*/
+    {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .topLinks a /* Basket Link*/
+    {
+        color: white;
+        font-size: 18px;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    .bottomNav /* Purple nav bar*/
+    {
+        background: #8962C6;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bottomNav a /* Navigation links*/
+    {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+</style>
+
+<!-- Links to basket functionality script -->
+<script src="js/basket.js"></script>
+
+    
