@@ -6,6 +6,7 @@ fetch("get_products.php")
 .then(response => response.json())
 .then(data => {
 
+    console.log(data);
     products = data;
 
     displayProducts(products);
@@ -90,7 +91,7 @@ function setupFilters(products, displayProducts) {
 
         filtered = filtered.filter(p => {
 
-            const priceMatch = p.price >= priceMin && p.price <= priceMax;
+            const priceMatch = p.Price >= priceMin && p.Price <= priceMax;
             const ageMatch = p.max_age >= ageMin && p.min_age <= ageMax;
 
             return priceMatch && ageMatch;
@@ -118,11 +119,11 @@ function loadRecommended(products) {
         card.classList.add("rec-card");
 
         card.innerHTML = `
-        <img src="${p.image}" alt="${p.name}" class="product-image"/>
-        <h4>${p.name}</h4>
-        <p>£${parseFloat(p.price).toFixed(2)}</p>
-        <a href="product.html?name=${encodeURIComponent(p.name)}">
-        <button class="view-product">view product</button>
+        <img src="${p.image || 'images/default.png'}" alt="${p.ProductName}" class="product-image"/>
+        <h4>${p.ProductName}</h4>
+        <p>£${parseFloat(p.Price).toFixed(2)}</p>
+        <a href="product.php?id=${p.ProductID}">
+            <button class="view-product">view product</button>
         </a>
         `;
 
@@ -131,8 +132,6 @@ function loadRecommended(products) {
     });
 
 }
-
-
 // ---------------- DISPLAY PRODUCTS ----------------
 function displayProducts(list) {
 
@@ -147,25 +146,23 @@ function displayProducts(list) {
         card.classList.add("product-card");
 
         card.innerHTML = `
+        <img src="${product.image || 'images/default.png'}" alt="${product.ProductName}" class="product-image"/>
 
-        <img src="${product.image}" alt="${product.name}" class="product-image"/>
+        <p><strong>${product.ProductName}</strong></p>
 
-        <p><strong>${product.name}</strong></p>
+        <p>Category: ${product.Category}</p>
 
-        <p>Category: ${product.category}</p>
+        <p>£${parseFloat(product.Price).toFixed(2)}</p>
 
-        <p>£${parseFloat(product.price).toFixed(2)}</p>
+        <p>Stock: ${product.Stock > 0 ? product.Stock + " available" : "Out of stock"}</p>
 
-        <p>Stock: ${product.stock > 0 ? product.stock + " available" : "Out of stock"}</p>
+        <p>Recommended age: ${product.minAge}–${product.maxAge}</p>
 
-        <p>Recommended age: ${product.min_age}–${product.max_age}</p>
+        <p>${product.Description}</p>
 
-        <p>${product.description}</p>
-
-        <a href="product.html?name=${encodeURIComponent(product.name)}">
-        <button class="view-product">view product</button>
+        <a href="product.php?id=${product.ProductID}">
+            <button class="view-product">view product</button>
         </a>
-
         `;
 
         grid.appendChild(card);
@@ -173,7 +170,6 @@ function displayProducts(list) {
     });
 
 }
-
 
 // ---------------- SEARCH ----------------
 document.addEventListener("DOMContentLoaded", () => {
@@ -192,8 +188,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const filtered = products.filter(p => {
 
-                const name = p.name.toLowerCase();
-                const desc = p.description.toLowerCase();
+                const name = p.ProductName.toLowerCase();
+                const desc = p.Description.toLowerCase();
 
                 return words.some(word =>
                     name.includes(word) || desc.includes(word)
@@ -215,9 +211,12 @@ function detectCategory(product) {
 
     const name = product.name.toLowerCase();
 
-    if (name.includes("headphone")) return "headphones";
-    if (name.includes("headset")) return "headsets";
-    if (name.includes("controller")) return "controllers";
+    if (name.includes("Ergonomic Chairs")) return "Ergonomic Chairs";
+    if (name.includes("Gaming Desks")) return "Gaming Desks";
+    if (name.includes("Moniter Stands")) return "Moniter Stands";
+    if (name.includes("Wrist And Arm Support")) return "Wrist And Arm Support";
+    if (name.includes("Gaming Accsessories")) return "Gaming Accsessoriest";
+    
 
     return "other";
 
@@ -257,7 +256,7 @@ function loadProductPage() {
     }
 
     const product = products.find(
-        p => p.name.toLowerCase() === productName.toLowerCase()
+        p => p.Product.Name.toLowerCase() === ProductName.toLowerCase()
     );
 
     if (!product) {
@@ -266,7 +265,7 @@ function loadProductPage() {
     }
 
     mainImage.src = product.image;
-    mainImage.alt = product.name;
+    mainImage.alt = product.ProductName;
 
     thumbnailContainer.innerHTML = "";
 
@@ -291,15 +290,15 @@ function loadProductPage() {
 
     <div class="product-page-card">
 
-    <h2>${product.name}</h2>
+    <h2>${product.ProductName}</h2>
 
-    <p>${product.description}</p>
+    <p>${product.Description}</p>
 
-    <p><strong>Category:</strong> ${product.category}</p>
+    <p><strong>Category:</strong> ${product.Category}</p>
 
-    <p><strong>Stock:</strong> ${product.stock}</p>
+    <p><strong>Stock:</strong> ${product.Stock}</p>
 
-    <p><strong>Price:</strong> £${parseFloat(product.price).toFixed(2)}</p>
+    <p><strong>Price:</strong> £${parseFloat(product.Price).toFixed(2)}</p>
 
     <p><strong>Age Range:</strong> ${product.min_age}–${product.max_age}</p>
 
@@ -310,42 +309,6 @@ function loadProductPage() {
     `;
 
 }
-
-function changeImage(img) {
-    document.getElementById("mainImage").src = img.src;
-  }
-  
-  // Engraving toggle
-  const toggle = document.getElementById("engravingToggle");
-  const text = document.getElementById("engravingText");
-  const preview = document.getElementById("preview");
-  
-  toggle.addEventListener("change", () => {
-    text.disabled = !toggle.checked;
-  });
-  
-  // Live preview
-  text.addEventListener("input", () => {
-    preview.innerText = text.value;
-  });
-  
-  // Add to basket
-  function addToBasket(productId) {
-    const engraving = toggle.checked;
-    const engravingText = text.value;
-  
-    let basket = JSON.parse(localStorage.getItem("basket")) || [];
-  
-    basket.push({
-      productId: productId,
-      engraving: engraving,
-      engravingText: engravingText
-    });
-  
-    localStorage.setItem("basket", JSON.stringify(basket));
-  
-    alert("Added to basket!");
-  }
 
 
 loadProductPage();
