@@ -426,6 +426,9 @@ https://trello.com/b/MgNq9DBY/team-23-pixelpalscs2tp
 Repository  
 https://github.com/maeesa-ali/team_23_pixelpals
 
+deployed website link: 
+https://cs2team23.cs2410-web01pvm.aston.ac.uk/Team23_PixelPals_Term2_Final/public/index.php
+
 ---
 
 #  Project Aim
