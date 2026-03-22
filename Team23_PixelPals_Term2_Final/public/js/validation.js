@@ -1,23 +1,25 @@
-//login.html handler
-const loginForm = document.getElementById("loginForm"); //if on login page, this will exist
+// The login page and signup page share this file, so each block first checks whether its form exists.
+const loginForm = document.getElementById("loginForm");
 if (loginForm) 
 {
     loginForm.addEventListener("submit", function(event)
     {
-        if (!validateLogin()) //calls validation function on form submission, if validation fails, prevent form submission
+        // Stop the post if the basic client-side checks fail.
+        if (!validateLogin())
         {
             event.preventDefault();
         }
     });
 }
 
-//register.html handler
-const regForm = document.getElementById("regForm"); //if on registration page, this will exist
+// The signup form gets its own validation and admin-toggle behaviour from the same shared file.
+const regForm = document.getElementById("regForm");
 if (regForm) 
 {
-    regForm.addEventListener("submit", function(event) //calls validation function on form submission
+    regForm.addEventListener("submit", function(event)
     {
-    if (!validateRegistration()) //if validation fails, prevent form submission
+    // Stop the post if the signup fields fail the client-side checks.
+    if (!validateRegistration())
     {
         event.preventDefault();
     }
@@ -27,48 +29,51 @@ if (regForm)
     const adminPasswordRow = document.getElementById("adminPasswordRow");
     const adminPassword = document.getElementById("admin_Password");
 
-    adminCheckbox.addEventListener("change", function () 
-    {
-        if (this.checked) 
+    if (adminCheckbox && adminPasswordRow && adminPassword) {
+        // The admin access-code field is only needed when the user is trying to create an admin account.
+        adminCheckbox.addEventListener("change", function () 
         {
-            adminPasswordRow.style.display = "block";
-            adminPassword.required = true;
-        } 
-        else 
-        {
-            adminPasswordRow.style.display = "none";
-            adminPassword.required = false;
-            adminPassword.value = "";
-        }
-    });
+            if (this.checked) 
+            {
+                adminPasswordRow.style.display = "block";
+                adminPassword.required = true;
+            } 
+            else 
+            {
+                adminPasswordRow.style.display = "none";
+                adminPassword.required = false;
+                adminPassword.value = "";
+            }
+        });
+    }
 }
 
-//error message display function
+// Keep the auth error output in one place so both forms write to the same on-page message area.
 function displayError(message)
 {
-    document.getElementById("error").textContent = message; //displays error message
+    document.getElementById("error").textContent = message;
 }
 
-//login validation function
+// Login only needs a very small validation pass before the server does the real authentication work.
 function validateLogin()
 {
-    const username = document.getElementById("username").value.trim(); //gets username input value
-    const password = document.getElementById("password").value; //gets password input value#
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
 
     if (!username || !password)
         {
             displayError("Atleast one field is empty");
-            return false; //returns false to prevent form submission
+            return false;
         }
 
-    displayError(""); //clears any previous error messages if validation passes
-    return true; //returns true to allow form submission and trigger success handler
+    displayError("");
+    return true;
 }
 
-//registration validation function
+// Signup validates the main account fields before the server checks duplicates and writes to the database.
 function validateRegistration()
 {
-    //get field values from user input
+    // Pull the current field values once so the checks below stay readable.
     const username = document.getElementById("username").value.trim();
     const firstName = document.getElementById("first_Name").value.trim();
     const lastName = document.getElementById("last_Name").value.trim();
@@ -80,27 +85,36 @@ function validateRegistration()
     if (!username || !firstName || !lastName || !dob || !email || !password || !confirmPassword)
     {
         displayError("Atleast one field is empty");
-        return false; //returns false to prevent form submission
+        return false;
     }
 
     if (!email.includes("@"))
     {
         displayError("Invalid email format");
-        return false; //returns false to prevent form submission
+        return false;
     } 
 
     if (password.length < 8)
     {
         displayError("Password must be at least 8 characters long");
-        return false; //returns false to prevent form submission
+        return false;
     } 
     
     if (password !== confirmPassword)
     {
         displayError("Passwords do not match");
-        return false; //returns false to prevent form submission
+        return false;
     }
 
-    displayError(""); //clears any previous error messages if validation passes
-    return true; //returns true to allow form submission and trigger success handler
+    // Admin signup needs the extra access-code field as well.
+    const adminCheckbox = document.getElementById("adminCheckbox");
+    const adminPassword = document.getElementById("admin_Password");
+    if (adminCheckbox && adminCheckbox.checked && adminPassword && !adminPassword.value)
+    {
+        displayError("Admin access code is required");
+        return false;
+    }
+
+    displayError("");
+    return true;
 }
