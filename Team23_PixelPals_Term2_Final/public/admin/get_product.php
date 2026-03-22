@@ -21,8 +21,6 @@ while ($row = $result->fetch_assoc()) {
         "Price" => (float)$row["Price"],
         "Stock" => (int)$row["Stock"],
         "Description" => $row["Description"],
-              "MinAge" => (int)$row["MinAge"],
-        "MaxAge" => (int)$row["MaxAge"],
         "ImagePath" => $row["ImagePath"]
         
        
