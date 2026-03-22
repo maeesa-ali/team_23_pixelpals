@@ -8,7 +8,7 @@
 <body>
 <!-- Top blue bar -->
 <header class="topBar">
-    <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
+    <img src="pixelPalsLogo.png" class="logo"> <!-- Logo Image -->
 
     <!-- Search Bar -->
     <div class="searchContainer">
@@ -36,12 +36,41 @@
 
         <!-- Email input field-->
         <label>Email</label>
-        <input type="email" id="regEmail" name="email" required>
+        <input type="email" id="email">
 
+        <!-- Username input field-->
+        <label>Username</label>
+        <input type="text" id="username">
+
+        <!-- Name input field-->
+         <label>Name</label>
+        <input type="text" id="first_Name">
+
+        <!-- Last Name input field-->
+        <label>Last Name</label>
+        <input type="text" id="last_Name">
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
 
         <!-- Password input field-->
         <label>Password</label>
-        <input type="password" id="regPassword" name="password" required>
+        <input type="password" id="password">
+
+        <!-- Confirm Password input field-->
+        <label>Confirm Password</label>
+        <input type="password" id="confirm_Password">
+
+        <div class="adminRow">
+            <!-- Admin Account Creation Checkbox-->
+            <label>Admin Account<input type="checkbox" id="adminCheckbox"></label>
+        </div>
+
+        <div id="adminPasswordRow" style="display:none;">
+            <!-- Admin Password input field (only shown if admin checkbox is checked)-->
+            <label>Admin Password</label>
+            <input type="password" id="admin_Password">
+        </div>
 
         <!-- Register button-->
         <button type="submit"><strong>Register</strong></button>
@@ -214,10 +243,25 @@
         align-items: center;
         gap: 5px;
     }
+
+    .adminRow 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;   
+    }
+
+    .adminRow input[type="checkbox"]   
+    {
+        width: auto;
+        margin: 10;
+        padding: 0;
+        transform: translateY(3px);
+    }
+
 </style>
 
 <!-- Links to validation script-->
-<!-- <script src="js/validation.js"></script> -->
-
-
+<script src="js/validation.js"></script>
 

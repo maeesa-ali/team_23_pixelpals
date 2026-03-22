@@ -1,1 +1,372 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PixelPals – Checkout</title>
+</head>
 
+<body>
+<!-- Top blue bar -->
+<header class="topBar">
+    <img src="pixelPals.png" class="logo"> <!-- Logo Image -->
+
+    <!-- Search Bar -->
+    <div class="searchContainer">
+        <input type="text" placeholder="Search">
+        <button class="clear-btn">×</button>
+    </div>
+
+    <!-- Basket Link -->
+    <div class="topLinks">
+        <a href="basket.html"> Basket</a>
+    </div>
+</header>
+
+<!-- Bottom purple nav bar -->
+<nav class="bottomNav">
+    <a href="login.html"> Login</a>
+    <a href="index.html"> Home</a>
+    <a href="products.html"> Products</a>
+    <a href="about.html"> About Us</a>
+    <a href="contact.html"> Contact Us</a>
+</nav>
+
+<div class="pageWrapper"> <!-- Main container for the checkout page -->
+    <!-- Delivery details section -->
+    <div class="deliveryDetails">
+
+        <h1>Delivery details</h1>
+        <h2>Contact details</h2>
+
+        <!-- Email input field -->
+        <div class="checkoutForm">
+            <input type="email" id="email" placeholder="Email">
+            <button class="clearButton" data-target="email">X</button>
+        </div>
+
+        <!-- Phone number input field -->
+        <div class="checkoutForm">
+            <input type="text" id="phoneNumber" placeholder="Phone Number">
+            <button class="clearButton" data-target="phoneNumber">X</button>
+        </div>
+
+        <!-- Name input fields in a split layout -->
+        <div class ="splitForm">
+            <div class="checkoutForm">
+                <input type="text" id="firstName" placeholder="First Name">
+                <button class="clearButton" data-target="firstName">X</button>
+            </div>
+            <div class="checkoutForm">
+                <input type="text" id="lastName" placeholder="Last Name">
+                <button class="clearButton" data-target="lastName">X</button>
+            </div>
+        </div>
+
+        <!-- Address input field -->
+        <div class="checkoutForm">
+            <input type="text" id="address" placeholder="Address">
+            <button class="clearButton" data-target="address">X</button>
+        </div>
+
+        <h1>Payment Details</h1>
+
+        <!-- Card number input field -->
+        <div class="checkoutForm">
+            <input type="text" id="cardNumber" placeholder="Card Number">
+            <button class="clearButton" data-target="cardNumber">X</button>
+        </div>
+
+        <!-- Expiry date and CVC input fields in a split layout -->
+        <div class ="splitForm">
+            <div class="checkoutForm">
+                <input type="text" id="expiryDate" placeholder="Expiry Date">
+                <button class="clearButton" data-target="expiryDate">X</button>
+            </div>
+            <div class="checkoutForm">
+                <input type="text" id="CVC" placeholder="CVC">
+                <button class="clearButton" data-target="CVC">X</button>
+            </div>
+        </div>
+
+        <!-- Total price display -->
+        <div class="totalPrice">
+            <strong>Total:</strong>
+            <strong><span id="finalTotal">£</span></strong>
+        </div>
+
+        <!-- Error message display -->
+        <p id="checkoutError" style="color: red; font-weight: bold;"></p>
+
+        <!-- Place order button -->
+        <button class="placeOrderButton" id="placeOrderButton">Place Order</button>
+    </div>
+
+    <!-- Order summary section -->
+    <div class="orderSummary">
+
+        <!-- Summary box containing order details -->
+        <div class="summaryBox">
+            <h2>Order Summary</h2>
+
+            <!-- Container for summary items -->
+            <div id="summaryItems"></div>
+
+            <!-- Horizontal line separator -->
+            <hr>
+
+            <!-- Subtotal summary -->
+            <div class="summary">
+                <span>Subtotal:</span>
+                <span id="subtotal">£</span>
+            </div>
+
+            <!-- Delivery price summary -->
+            <div class="summary">
+                <span>Delivery:</span>
+                <span id="delivery">£</span>
+            </div>
+
+            <!-- Total price summary -->
+            <div class="summaryTotal">
+                <strong>Total:</strong>
+                <strong id="total">£</strong>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- Styles for the checkout page -->
+<style>
+    * 
+    {
+        box-sizing: border-box;
+    }
+
+    body /*overall page style*/
+    {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(#DE4FFF, #77ADFF, #D5A4Ff);
+    }
+
+    .pageWrapper /*main container for checkout page*/
+    {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    .deliveryDetails /*delivery details section*/
+    {
+        width: 60%;
+    }
+
+    h1 /*main headings*/
+    {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    h2 /*subheadings*/
+    {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .checkoutForm /*styles for input fields*/
+    {
+        position: relative;
+        width: 250px;
+        margin-bottom: 15px;
+    }
+
+    input /*input field styles*/
+    {
+        width: 100%;
+        padding: 12px 35px 12px 12px;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .clearButton /*clear button styles*/
+    {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        opacity: 0.6;
+    }
+
+    .clearButton:hover /*clear button hover effect*/
+    {
+        opacity: 1;
+    }
+
+    .splitForm /*styles for split input fields*/
+    {
+        display: flex;
+        gap: 15px;
+    }
+
+    .totalPrice /*displays total price at bottom of delivery details*/
+    {
+        font-size: 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .placeOrderButton /*place order button styles*/
+    {
+        margin-top: 20px;
+        padding: 15px;
+        width: 250px;
+        background: #C0ED45;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+
+    .orderSummary /*order summary section*/
+    {
+        width: 35%;
+    }
+
+    .summaryBox /*summary box styles*/
+    {
+        background: #d7ddff;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .summaryBox h2 /*summary box heading styles*/
+    {
+        margin-top: 0;
+    }
+
+    .summary, .summaryTotal /*subtotal, delivery, and total styles*/
+    {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .summaryTotal strong /*total text styles*/
+    {
+        font-size: 18px;
+    }
+
+    .summaryItem /*individual summary item styles*/
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .summaryItem img /*product image styles*/
+    {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 12px;
+    }
+
+    .summaryItemInfo /*product info styles*/
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .summaryItemPrice /*product price styles*/
+    {
+        font-weight: bold;
+        margin-left: 20px;
+    }
+
+    .topBar /* Top blue bar*/
+    {
+        background: #3F8BE0;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .topBar .logo /* Logo*/
+    {
+        height: 60px;
+    }
+
+    .searchContainer /* Search bar*/
+    {
+        flex: 1;
+       position: relative;
+    }
+
+    .searchContainer input /* Search bar input field*/
+    {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .searchContainer .clear-btn /*search bar clear button*/
+    {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .topLinks a /* Basket Link*/
+    {
+        color: white;
+        font-size: 18px;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    .bottomNav /* Purple nav bar*/
+    {
+        background: #8962C6;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bottomNav a /* Navigation links*/
+    {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+</style>
+
+<!-- JavaScript for checkout functionality -->
+<script src="checkout.js"></script> 

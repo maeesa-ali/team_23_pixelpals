@@ -58,8 +58,8 @@
           <button class="cat-btn cat-headphones">Ergonomic Chairs </button>
         </a>
 
-        <a href="products.html?q=gameing desks">
-          <button class="cat-btn cat-headsets">Gameing Desks</button>
+        <a href="products.html?q=gaming desks">
+          <button class="cat-btn cat-headsets">Gaming Desks</button>
         </a>
 
         <a href="products.html?q=moniter stands">
@@ -71,7 +71,7 @@
         </a>
 
         <a href="products.html?q=gameing accessory">
-          <button class="cat-btn cat-gameingAcsessorry">Gameing Acsessories</button>
+          <button class="cat-btn cat-gamingAcsessorry">Gaming Acsessories</button>
         </a>
 
       </div>
