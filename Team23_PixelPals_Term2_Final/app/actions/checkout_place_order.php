@@ -31,7 +31,7 @@ if (count($checkout_items) === 0){
     exit;
 }
 
-$order_sql = "INSERT INTO orders (UserID, Status) VALUES (?, 'Processing')";
+$order_sql = "INSERT INTO orders (UserID, Status) VALUES (?, 'processing')";
 $order_stmt = $db->prepare($order_sql);
 $order_stmt->execute([$UserID]);
 $OrderID = $db->lastInsertId();
