@@ -1,31 +1,36 @@
 <?php
 session_start();
-require_once '../config/db.php';
+require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../includes/user_account_service.php';
 
+// Self-delete only applies to signed-in customers.
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../../public/login.php");
+    header("Location: /Team23_PixelPals_Term2_Final/public/login.php");
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $uid = $_SESSION['user_id'];
+// The delete button posts here so we can clean up related account data before removing the user row.
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
+    exit();
+}
 
-    try {
-        $stmt = $db->prepare("DELETE FROM users WHERE UserID = ?");
-        $stmt->execute([$uid]);
+$uid = $_SESSION['user_id'];
 
-        session_unset();
-        session_destroy();
+try {
+    // The shared service handles the related basket/order/review cleanup work first.
+    delete_user_with_relations($db, (int) $uid);
 
-        session_start();
-        $_SESSION['success'] = "Your account has been permanently deleted.";
-        header("Location: ../../public/index.php");
-        exit();
+    session_unset();
+    session_destroy();
 
-    } catch (PDOException $e) {
-        $_SESSION['error'] = "Could not delete account.";
-        // may change
-        header("Location: ../../public/account.php");
-        exit();
-    }
+    session_start();
+    $_SESSION['success'] = 'Your account has been permanently deleted.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/index.php');
+    exit();
+
+} catch (PDOException $e) {
+    $_SESSION['error'] = 'Could not delete account.';
+    header('Location: /Team23_PixelPals_Term2_Final/public/account.php');
+    exit();
 }
