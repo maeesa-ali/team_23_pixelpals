@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'db_connect.php';
+require '../config/db.php';
 
 if (!isset($_SESSION['UserID'])){
-    header('Location: login.php');
+    header('Location: ../../public/login.php');
     exit;
 }
 
