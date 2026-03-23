@@ -7,7 +7,6 @@
     <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
 
-    <!-- in line styling (temp) -->
     <style>
       a:link, a:visited {
       color: inherit;
@@ -58,29 +57,29 @@
       <nav class="navbar">
 
         <div class="nav-left">
-          <a href="/index.php">
+          <a href="index.php">
             <img src="/assets/img/logo.png" class="logo" alt="PixelPals Logo">
           </a>
 
-          <a href="/index.php">PixelPals</a>
+          <a href="index.php">PixelPals</a>
         </div>
 
         <div class="nav-links">
-          <a href="/index.php">Home</a>
-          <a href="/products.php">Products</a>
-          <a href="/about.php">About</a>
-          <a href="/contact.php">Contact</a>
+          <a href="index.php">Home</a>
+          <a href="products.php">Products</a>
+          <a href="about.php">About</a>
+          <a href="contact.php">Contact</a>
         </div>
 
         <div class="nav-right">
-          <a href="/basket.php">Basket</a>
-          <a href="/account.php">Account</a>
+          <a href="basket.php">Basket</a>
+          <a href="account.php">Account</a>
 
           <?php if(isset($_SESSION['user_id'])): ?>
-          <a href="/logout.php">Logout</a>
+          <a href="logout.php">Logout</a>
           <?php else: ?>
-          <a href="/login.php">Login</a>
-          <a href="/signup.php">Signup</a>
+          <a href="login.php">Login</a>
+          <a href="signup.php">Signup</a>
           <?php endif; ?>
 
           <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
@@ -135,8 +134,9 @@
           to support motor development, coordination, and healthy movement.
         </p>
 
-         <p> <!-- include link to specific product page -->
-          From <b><a href="">easy-grip controllers</a></b> to <b><a href="">adaptive keyboards</a></b>, every PixelPals product is created to help kids:
+         <p> 
+          From <b><a href="/products.php">easy-grip controllers</a></b> to <b><a href="/products.php">adaptive keyboards</a></b>, 
+          every PixelPals product is created to help kids:
         </p>
 
         <ul>
@@ -184,11 +184,6 @@
       <p><strong>PixelPals</strong></p>
       <p>Ergonomic gaming accessories for children</p>
       <p>© 2026 PixelPals</p>
-
-      <img src="assets/img/logo.png" class="logo">
-      <img src="assets/img/logo.png" class="logo">
-      <img src="assets/img/logo.png" class="logo">
-      <img src="assets/img/logo.png" class="logo">
     </footer>
   </body>
 </html>
