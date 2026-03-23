@@ -130,10 +130,10 @@ unset($_SESSION['success']);
       </div>
       <?php unset($_SESSION['error']); endif; ?>
 
-      <h1 class="page-title">Order Confirmed ✅</h1>
+      <h1 class="page-title">Order Confirmed</h1>
       <div class="success-card">
         <div class="success-icon">
-          ✔
+          <p>&#10004;</p>
         </div>
 
         <div class="success-message">
