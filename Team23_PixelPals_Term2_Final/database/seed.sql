@@ -1,1 +1,153 @@
+-- Seed the catalogue so a fresh database has real products ready to browse and test.
+INSERT INTO `product` 
+(`Description`, `ProductName`, `Category`, `ImagePath`, `Price`, `Stock`) 
+VALUES
+('Designed for comfort, over-ear with soft-cushioned ear pads, these wireless headphones protect delicate eardrums of growing children with their volume control.', 
+'Volume-sensitive Over-ear Headphones', 
+'Audio', 
+'assets/img/products/audio_volsensitive_black.png', 
+15.00, 37),
 
+('For sensitive heads, these lightweight headphones make sure no extra weight causes discomfort.', 
+'Lightweight Wired Earphones', 
+'Audio', 
+'assets/img/products/audio_lightweight_blue.png', 
+14.00, 54),
+
+('For smaller ears and heads, these small headphones make sure of comfort for long durations.', 
+'Small Wireless Over-ear Headphones', 
+'Audio', 
+'assets/img/products/audio_small_purple.png', 
+16.00, 35),
+
+('Microphone Headset allows kids to engage with games without the clutter of many devices.', 
+'Wireless Microphone Over-ear Headset', 
+'Audio', 
+'assets/img/products/audio_micset_black.png', 
+14.00, 15),
+
+('This wired/wireless clip-on microphone allows ease of use. Plug into headset/device or connect via Bluetooth.', 
+'Clip-on Microphone', 
+'Audio', 
+'assets/img/products/audio_clipon.png', 
+18.00, 45),
+
+('Small sized controller made for small hands, preventing overstretch and cramps.', 
+'Small Handheld Controller', 
+'Controllers', 
+'assets/img/products/controller_small_pink.png', 
+16.00, 60),
+
+('Comfortable and shaped to fit perfectly in the palm and fingers are allowed to sit at rest position.', 
+'Wireless Ergonomic Controller', 
+'Controllers', 
+'assets/img/products/controller_ergo_black.png', 
+12.00, 70),
+
+('Bright colours for visual aid and larger buttons and joysticks for ease of use.', 
+'Enlarged Button Controller', 
+'Controllers', 
+'assets/img/products/controller_enlarged_button.png', 
+14.00, 30),
+
+('This case allows for a gentler hold, cushioned and soft means palms clenching the controller will not hurt and long-duration usage will cause less strain.', 
+'Ergonomic Cushioned Case For Controller', 
+'Controllers', 
+'assets/img/products/controller_cushion_case.png', 
+16.00, 40),
+
+('For hands with difficulty reaching trigger buttons on gaming controllers.', 
+'Trigger Extender Caps', 
+'Controllers', 
+'assets/img/products/controller_triggerext.png', 
+25.00, 20),
+
+('Prioritising hand and motor health, ergonomically designed keyboard allows for the hand and wrist to sit in its natural position.', 
+'Ergonomic Keyboard', 
+'Keyboard and Mouse', 
+'assets/img/products/km_ergokeyboard.png', 
+35.00, 35),
+
+('Prioritising hand and motor health, ergonomically designed mouse allows for the hand and wrist to sit in its natural position.', 
+'Ergonomic Mouse', 
+'Keyboard and Mouse', 
+'assets/img/products/km_ergomouse_white.png', 
+35.00, 25),
+
+('Bright colours for visually impaired aid. The distinguishable buttons allow children to become more accustomed to the devices.', 
+'Sensory Keyboard', 
+'Keyboard and Mouse', 
+'assets/img/products/km_sensorykeyboard.png', 
+42.00, 18),
+
+('Bright colours for visually impaired aid. The distinguishable buttons allow children to become more accustomed to the devices.', 
+'Sensory Mouse', 
+'Keyboard and Mouse', 
+'assets/img/products/km_sensorymouse.png', 
+30.00, 30),
+
+('Ergonomically designed wrist rest allows for the hand and wrist to sit in its natural position.', 
+'Wrist Rest', 
+'Keyboard and Mouse', 
+'assets/img/products/km_wristrest.png', 
+7.00, 60),
+
+('Ergonomically designed motion chair makes for strengthening core muscles and maintain posture.', 
+'Ergonomic Posture Chair', 
+'Desks and Chairs', 
+'assets/img/products/dc_ergochair_blue.png', 
+10.00, 40),
+
+('This smaller chair allows children of all ages to sit comfortably whilst engaging with technology.', 
+'Floor Gaming Chair', 
+'Desks and Chairs', 
+'assets/img/products/dc_floorchair.png', 
+15.00, 42),
+
+('This booster seat allows your chair to conform into an ergonomically supportive seat for children.', 
+'Ergonomic Booster Seat', 
+'Desks and Chairs', 
+'assets/img/products/dc_ergobooster.png', 
+14.00, 55),
+
+('Adjustable table allows the screen to meet your eye level, preventing strain.', 
+'Height-adjusting Table', 
+'Desks and Chairs', 
+'assets/img/products/dc_adjustabletable.png', 
+16.00, 35),
+
+('Compatible with screens of all kinds; tablets, monitors, and phones.', 
+'Adjustable Monitor Stand', 
+'Desks and Chairs', 
+'assets/img/products/dc_monitorstand.png', 
+14.00, 50),
+
+('Prevents eye strain by reducing glare from screens.', 
+'Anti-glare screen protector', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_antiglare.png', 
+18.00, 45),
+
+('Allows regulation of children’s screen time.', 
+'Screen-time Timer', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_timer.png', 
+16.00, 60),
+
+('Ergonomic iPad case promoting motor skills and healthy usage.', 
+'Ergonomic iPad Case', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_ipadcase.png', 
+12.00, 70),
+
+('Fidget toy for relieving stress and improving motor skills.', 
+'Fidget Toy', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_fidget.png', 
+14.00, 30),
+
+('Reward chart to encourage healthy screen-time habits.', 
+'Screen-time Reward Chart', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_screentime.png', 
+16.00, 40);
