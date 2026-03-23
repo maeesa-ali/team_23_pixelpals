@@ -1,383 +1,699 @@
 <?php
-// This is the main storefront page, so the category links and first actions live here.
-// We only need session state here for auth checks and the optional admin preview banner.
+// This page loads one product in full and keeps the add-to-basket and review actions close by.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-// Shared auth helpers keep access rules and admin preview mode consistent with the rest of the site.
+
 require_once '../app/includes/auth.php';
+require_once '../app/config/db.php';
 require_once '../app/includes/admin_preview.php';
+
 requireAuthenticatedSession();
+
+// The whole page is driven by one product id coming from the catalogue links.
+$productId = (int) ($_GET['id'] ?? 0);
+$product = null;
+$reviews = [];
+$relatedProducts = [];
+$ratingSummary = [
+    'average_rating' => null,
+    'review_count' => 0,
+];
+
+function productStockLabel(int $stock): string
+{
+    if ($stock <= 0) {
+        return 'Out of stock';
+    }
+
+    if ($stock <= 10) {
+        return 'Low stock';
+    }
+
+    return 'In stock';
+}
+
+function productStockClass(int $stock): string
+{
+    if ($stock <= 0) {
+        return 'out';
+    }
+
+    if ($stock <= 10) {
+        return 'low';
+    }
+
+    return 'in';
+}
+
+if ($productId > 0) {
+    try {
+        // Load the main product record first because everything else depends on it existing.
+        $productStmt = $db->prepare(
+            'SELECT ProductID, ProductName, Description, Category, ImagePath, Price, Stock
+             FROM product
+             WHERE ProductID = ?'
+        );
+        $productStmt->execute([$productId]);
+        $product = $productStmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($product) {
+            // Reviews and related products only make sense once the product itself has been confirmed.
+            $ratingStmt = $db->prepare(
+                'SELECT AVG(Rating) AS average_rating, COUNT(*) AS review_count
+                 FROM reviews
+                 WHERE ProductID = ?'
+            );
+            $ratingStmt->execute([$productId]);
+            $ratingSummary = $ratingStmt->fetch(PDO::FETCH_ASSOC) ?: $ratingSummary;
+
+            $reviewsStmt = $db->prepare(
+                'SELECT r.Rating, r.Comment, r.CreatedAt, u.Username
+                 FROM reviews r
+                 INNER JOIN users u ON u.UserID = r.UserID
+                 WHERE r.ProductID = ?
+                 ORDER BY r.CreatedAt DESC, r.ReviewID DESC'
+            );
+            $reviewsStmt->execute([$productId]);
+            $reviews = $reviewsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $relatedStmt = $db->prepare(
+                'SELECT ProductID, ProductName, ImagePath, Price, Stock
+                 FROM product
+                 WHERE Category = ? AND ProductID <> ?
+                 ORDER BY Stock > 0 DESC, ProductName ASC
+                 LIMIT 3'
+            );
+            $relatedStmt->execute([$product['Category'], $productId]);
+            $relatedProducts = $relatedStmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        // A failed lookup just falls through to the normal "not found" state below.
+        $product = null;
+    }
+}
+
+if (!$product) {
+    http_response_code(404);
+}
+
+$flashSuccess = $_SESSION['success'] ?? null;
+$flashError = $_SESSION['error'] ?? null;
+unset($_SESSION['success'], $_SESSION['error']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelPals | Gaming Setups for Growing Players</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <style>
-    /* Smooth scrolling makes the category jump link feel a little nicer on the homepage. */
-    html {
-      scroll-behavior: smooth;
-    }
-    /* These small hover effects keep the homepage cards from feeling too static. */
-    .cta-row a {
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $product ? 'PixelPals | ' . htmlspecialchars($product['ProductName']) : 'PixelPals | Product'; ?></title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .product-detail-shell {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 36px;
+        }
 
-    .cta-row a:hover,
-    .category-card:hover {
-      transform: translateY(-2px);
-    }
+        .product-hero {
+            display: grid;
+            grid-template-columns: minmax(280px, 420px) 1fr;
+            gap: 24px;
+        }
 
-    /* The top section is split into intro copy on the left and quick stats on the right. */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: stretch;
-      margin-bottom: 28px;
-    }
+        .detail-card,
+        .review-card,
+        .related-card,
+        .not-found-card {
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
 
-    /* Shared card styling keeps the homepage sections visually tied together. */
-    .section-card {
-      background: var(--card);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-    }
+        .product-summary {
+            padding: 30px;
+        }
 
-    .hero-copy::before {
-      content: "";
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      left: -30px;
-      top: -30px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.45) 50%, transparent 50%),
-        linear-gradient(rgba(255,255,255,0.45) 50%, transparent 50%);
-      background-size: 18px 18px;
-      opacity: 0.5;
-      transform: rotate(10deg);
-    }
+        .product-visual {
+            padding: 24px;
+            display: grid;
+            align-content: start;
+            gap: 16px;
+            background: linear-gradient(160deg, rgba(116, 70, 200, 0.95), rgba(43, 111, 214, 0.95));
+            color: #fff;
+        }
 
-    .hero-copy p {
-      max-width: 58ch;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      opacity: 0.92;
-    }
+        .product-visual img {
+            width: 100%;
+            aspect-ratio: 4 / 4;
+            object-fit: cover;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 26px;
-    }
+        .product-visual strong {
+            display: block;
+            font-size: 1.4rem;
+        }
 
-    .cta-row a {
-      padding: 14px 20px;
-      border-radius: 18px;
-      font-weight: 700;
-    }
+        .product-visual p {
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0.92;
+        }
 
-    .cta-main {
-      background: linear-gradient(135deg, var(--mint), #f5ff9a);
-    }
+        .product-summary {
+            background:
+                radial-gradient(circle at top right, rgba(255, 213, 77, 0.28), transparent 24%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 250, 255, 0.82));
+        }
 
-    .cta-secondary {
-      background: rgba(17, 37, 77, 0.08);
-      border: 1px solid var(--outline);
-    }
+        .product-summary h1 {
+            margin: 16px 0 12px;
+            font-size: clamp(2.3rem, 5vw, 4.2rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
 
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 24px;
-      margin-bottom: 40px;
-    }
+        .product-summary p {
+            margin: 0;
+            line-height: 1.7;
+            opacity: 0.88;
+        }
 
-    .section-card {
-      padding: 28px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 255, 0.82));
-    }
+        .summary-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 22px 0 18px;
+        }
 
-    .section-card h2 {
-      margin: 0 0 10px;
-      font-size: 1.9rem;
-    }
+        .meta-chip,
+        .stock-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 800;
+        }
 
-    .section-card p.lead {
-      margin: 0 0 24px;
-      line-height: 1.7;
-      opacity: 0.86;
-    }
+        .meta-chip {
+            background: rgba(17, 37, 77, 0.08);
+        }
 
-    /* Categories are shown in a compact grid so the homepage doubles as a quick route into the catalogue. */
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
+        .stock-pill.in {
+            background: rgba(72, 187, 120, 0.14);
+            color: #1b7a44;
+        }
 
-    .category-card {
-      padding: 20px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(201, 218, 255, 0.92));
-      border: 1px solid rgba(17, 37, 77, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 14px 28px rgba(17, 37, 77, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
+        .stock-pill.low {
+            background: rgba(237, 137, 54, 0.16);
+            color: #a95511;
+        }
 
-    .category-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -30px -40px auto;
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: rgba(116, 70, 200, 0.08);
-    }
+        .stock-pill.out {
+            background: rgba(229, 62, 62, 0.16);
+            color: #b43030;
+        }
 
-    .category-card span {
-      display: inline-block;
-      margin-bottom: 10px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: linear-gradient(90deg, rgba(116, 70, 200, 0.12), rgba(255, 109, 178, 0.12));
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
+        .price-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: end;
+            gap: 16px;
+            margin: 20px 0 18px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(17, 37, 77, 0.08);
+            border-bottom: 1px solid rgba(17, 37, 77, 0.08);
+        }
 
-    .category-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.2rem;
-      position: relative;
-      z-index: 1;
-    }
+        .price-block strong {
+            display: block;
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
 
-    .category-card p {
-      margin: 0;
-      line-height: 1.55;
-      opacity: 0.82;
-      position: relative;
-      z-index: 1;
-    }
+        .price-block span {
+            display: block;
+            margin-top: 6px;
+            font-size: 2rem;
+            font-weight: 900;
+        }
 
-    /* These smaller highlight cards explain the value of the store without taking over the page. */
-    .highlight-list {
-      display: grid;
-      gap: 14px;
-    }
+        .rating-block {
+            text-align: right;
+        }
 
-    .highlight-item {
-      padding: 18px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(87, 166, 255, 0.14), rgba(116, 70, 200, 0.14));
-      border: 1px solid var(--outline);
-    }
+        .rating-value {
+            font-size: 1.4rem;
+            font-weight: 900;
+        }
 
-    .highlight-item strong {
-      display: block;
-      margin-bottom: 8px;
-    }
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
 
-    @media (max-width: 900px) {
-      .hero,
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+        .action-row form {
+            margin: 0;
+            display: flex;
+        }
 
-    @media (max-width: 640px) {
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
+        .detail-button,
+        .detail-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            min-width: 220px;
+            padding: 13px 18px;
+            border-radius: 18px;
+            font: inherit;
+            font-weight: 800;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
 
-      .hero-copy,
-      .hero-panel,
-      .section-card {
-        padding: 22px;
-      }
+        .detail-button {
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--mint), #f5ff9a);
+            color: var(--navy);
+        }
 
-    }
-  </style>
+        .detail-button[disabled] {
+            cursor: not-allowed;
+            opacity: 0.55;
+        }
+
+        .detail-link {
+            background: rgba(17, 37, 77, 0.08);
+            border: 1px solid var(--outline);
+            color: var(--navy);
+        }
+
+        .detail-button:hover,
+        .detail-link:hover,
+        .related-link:hover,
+        .review-submit:hover {
+            transform: translateY(-2px);
+        }
+
+        .detail-button,
+        .detail-link,
+        .related-link,
+        .review-submit {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .review-layout {
+            display: grid;
+            grid-template-columns: 1fr 0.95fr;
+            gap: 24px;
+        }
+
+        .review-card,
+        .related-card,
+        .not-found-card {
+            padding: 28px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 255, 0.82));
+        }
+
+        .review-card h2,
+        .related-card h2,
+        .not-found-card h2 {
+            margin: 0 0 10px;
+            font-size: 1.85rem;
+        }
+
+        .review-card p,
+        .related-card p,
+        .not-found-card p {
+            margin: 0;
+            line-height: 1.7;
+            opacity: 0.86;
+        }
+
+        .review-form {
+            display: grid;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .review-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .review-form select,
+        .review-form textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(17, 37, 77, 0.12);
+            background: rgba(255, 255, 255, 0.92);
+            font: inherit;
+        }
+
+        .review-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .review-submit {
+            border: none;
+            cursor: pointer;
+            padding: 14px 18px;
+            border-radius: 18px;
+            font: inherit;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--mint), #f5ff9a);
+            color: var(--navy);
+        }
+
+        .review-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .review-item {
+            padding: 18px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(87, 166, 255, 0.12), rgba(116, 70, 200, 0.12));
+            border: 1px solid rgba(17, 37, 77, 0.08);
+        }
+
+        .review-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .review-date {
+            opacity: 0.68;
+            font-size: 0.92rem;
+        }
+
+        .review-empty {
+            margin-top: 22px;
+            padding: 18px;
+            border-radius: 22px;
+            background: rgba(17, 37, 77, 0.06);
+        }
+
+        .related-grid {
+            display: grid;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .related-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            padding: 18px;
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(201, 218, 255, 0.9));
+            border: 1px solid rgba(17, 37, 77, 0.08);
+        }
+
+        .related-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .related-price {
+            font-weight: 900;
+        }
+
+        .related-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 14px;
+            border-radius: 14px;
+            background: rgba(17, 37, 77, 0.08);
+            font-weight: 800;
+        }
+
+        .not-found-card {
+            text-align: center;
+        }
+
+        .not-found-card .detail-link {
+            margin-top: 18px;
+        }
+
+        @media (max-width: 920px) {
+            .product-hero,
+            .review-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .product-summary,
+            .review-card,
+            .related-card,
+            .not-found-card {
+                padding: 22px;
+            }
+
+            .detail-button,
+            .detail-link {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .price-row,
+            .review-head,
+            .related-item {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            .rating-block {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
-  <?php renderAdminPreviewBanner(); ?>
-  <div class="site-shell">
-    <!-- Shared customer header and nav stay the same across the public-facing pages. -->
-    <header class="topBar">
-      <a class="brand" href="index.php">
-        <img src="assets/img/logo.png" alt="PixelPals logo" class="logo">
-        <div class="brand-copy">
-          <strong>PixelPals</strong>
-          <span>Comfort-first gaming gear for growing players</span>
-        </div>
-      </a>
+    <?php renderAdminPreviewBanner(); ?>
+    <div class="site-shell">
+        <!-- Shared customer header and nav stay the same across the public-facing pages. -->
+        <header class="topBar">
+            <a class="brand" href="index.php">
+                <img src="assets/img/logo.png" alt="PixelPals logo" class="logo">
+                <div class="brand-copy">
+                    <strong>PixelPals</strong>
+                    <span>Comfort-first gaming gear for growing players</span>
+                </div>
+            </a>
 
-      <div class="searchContainer">
-        <form action="products.php" method="GET">
-          <input type="text" id="searchInput" name="q" placeholder="Search chairs, desks, stands and more">
-        </form>
-      </div>
+            <div class="searchContainer">
+                <form action="products.php" method="GET">
+                    <input type="text" name="q" placeholder="Search chairs, desks, stands and more">
+                </form>
+            </div>
 
             <div class="topLinks">
                 <a class="chip-link" href="basket.php">Basket</a>
                 <?php if (isAdminPreviewMode()): ?>
-                  <a class="primary-link" href="admin/dashboard.php">Admin Dashboard</a>
-                <?php elseif (isset($_SESSION['user_id'])): ?>
-                  <a class="primary-link" href="account.php">My Account</a>
+                    <a class="primary-link" href="admin/dashboard.php">Admin Dashboard</a>
                 <?php else: ?>
-                  <a class="primary-link" href="login.php">Log In</a>
+                    <a class="primary-link" href="account.php">My Account</a>
                 <?php endif; ?>
-      </div>
-    </header>
+            </div>
+        </header>
 
-    <nav class="bottomNav">
-        <div class="nav-links">
-          <a class="active" href="index.php">Home</a>
-          <a href="products.php">Products</a>
-          <a href="about.php">About Us</a>
-          <a href="contact.php">Contact Us</a>
-          <a href="orders.php">Orders</a>
-          <?php if (isAdminPreviewMode()): ?>
-            <a href="admin/dashboard.php">Admin Dashboard</a>
-          <?php elseif (isset($_SESSION['user_id'])): ?>
-            <a href="logout.php">Log Out</a>
-          <?php else: ?>
-            <a href="signup.php">Create Account</a>
+        <nav class="bottomNav">
+            <div class="nav-links">
+                <a href="index.php">Home</a>
+                <a class="active" href="products.php">Products</a>
+                <a href="about.php">About Us</a>
+                <a href="contact.php">Contact Us</a>
+                <a href="orders.php">Orders</a>
+                <?php if (isAdminPreviewMode()): ?>
+                    <a href="admin/dashboard.php">Admin Dashboard</a>
+                <?php else: ?>
+                    <a href="logout.php">Log Out</a>
+                <?php endif; ?>
+            </div>
+        </nav>
+
+        <?php if ($flashSuccess): ?>
+            <div class="flash success"><?php echo htmlspecialchars($flashSuccess); ?></div>
         <?php endif; ?>
-      </div>
-    </nav>
 
-    <!-- The homepage content starts here. -->
-    <main>
-      <!-- Hero section: quick intro to the shop and a couple of easy first actions. -->
-      <section class="hero">
-        <div class="hero-copy">
-          <span class="eyebrow">PixelPals</span>
-          <h1>Gaming gear for younger players.</h1>
-          <p>
-            Browse desks, chairs, headsets, controllers, keyboards and accessories chosen to be easier and
-            more comfortable for younger players to use.
-          </p>
+        <?php if ($flashError): ?>
+            <div class="flash error"><?php echo htmlspecialchars($flashError); ?></div>
+        <?php endif; ?>
 
-          <div class="cta-row">
-            <a class="cta-main" href="products.php">Shop All Products</a>
-            <a class="cta-secondary" href="#categories">Browse Categories</a>
-          </div>
-        </div>
+        <!-- The single product view starts here. -->
+        <main class="product-detail-shell">
+            <?php if (!$product): ?>
+                <!-- Fallback for an invalid or outdated product link. -->
+                <section class="not-found-card">
+                    <span class="eyebrow">Product not found</span>
+                    <h2>That product could not be found.</h2>
+                    <p>It may have been removed, or the link may be out of date.</p>
+                    <a class="detail-link" href="products.php">Back to Products</a>
+                </section>
+            <?php else: ?>
+                <!-- The hero row keeps the visual summary and the main buying info together. -->
+                <section class="product-hero">
+                    <aside class="detail-card product-visual">
+                        <img src="<?php echo htmlspecialchars($product['ImagePath'] ?: 'assets/img/logo.png'); ?>" alt="<?php echo htmlspecialchars($product['ProductName']); ?>">
+                        <div>
+                            <strong><?php echo htmlspecialchars($product['Category']); ?></strong>
+                            <p>This product is listed in the <?php echo htmlspecialchars($product['Category']); ?> category.</p>
+                        </div>
+                    </aside>
 
-        <aside class="hero-panel">
-          <div class="hero-stat">
-            <strong>5</strong>
-            product categories in the shop
-          </div>
-          <div class="hero-stat">
-            <strong>25</strong>
-            products currently available
-          </div>
-          <div class="hero-stat">
-            <strong>Simple filters</strong>
-            search by category and narrow products quickly
-          </div>
-        </aside>
-      </section>
+                    <div class="detail-card product-summary">
+                        <span class="eyebrow">Product Details</span>
+                        <h1><?php echo htmlspecialchars($product['ProductName']); ?></h1>
+                        <p><?php echo htmlspecialchars($product['Description']); ?></p>
 
-      <!-- Main homepage content: category shortcuts on the left and store highlights on the right. -->
-      <section class="content-grid">
-        <div class="section-card" id="categories">
-          <h2>Shop by Category</h2>
-          <p class="lead">Choose a category to go straight to the products that fit it.</p>
+                        <div class="summary-meta">
+                            <span class="meta-chip"><?php echo htmlspecialchars($product['Category']); ?></span>
+                            <span class="stock-pill <?php echo productStockClass((int) $product['Stock']); ?>">
+                                <?php echo htmlspecialchars(productStockLabel((int) $product['Stock'])); ?>
+                            </span>
+                            <span class="meta-chip"><?php echo (int) $product['Stock']; ?> available</span>
+                        </div>
 
-          <!-- Each category card links straight into the filtered products page. -->
-          <div class="category-grid">
-            <a class="category-card" href="products.php?category=Desks+%26+Chairs">
-              <span>Main Setup</span>
-              <h3>Desks &amp; Chairs</h3>
-              <p>Chairs and desks for the main setup.</p>
-            </a>
+                        <div class="price-row">
+                            <div class="price-block">
+                                <strong>Price</strong>
+                                <span>&pound;<?php echo number_format((float) $product['Price'], 2); ?></span>
+                            </div>
 
-            <a class="category-card" href="products.php?category=Audio+%26+Headsets">
-              <span>Audio</span>
-              <h3>Audio &amp; Headsets</h3>
-              <p>Headsets and audio gear for gaming, calls and desk use.</p>
-            </a>
+                            <div class="rating-block">
+                                <div class="rating-value">
+                                    <?php if ($ratingSummary['review_count'] > 0): ?>
+                                        <?php echo number_format((float) $ratingSummary['average_rating'], 1); ?>/5
+                                    <?php else: ?>
+                                        No ratings yet
+                                    <?php endif; ?>
+                                </div>
+                                <div><?php echo (int) $ratingSummary['review_count']; ?> review<?php echo (int) $ratingSummary['review_count'] === 1 ? '' : 's'; ?></div>
+                            </div>
+                        </div>
 
-            <a class="category-card" href="products.php?category=Controllers+%26+Grips">
-              <span>Controllers</span>
-              <h3>Controllers &amp; Grips</h3>
-              <p>Controllers and grip add-ons for smaller hands.</p>
-            </a>
+                        <!-- These are the main next steps: buy now, browse the category, or go back to the full catalogue. -->
+                        <div class="action-row">
+                            <?php if (!isAdminPreviewMode()): ?>
+                                <form method="POST" action="basket_add.php" style="margin:0;">
+                                    <input type="hidden" name="product_id" value="<?php echo (int) $product['ProductID']; ?>">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button class="detail-button" type="submit" <?php echo (int) $product['Stock'] <= 0 ? 'disabled' : ''; ?>>
+                                        <?php echo (int) $product['Stock'] <= 0 ? 'Out of Stock' : 'Add to Basket'; ?>
+                                    </button>
+                                </form>
+                            <?php endif; ?>
 
-            <a class="category-card" href="products.php?category=Keyboards+%26+Mice">
-              <span>Input</span>
-              <h3>Keyboards &amp; Mice</h3>
-              <p>Keyboards and mice for everyday use.</p>
-            </a>
+                            <a class="detail-link" href="products.php?category=<?php echo urlencode($product['Category']); ?>">
+                                More in <?php echo htmlspecialchars($product['Category']); ?>
+                            </a>
+                            <a class="detail-link" href="products.php">Back to Catalogue</a>
+                        </div>
+                    </div>
+                </section>
 
-            <a class="category-card" href="products.php?category=Accessories+%26+Focus">
-              <span>Extras</span>
-              <h3>Accessories &amp; Focus</h3>
-              <p>Accessories and support items for the rest of the setup.</p>
-            </a>
+                <!-- Reviews and related products sit lower down once the main product details are out of the way. -->
+                <section class="review-layout">
+                    <article class="review-card">
+                        <!-- The review form stays on the same page so feedback is tied closely to the product. -->
+                        <h2>Customer Reviews</h2>
+                        <p>See what other shoppers thought and add your own review if you have tried this item.</p>
 
-            <a class="category-card" href="products.php">
-              <span>Everything</span>
-              <h3>Full Collection</h3>
-              <p>See the full range in one place.</p>
-            </a>
-          </div>
-        </div>
+                        <?php if (!isAdminPreviewMode()): ?>
+                            <form class="review-form" action="review_add.php" method="POST">
+                                <input type="hidden" name="product_id" value="<?php echo (int) $product['ProductID']; ?>">
 
-        <aside class="section-card">
-          <!-- This side column just gives a quick explanation of what the store is aiming for. -->
-          <h2>Why Choose PixelPals</h2>
-          <p class="lead">The store is built around comfort, simpler setups and practical upgrades.</p>
+                                <div>
+                                    <label for="rating">Rating</label>
+                                    <select id="rating" name="rating" required>
+                                        <option value="">Choose a rating</option>
+                                        <option value="5">5 stars</option>
+                                        <option value="4">4 stars</option>
+                                        <option value="3">3 stars</option>
+                                        <option value="2">2 stars</option>
+                                        <option value="1">1 star</option>
+                                    </select>
+                                </div>
 
-          <div class="highlight-list">
-            <div class="highlight-item">
-              <strong>Everyday use</strong>
-              Products are suitable for both gaming and desk time.
-            </div>
-            <div class="highlight-item">
-              <strong>Easy to build up</strong>
-              Start with one item and add more later.
-            </div>
-            <div class="highlight-item">
-              <strong>Clear product range</strong>
-              The categories are kept simple so products are easier to find.
-            </div>
-          </div>
-        </aside>
-      </section>
-    </main>
+                                <div>
+                                    <label for="comment">Your review</label>
+                                    <textarea id="comment" name="comment" required placeholder="What did you think of this product?"></textarea>
+                                </div>
 
-    <!-- Shared footer note keeps the public pages feeling connected at the bottom. -->
-    <div class="footer-note">
-      <div class="footer-brand">
-        <img src="assets/img/logo.png" alt="PixelPals logo">
-        <div>PixelPals sells gaming gear for younger players and family setups.</div>
-      </div>
+                                <button class="review-submit" type="submit">Submit Review</button>
+                            </form>
+                        <?php endif; ?>
 
-      <div class="footer-socials">
-        <a href="#" aria-label="Instagram">
-          <img src="assets/img/instagram_logo.png" alt="Instagram">
-        </a>
-        <a href="#" aria-label="Twitter">
-          <img src="assets/img/twitter_logo.png" alt="Twitter">
-        </a>
-        <a href="#" aria-label="YouTube">
-          <img src="assets/img/youtube_logo.png" alt="YouTube">
-        </a>
-      </div>
+                        <?php if ($reviews): ?>
+                            <div class="review-list">
+                                <?php foreach ($reviews as $review): ?>
+                                    <div class="review-item">
+                                        <div class="review-head">
+                                            <div><?php echo htmlspecialchars($review['Username']); ?> · <?php echo (int) $review['Rating']; ?>/5</div>
+                                            <div class="review-date"><?php echo htmlspecialchars(date('j M Y', strtotime((string) $review['CreatedAt']))); ?></div>
+                                        </div>
+                                        <p><?php echo nl2br(htmlspecialchars($review['Comment'])); ?></p>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="review-empty">
+                                <p>No reviews yet. This would be a good one to review first.</p>
+                            </div>
+                        <?php endif; ?>
+                    </article>
+
+                    <aside class="related-card">
+                        <!-- Related items keep people moving through the same category without a full search reset. -->
+                        <h2>Related Products</h2>
+                        <p>More options from the same category if you want to compare before adding to your basket.</p>
+
+                        <?php if ($relatedProducts): ?>
+                            <div class="related-grid">
+                                <?php foreach ($relatedProducts as $related): ?>
+                                    <div class="related-item">
+                                        <div>
+                                            <strong><?php echo htmlspecialchars($related['ProductName']); ?></strong>
+                                            <div class="related-price">&pound;<?php echo number_format((float) $related['Price'], 2); ?></div>
+                                            <div><?php echo htmlspecialchars(productStockLabel((int) $related['Stock'])); ?></div>
+                                        </div>
+                                        <a class="related-link" href="product.php?id=<?php echo (int) $related['ProductID']; ?>">View</a>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="review-empty">
+                                <p>This is the only product in this category right now.</p>
+                            </div>
+                        <?php endif; ?>
+                    </aside>
+                </section>
+            <?php endif; ?>
+        </main>
     </div>
-  </div>
 </body>
 </html>
