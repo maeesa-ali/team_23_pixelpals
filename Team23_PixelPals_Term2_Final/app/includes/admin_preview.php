@@ -1,6 +1,7 @@
 <?php
 
-if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) 
+{
     // Preview helpers rely on the session because admin preview mode is just another session state.
     session_start();
 }
@@ -24,11 +25,14 @@ function renderAdminPreviewBanner(string $backHref = '/Team23_PixelPals_Term2_Fi
     echo '</div>';
 }
 
-function renderAdminPreviewUnavailablePage(
+function renderAdminPreviewUnavailablePage
+(
     string $title,
     string $message,
     string $backHref = '/Team23_PixelPals_Term2_Final/public/admin/dashboard.php'
-): void {
+): 
+void 
+{
     // Some customer-only pages do not make sense in preview mode, so render a lightweight fallback page instead.
     if (!isAdminPreviewMode()) {
         return;
