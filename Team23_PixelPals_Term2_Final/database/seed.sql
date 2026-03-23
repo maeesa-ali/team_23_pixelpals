@@ -1,38 +1,153 @@
-----
-INSERT INTO admin (AdminID, FirstName, LastName, Password, Email, Role) VALUES
-(6, 'Admin', 'User', 'Admin123!', 'admin@pixelpals.com', 'SuperAdmin');
+-- Seed the catalogue so a fresh database has real products ready to browse and test.
+INSERT INTO `product` 
+(`Description`, `ProductName`, `Category`, `ImagePath`, `Price`, `Stock`) 
+VALUES
+('Designed for comfort, over-ear with soft-cushioned ear pads, these wireless headphones protect delicate eardrums of growing children with their volume control.', 
+'Volume-sensitive Over-ear Headphones', 
+'Audio', 
+'assets/img/products/audio_volsensitive_black.png', 
+15.00, 37),
 
+('For sensitive heads, these lightweight headphones make sure no extra weight causes discomfort.', 
+'Lightweight Wired Earphones', 
+'Audio', 
+'assets/img/products/audio_lightweight_blue.png', 
+14.00, 54),
 
-INSERT INTO users (UserID, Username, FirstName, LastName, DateOfBirth, Password, Email) VALUES
-(2, 'test123', 'tester1', '100', '2005-05-13',
-'$2y$10$tGwUdpjysS2SdDyc5WzDrOSVuWk5.IIvAs5REg9hNccmL0hu41KCS',
-'test124@aston.ac.uk');
+('For smaller ears and heads, these small headphones make sure of comfort for long durations.', 
+'Small Wireless Over-ear Headphones', 
+'Audio', 
+'assets/img/products/audio_small_purple.png', 
+16.00, 35),
 
+('Microphone Headset allows kids to engage with games without the clutter of many devices.', 
+'Wireless Microphone Over-ear Headset', 
+'Audio', 
+'assets/img/products/audio_micset_black.png', 
+14.00, 15),
 
-INSERT INTO product (ProductID, Description, ProductName, Category, Price, Stock) VALUES
-(1, 'Small ergonomic chair designed for kids aged 6–8 to support posture.', 'PixelPals Junior Chair (Ages 6–8)', 'Ergonomic Chairs', 15.00, 40),
-(2, 'Ergonomic chair sized for ages 8–10 with supportive backrest.', 'PixelPals Junior Chair (Ages 8–10)', 'Ergonomic Chairs', 14.00, 55),
-(3, 'Supportive chair for ages 10–12 with comfort for longer sitting.', 'PixelPals Junior Chair (Ages 10–12)', 'Ergonomic Chairs', 16.00, 35),
-(4, 'Adjustable gaming chair with height support and sturdy frame.', 'PixelPals Adjustable Gaming Chair', 'Ergonomic Chairs', 14.00, 10),
-(5, 'Posture-focused chair to encourage healthy sitting positions.', 'PixelPals Posture Support Chair', 'Ergonomic Chairs', 18.00, 45),
-(6, 'Compact desk that fits small rooms while keeping setup organised.', 'PixelPals Compact Gaming Desk', 'Gaming Desks', 16.00, 60),
-(7, 'Height-adjustable desk to match different ages and seating needs.', 'PixelPals Height-Adjustable Desk', 'Gaming Desks', 12.00, 70),
-(8, 'Desk designed for both study time and gaming sessions.', 'PixelPals Study & Play Desk', 'Gaming Desks', 14.00, 30),
-(9, 'Foldable desk for easy storage and flexible room layouts.', 'PixelPals Foldable Gaming Desk', 'Gaming Desks', 16.00, 40),
-(10, 'Larger desk built for multi-device gaming setups and accessories.', 'PixelPals Pro Gaming Desk', 'Gaming Desks', 25.00, 20),
-(11, 'Single monitor stand to raise screens and reduce neck strain.', 'PixelPals Single Monitor Stand', 'Monitor Stands', 35.00, 35),
-(12, 'Dual stand for two screens to improve viewing height and space.', 'PixelPals Dual Monitor Stand', 'Monitor Stands', 35.00, 25),
-(13, 'Adjustable riser to set the monitor to a comfortable eye level.', 'PixelPals Adjustable Monitor Riser', 'Monitor Stands', 42.00, 18),
-(14, 'Wooden stand that raises monitors and adds a clean desk look.', 'PixelPals Wooden Monitor Stand', 'Monitor Stands', 30.00, 30),
-(15, 'Shelf-style stand that lifts screens and provides storage underneath.', 'PixelPals Desk Shelf Monitor Stand', 'Monitor Stands', 7.00, 60),
-(16, 'Small wrist rest for comfortable keyboard and mouse use.', 'PixelPals Wrist Rest (Small)', 'Wrist & Arm Support', 10.00, 40),
-(17, 'Medium wrist rest to support wrists during longer sessions.', 'PixelPals Wrist Rest (Medium)', 'Wrist & Arm Support', 15.00, 40),
-(18, 'Large wrist rest for wider keyboards and extra support.', 'PixelPals Wrist Rest (Large)', 'Wrist & Arm Support', 14.00, 55),
-(19, 'Mouse pad with wrist cushion to reduce strain and improve control.', 'PixelPals Ergonomic Mouse Pad', 'Wrist & Arm Support', 16.00, 35),
-(20, 'Arm support cushion to reduce pressure at the edge of the desk.', 'PixelPals Arm Support Cushion', 'Wrist & Arm Support', 14.00, 50),
-(21, 'Headset stand to keep headphones stored safely and neatly.', 'PixelPals Headset Stand', 'Gaming Accessories', 18.00, 45),
-(22, 'Desk mat that protects surfaces and improves mouse movement.', 'PixelPals Desk Mat', 'Gaming Accessories', 16.00, 60),
-(23, 'LED lamp for better lighting during study or gaming time.', 'PixelPals LED Desk Lamp', 'Gaming Accessories', 12.00, 70),
-(24, 'Cable organiser to tidy wires and keep the desk clutter-free.', 'PixelPals Cable Organiser', 'Gaming Accessories', 14.00, 30),
-(25, 'Controller stand to store controllers and keep them easy to grab.', 'PixelPals Controller Stand', 'Gaming Accessories', 16.00, 40);
+('This wired/wireless clip-on microphone allows ease of use. Plug into headset/device or connect via Bluetooth.', 
+'Clip-on Microphone', 
+'Audio', 
+'assets/img/products/audio_clipon.png', 
+18.00, 45),
 
+('Small sized controller made for small hands, preventing overstretch and cramps.', 
+'Small Handheld Controller', 
+'Controllers', 
+'assets/img/products/controller_small_pink.png', 
+16.00, 60),
+
+('Comfortable and shaped to fit perfectly in the palm and fingers are allowed to sit at rest position.', 
+'Wireless Ergonomic Controller', 
+'Controllers', 
+'assets/img/products/controller_ergo_black.png', 
+12.00, 70),
+
+('Bright colours for visual aid and larger buttons and joysticks for ease of use.', 
+'Enlarged Button Controller', 
+'Controllers', 
+'assets/img/products/controller_enlarged_button.png', 
+14.00, 30),
+
+('This case allows for a gentler hold, cushioned and soft means palms clenching the controller will not hurt and long-duration usage will cause less strain.', 
+'Ergonomic Cushioned Case For Controller', 
+'Controllers', 
+'assets/img/products/controller_cushion_case.png', 
+16.00, 40),
+
+('For hands with difficulty reaching trigger buttons on gaming controllers.', 
+'Trigger Extender Caps', 
+'Controllers', 
+'assets/img/products/controller_triggerext.png', 
+25.00, 20),
+
+('Prioritising hand and motor health, ergonomically designed keyboard allows for the hand and wrist to sit in its natural position.', 
+'Ergonomic Keyboard', 
+'Keyboard and Mouse', 
+'assets/img/products/km_ergokeyboard.png', 
+35.00, 35),
+
+('Prioritising hand and motor health, ergonomically designed mouse allows for the hand and wrist to sit in its natural position.', 
+'Ergonomic Mouse', 
+'Keyboard and Mouse', 
+'assets/img/products/km_ergomouse_white.png', 
+35.00, 25),
+
+('Bright colours for visually impaired aid. The distinguishable buttons allow children to become more accustomed to the devices.', 
+'Sensory Keyboard', 
+'Keyboard and Mouse', 
+'assets/img/products/km_sensorykeyboard.png', 
+42.00, 18),
+
+('Bright colours for visually impaired aid. The distinguishable buttons allow children to become more accustomed to the devices.', 
+'Sensory Mouse', 
+'Keyboard and Mouse', 
+'assets/img/products/km_sensorymouse.png', 
+30.00, 30),
+
+('Ergonomically designed wrist rest allows for the hand and wrist to sit in its natural position.', 
+'Wrist Rest', 
+'Keyboard and Mouse', 
+'assets/img/products/km_wristrest.png', 
+7.00, 60),
+
+('Ergonomically designed motion chair makes for strengthening core muscles and maintain posture.', 
+'Ergonomic Posture Chair', 
+'Desks and Chairs', 
+'assets/img/products/dc_ergochair_blue.png', 
+10.00, 40),
+
+('This smaller chair allows children of all ages to sit comfortably whilst engaging with technology.', 
+'Floor Gaming Chair', 
+'Desks and Chairs', 
+'assets/img/products/dc_floorchair.png', 
+15.00, 42),
+
+('This booster seat allows your chair to conform into an ergonomically supportive seat for children.', 
+'Ergonomic Booster Seat', 
+'Desks and Chairs', 
+'assets/img/products/dc_ergobooster.png', 
+14.00, 55),
+
+('Adjustable table allows the screen to meet your eye level, preventing strain.', 
+'Height-adjusting Table', 
+'Desks and Chairs', 
+'assets/img/products/dc_adjustabletable.png', 
+16.00, 35),
+
+('Compatible with screens of all kinds; tablets, monitors, and phones.', 
+'Adjustable Monitor Stand', 
+'Desks and Chairs', 
+'assets/img/products/dc_monitorstand.png', 
+14.00, 50),
+
+('Prevents eye strain by reducing glare from screens.', 
+'Anti-glare screen protector', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_antiglare.png', 
+18.00, 45),
+
+('Allows regulation of children’s screen time.', 
+'Screen-time Timer', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_timer.png', 
+16.00, 60),
+
+('Ergonomic iPad case promoting motor skills and healthy usage.', 
+'Ergonomic iPad Case', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_ipadcase.png', 
+12.00, 70),
+
+('Fidget toy for relieving stress and improving motor skills.', 
+'Fidget Toy', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_fidget.png', 
+14.00, 30),
+
+('Reward chart to encourage healthy screen-time habits.', 
+'Screen-time Reward Chart', 
+'Tabletop Accessories', 
+'assets/img/products/accessories_screentime.png', 
+16.00, 40);
