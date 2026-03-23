@@ -1,92 +1,127 @@
+ <!-- Header + navbar -->
+<?php include '../app/includes/header.php'; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome page</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
-</head>
+  
+    <!-- HERO SECTION -->
+     <section class="herobanner">
+        <div class="section-content">
+            <div class ="hero-details">
+                <h2 class="title">PixelPals</h2>
+                <h3 class="subtitle">Welcome to PixelPals!</h3>
+                <p class="description">Designing healthier gaming experiences for young players</p>
 
-<body>
+                <div class="hero-buttons">
+                  <a href="products.php" class="shopnow-button">Shop All Products!</a>
+                  <a href="#categories" class="categories-button">Browse Categories!</a>
+                </div>
+                
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="assets/img/hero/herobanner.png" alt="Hero" class="herobanner-image">
+            </div>
+        </div>
+     </section>
 
-  <!-- Header -->
-  <header class="topBar">
-    <img src="pixelPals.png" class="logo">
 
-    <div class="searchContainer">
-      <form  action="products.html"  method="GET">
-        <input type="text" id="searchInput" name="q" placeholder="Search">
-      </form>
-      <button class="clear-btn">×</button>
-    </div>
-
-    <div class="topLinks">
-      <a href="basket.html">Basket</a>
-    </div>
-  </header>
-
-  <!-- Bottom Navigation -->
-  <nav class="bottomNav">
-    <a href="login.php">Log in</a>
-    <a href="index.php">Home</a>
-    <a href="products.php">Products</a>
-    <a href="about.php">About Us</a>
-    <a href="contact.php">Contact Us</a>
-    <a href="orders.php">Orders</a>   
- 
-  </nav>
-
-  <!-- Page Content -->
-  <main>
-
-    <section id="welcome-message">
-      <h2>Welcome to Pixel Pals!</h2>
-      <p>Pixel Pals is great for finding gaming accessories for young children!</p>
-
-      <form action="products.html" method="GET">
-        <button type="submit" class="shop-now-btn">Shop Now!</button>
-      </form>
-    </section>
-
-    <section class="card">
+     <!-- CATEGORIES. -->
+    <section class="categories" id="categories">
       <h2>Shop by Category</h2>
 
-      <div class="category-buttons">
+      <div class="categorycard">
 
-        <a href="products.html?q=chair">
-          <button class="cat-btn cat-headphones">Ergonomic Chairs </button>
+        <a href="products.php?q=chair">
+          <button class="cat-btn cat-chair">Ergonomic Chairs </button>
         </a>
 
-        <a href="products.html?q=gameing desks">
-          <button class="cat-btn cat-headsets">Gameing Desks</button>
+        <a href="products.php?q=gaming desks">
+          <button class="cat-btn cat-desk">Gaming Desks</button>
         </a>
 
-        <a href="products.html?q=moniter stands">
-          <button class="cat-btn cat-controllers">Moniter Stands</button>
+        <a href="products.php?q=monitor stands">
+          <button class="cat-btn cat-monitor">Monitor Stands</button>
         </a>
 
-        <a href="products.html?q=support">
-          <button class="cat-btn cat-keyboards">Wrist And Arm Support</button>
+        <a href="products.php?q=support">
+          <button class="cat-btn cat-support">Wrist And Arm Support</button>
         </a>
 
-        <a href="products.html?q=gameing accessory">
-          <button class="cat-btn cat-gameingAcsessorry">Gameing Acsessories</button>
+        <a href="products.php?q=gaming accessory">
+          <button class="cat-btn cat-accessory">Gaming Acsessories</button>
         </a>
 
       </div>
     </section>
 
-    <section id="recommended">
-      <h2>Recommended Products</h2>
-      <div class="recommended-grid" id="recommendedGrid"></div>
+    <!-- FEATURED PRODUCTS. -->
+    <section class="featured">
+      <h2>Featured Products</h2>
+
+      <div class="featured-grid">
+        <div class="product-card">
+            <a href="product.php?id=1">
+                <img src="assets/img/products/dc_ergochair_pink.png" alt ="Ergonomic chair">
+                <h3>Ergonomic Chair</h3>
+                <p class="price">£199.99 </p>
+            </a>
+            
+            <form action="../app/actions/basket_add.php" method="POST">
+              <input type="hidden" name="product_id" value="1">
+              <button type="submit" class="add-to-cart">Add to Basket</button>
+            </form>
+            
+        </div>
+
+        <div class="product-card">
+            <a href="product.php?id=2">
+                <img src="assets/img/products/dc_adjustabletable.png" alt="Gaming desk">
+                <h3>Gaming Desk</h3>
+                <p class="price">£149.99</p>
+            </a>
+
+            <form action="../app/actions/basket_add.php" method="POST">
+              <input type="hidden" name="product_id" value="2">
+              <button type="submit" class="add-to-cart">Add to Basket</button>
+            </form>
+
+        </div>
+
+        <div class="product-card">
+            <a href="product.php?id=3">
+                <img src="assets/img/products/dc_monitorstand.png" alt="Monitor Stand">
+                <h3>Monitor Stand</h3>
+                <p class="price">£39.99</p>
+            </a>
+
+            <form action="../app/actions/basket_add.php" method="POST">
+              <input type="hidden" name="product_id" value="3">
+              <button type="submit" class="add-to-cart">Add to Basket</button>
+            </form>  
+
+        </div>
+
+        <div class="product-card">
+            <a href="product.php?id=4">
+                <img src="assets/img/products/km_wristrest.png" alt="Wrist Support">
+                <h3>Wrist & Arm Support</h3>
+                <p class="price">£24.99</p>
+            </a>
+
+            <form action="../app/actions/basket_add.php" method="POST">
+              <input type="hidden" name="product_id" value="4">
+              <button type="submit" class="add-to-cart">Add to Basket</button>
+            </form>
+            
+        </div>
+
+      </div>
     </section>
-
-
-
-  </main>
-
-  <script src="js/script.js"></script>
+  
+  
+  <!-- FOOTER -->
+   <?php include '../app/includes/footer.php'; ?>
 
 </body>
 </html>
+
+
+
