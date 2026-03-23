@@ -20,7 +20,9 @@ while ($row = $result->fetch_assoc()) {
         "Category" => $row["Category"],
         "Price" => (float)$row["Price"],
         "Stock" => (int)$row["Stock"],
-        "description" => $row["Description"],
+        "Description" => $row["Description"],
+        "ImagePath" => $row["ImagePath"]
+        
        
     ];
 }
